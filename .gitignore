@@ -45,3 +45,6 @@ Thumbs.db
 wandb/
 *.wandb
 artifacts/
+
+# Checkpoint files
+checkpoints/*.pth
