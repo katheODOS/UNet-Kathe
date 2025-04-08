@@ -1,10 +1,11 @@
 import os
 import numpy as np
 from PIL import Image
+from tqdm import tqdm
 
-# Define input file and output directory
-INPUT_FILE = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\imgs\val\biodiversity_0054_OUT.png"
-OUTPUT_DIR = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\original dataset index\predictions"
+# Define input and output directories
+INPUT_DIR = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\overlap_augmented_index\predictions_single"
+OUTPUT_DIR = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\overlap_augmented_index\predictions"
 
 # Define the mapping from class ID to RGB values
 CLASS_TO_RGB = {
@@ -44,16 +45,22 @@ def main():
     # Create output directory if it doesn't exist
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # Get the filename from the input path
-    filename = os.path.basename(INPUT_FILE)
-    output_path = os.path.join(OUTPUT_DIR, filename)
+    # Get list of all PNG files in input directory
+    image_files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.png')]
+    print(f"Found {len(image_files)} images to process")
     
-    try:
-        convert_single_to_rgb(INPUT_FILE, output_path)
-        print(f"Successfully converted {filename}")
-        print(f"Saved to: {output_path}")
-    except Exception as e:
-        print(f"Error processing {filename}: {str(e)}")
+    # Process each image with progress bar
+    for filename in tqdm(image_files, desc="Converting images"):
+        input_path = os.path.join(INPUT_DIR, filename)
+        output_path = os.path.join(OUTPUT_DIR, filename)
+        
+        try:
+            convert_single_to_rgb(input_path, output_path)
+        except Exception as e:
+            print(f"\nError processing {filename}: {str(e)}")
+    
+    print("\nConversion complete!")
+    print(f"Processed images saved to: {OUTPUT_DIR}")
 
 if __name__ == "__main__":
     main()
