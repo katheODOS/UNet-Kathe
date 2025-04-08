@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.26100-SP0",
+    "python": "3.8.20",
+    "heartbeatAt": "2025-04-08T09:41:12.780358",
+    "startedAt": "2025-04-08T09:41:11.870165",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--classes",
+        "11"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/katheODOS/UNet-Kathe.git",
+        "commit": "8c9c5dd18be0dfc6670e8220df44024204ca5d94"
+    },
+    "email": "katherine@odostech.com",
+    "root": "C:/Users/Admin/anaconda3/envs/UNet-Kathe/UNet-Kathe",
+    "host": "Alvaro",
+    "username": "Admin",
+    "executable": "C:\\Users\\Admin\\anaconda3\\envs\\UNet-Kathe\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3096.0,
+        "min": 0.0,
+        "max": 3096.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3096.0,
+            "min": 0.0,
+            "max": 3096.0
+        }
+    ],
+    "disk": {
+        "total": 1905.0429649353027,
+        "used": 1052.8538360595703
+    },
+    "gpu": "NVIDIA RTX 4000 Ada Generation",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX 4000 Ada Generation",
+            "memory_total": 21469593600
+        }
+    ],
+    "memory": {
+        "total": 63.25018310546875
+    }
+}
