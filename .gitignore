@@ -30,6 +30,18 @@ logs/
 *.pkl
 *.h5
 
+# Ignore PNGs in data directory and all subdirectories
+data/**/*.png
+
+# Keep the data directory structure
+!data/**/
+!data/**/.gitkeep
+
 # OS specific
 .DS_Store
 Thumbs.db
+
+# Weights & Biases
+wandb/
+*.wandb
+artifacts/
