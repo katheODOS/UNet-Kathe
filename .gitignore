@@ -47,4 +47,8 @@ wandb/
 artifacts/
 
 # Checkpoint files
-checkpoints/*.pth
+checkpoints/**/*.pth
+!checkpoints/**/
+!checkpoints/**/output.txt
+!checkpoints/validation_scores.json
+!checkpoints/validation_scores_sorted.txt

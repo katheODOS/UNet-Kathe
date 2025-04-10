@@ -63,6 +63,7 @@ def train_model(
         momentum: float = 0.999,
         gradient_clipping: float = 1.0,
         weight_method: str = 'inverse',
+        dir_checkpoint: Path = Path('./checkpoints/'),
 ):
     # 1. Create datasets 
     train_set = BasicDataset(dir_img / 'train', dir_mask / 'train', img_scale)
@@ -195,7 +196,7 @@ def train_model(
                             pass
 
         if save_checkpoint:
-            Path(dir_checkpoint).mkdir(parents=True, exist_ok=True)
+            dir_checkpoint.mkdir(parents=True, exist_ok=True)
             state_dict = model.state_dict()
             state_dict['mask_values'] = train_set.mask_values
             torch.save(state_dict, str(dir_checkpoint / 'checkpoint_epoch{}.pth'.format(epoch)))
