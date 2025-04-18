@@ -10,27 +10,28 @@ import wandb
 import io
 from contextlib import redirect_stdout
 from tqdm import tqdm
-import traceback  # Add this import
+import traceback 
 from io import StringIO
 import atexit
+import re
 
 # Hyperparameter configurations
-LEARNING_RATES = [1e-7, 1e-6, 1e-5, 1e-4]
-BATCH_SIZES = [2, 4, 8]
-EPOCHS = [5, 10, 15]
+LEARNING_RATES = [1e-7, 1e-6]
+BATCH_SIZES = [1, 2, 4]
+EPOCHS = [10, 15]
 WEIGHT_DECAYS = [1e-9, 1e-8, 1e-7]
 
 # Dataset configurations with path mappings
 DATASETS = {
-    'A': {'name': 'Dataset A', 'code': 'A', 'path': 'Dataset A'},
-    'B': {'name': 'Dataset B', 'code': 'B', 'path': 'Dataset B'},
+    #'A': {'name': 'Dataset A', 'code': 'A', 'path': 'Dataset A'},
+    #'B': {'name': 'Dataset B', 'code': 'B', 'path': 'Dataset B'},
     'ASA': {'name': 'Dataset A SA', 'code': 'ASA', 'path': 'Dataset A SA'},
     'BSA': {'name': 'Dataset B SA', 'code': 'BSA', 'path': 'Dataset B SA'}
 }
 
-def setup_checkpoint_dir(dataset_code, lr, wd, epochs):
+def setup_checkpoint_dir(dataset_code, lr, wd, epochs, batch_size):
     """Create and return checkpoint directory for specific configuration"""
-    dir_name = f"{dataset_code}L{lr:.0e}W{wd:.0e}E{epochs}"
+    dir_name = f"{dataset_code}L{lr:.0e}W{wd:.0e}B{batch_size}E{epochs}"
     checkpoint_dir = Path('./checkpoints') / dir_name
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     return checkpoint_dir
@@ -45,9 +46,11 @@ class SafeOutputCapture:
         self.buffer = StringIO()
         self.original_stdout = sys.stdout
         self.original_stderr = sys.stderr
+        # Add logging capture
+        self.log_handler = logging.StreamHandler(self.buffer)
+        self.log_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
         
     def write(self, text):
-        # Write to buffer and original stdout without recursion
         self.buffer.write(text)
         self.original_stdout.write(text)
         
@@ -61,11 +64,15 @@ class SafeOutputCapture:
     def __enter__(self):
         sys.stdout = self
         sys.stderr = self
+        # Add logging handler when entering context
+        logging.getLogger().addHandler(self.log_handler)
         return self
         
     def __exit__(self, exc_type, exc_value, traceback):
         sys.stdout = self.original_stdout
         sys.stderr = self.original_stderr
+        # Remove logging handler when exiting context
+        logging.getLogger().removeHandler(self.log_handler)
         self.buffer.close()
 
 def cleanup_wandb():
@@ -76,21 +83,29 @@ def cleanup_wandb():
     except:
         pass
 
-def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epochs, weight_decay):
+def extract_latest_validation_score(output_text):
+    """Extract the most recent validation score from the output"""
+    matches = re.findall(r'INFO: Validation Dice score: (\d+\.\d+)', output_text)
+    return float(matches[-1]) if matches else 0.0
+
+def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epochs, weight_decay, config_details):
     """Run training with specific configuration and capture output"""
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    # Initialize model with correct number of classes (11 for your case: 10 classes + background)
     model = UNet(n_channels=3, n_classes=11, bilinear=True)
     model = model.to(device=device)
     
-    # Set up safer output capture
     with SafeOutputCapture() as output:
         try:
-            # Register cleanup function
+            # Write configuration details first
+            sys.stdout.write("="*80 + "\n")
+            sys.stdout.write(f"Configuration Details:\n")
+            sys.stdout.write("="*80 + "\n")
+            sys.stdout.write(config_details + "\n")
+            sys.stdout.write("="*80 + "\n\n")
+            
             atexit.register(cleanup_wandb)
             
-            # Temporarily modify the global directory variables
             original_img_dir = train.dir_img
             original_mask_dir = train.dir_mask
             original_checkpoint_dir = train.dir_checkpoint
@@ -99,6 +114,7 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
             train.dir_mask = Path(dataset_path) / 'masks'
             train.dir_checkpoint = checkpoint_dir
             
+            # Do full training at once, we'll monitor the output for early stopping
             train_model(
                 model=model,
                 epochs=epochs,
@@ -110,13 +126,15 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
                 weight_decay=weight_decay
             )
             
-            # Capture wandb summary before cleanup
-            if wandb.run is not None:
-                print("\nWandb Run Summary:")
-                print("=" * 50)
-                for key, value in wandb.run.summary.items():
-                    print(f"{key}: {value}")
-                print("=" * 50)
+            # Check if we should have stopped early
+            current_output = output.get_output()
+            validation_scores = re.findall(r'INFO: Validation Dice score: (\d+\.\d+)', current_output)
+            
+            # Add early stopping note if applicable
+            if len(validation_scores) >= 5:  # We have at least 5 scores
+                early_scores = [float(score) for score in validation_scores[:5]]
+                if max(early_scores) < 0.65:
+                    sys.stdout.write("\nNote: Early stopping would have occurred after epoch 5 (score below 0.65)\n")
             
             # Restore directory variables
             train.dir_img = original_img_dir
@@ -128,9 +146,7 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
             print("\nFull traceback:")
             print(traceback.format_exc())
         finally:
-            # Cleanup wandb run
             cleanup_wandb()
-            # Deregister cleanup function
             atexit.unregister(cleanup_wandb)
             
         return output.get_output()
@@ -151,7 +167,6 @@ def main():
         EPOCHS,
         WEIGHT_DECAYS
     ))
-    
     total_combinations = len(configs)
     logging.info(f"Total number of combinations to try: {total_combinations}")
     
@@ -166,7 +181,7 @@ def main():
             
             # Setup directories for current configuration
             checkpoint_dir = setup_checkpoint_dir(
-                dataset_info['code'], lr, weight_decay, epochs
+                dataset_info['code'], lr, weight_decay, epochs, batch_size
             )
             
             # Check if this combination was already completed
@@ -193,7 +208,15 @@ def main():
                 
             logging.info("Starting training for this combination...")
             
-            # Run training
+            # Format configuration details
+            config_details = f"""Dataset: {dataset_info['name']} ({dataset_key})
+Learning Rate: {lr}
+Batch Size: {batch_size}
+Epochs: {epochs}
+Weight Decay: {weight_decay}
+Checkpoint Directory: {checkpoint_dir}"""
+            
+            # Run training with config details
             try:
                 output = run_training_configuration(
                     dataset_base,
@@ -201,7 +224,8 @@ def main():
                     lr,
                     batch_size,
                     epochs,
-                    weight_decay
+                    weight_decay,
+                    config_details
                 )
                 
                 # Save output
