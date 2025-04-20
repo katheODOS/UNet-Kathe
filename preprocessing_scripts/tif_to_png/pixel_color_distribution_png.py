@@ -3,8 +3,8 @@ import json
 import numpy as np
 from PIL import Image
 
-folder_path = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap\index\annotation_512"
-output_json_path = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap\index\annotation_512\output.json"
+folder_path = r"directory/with/pngs/to/analyze"
+output_json_path = r"directory/to/save/your/file/into/output.json"
 
 color_labels = {
     "000000": 0,
@@ -24,7 +24,6 @@ color_labels = {
 color_counts = {}
 total_pixels = 0
 
-# Loop through each file in the folder
 for filename in os.listdir(folder_path):
     if not filename.lower().endswith(".png"):
         continue
@@ -32,10 +31,8 @@ for filename in os.listdir(folder_path):
     file_path = os.path.join(folder_path, filename)
     print(f"Processing file: {file_path}")
 
-    # Open and process PNG file using PIL
     try:
         with Image.open(file_path) as img:
-            # Convert image to RGB mode if it isn't already
             if img.mode != 'RGB':
                 img = img.convert('RGB')
             
@@ -76,7 +73,6 @@ for hex_val, label in color_labels.items():
         "color_percentage": color_percentages.get(hex_with_hash, 0)
     }
 
-# Prepare the output data structure, including the new labels_statistics
 output_data = {
     "total_pixel_count": total_pixels,
     "pixel_counts": color_counts,
@@ -84,7 +80,6 @@ output_data = {
     "labels_statistics": labels_statistics
 }
 
-# Write the output to a JSON file
 with open(output_json_path, "w") as json_file:
     json.dump(output_data, json_file, indent=4)
 

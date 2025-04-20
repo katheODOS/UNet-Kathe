@@ -7,8 +7,8 @@ import logging
 from tqdm import tqdm
 
 # Define specific input and output paths
-INPUT_DIR = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\annotation_512"
-OUTPUT_DIR = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\annotation_single_channel"
+INPUT_DIR = r"directory/with/512x512/images/to/convert"
+OUTPUT_DIR = r"directory/to/save/single/channel/annotations/into"
 
 def setup_logging():
     logging.basicConfig(
@@ -25,7 +25,7 @@ def parse_hex_color(hex_color):
 def create_color_mapping():
     """Create color mapping from hex to class ID."""
     color_map = {
-        "0bf6d2": 0,
+        "0bf6d2": 0, #This is my ignore index because the UNet does not like if I set it to 255 
         "27b341": 1,
         "e657c4": 2,
         "fc7ebb": 3,
@@ -63,9 +63,9 @@ def process_mask(mask_path, rgb_to_class, output_path):
     for y in range(height):
         for x in range(width):
             # Get the RGB value
-            if mask_array.ndim == 3:  # RGB image
+            if mask_array.ndim == 3:  
                 rgb = tuple(mask_array[y, x])
-            else:  # Grayscale image
+            else: 
                 rgb = (mask_array[y, x], mask_array[y, x], mask_array[y, x])
             
             # Look up the class ID
@@ -75,14 +75,13 @@ def process_mask(mask_path, rgb_to_class, output_path):
                 class_id = rgb_to_class[rgb]
                 rgb_lookup[rgb] = class_id
             else:
-                # If color not found in mapping, use ignore index
-                class_id = 255
+                
+                class_id = 255 #Used to identify any pixels which aren't part of my mapping but made their way into the masks regardless
                 rgb_lookup[rgb] = class_id
                 logging.warning(f"Unknown color {rgb} found in {mask_path}")
             
             class_mask[y, x] = class_id
     
-    # Save the class mask
     class_img = Image.fromarray(class_mask)
     class_img.save(output_path)
     
@@ -93,27 +92,22 @@ def main():
     print(f"Input directory: {INPUT_DIR}")
     print(f"Output directory: {OUTPUT_DIR}")
     
-    # Verify directories
     if not os.path.exists(INPUT_DIR):
         raise RuntimeError(f"Input directory not found: {INPUT_DIR}")
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # Create color mapping
     rgb_to_class = create_color_mapping()
     logging.info(f"Created mapping with {len(rgb_to_class)} colors")
     
-    # Print the mapping
     for rgb, class_id in rgb_to_class.items():
         logging.info(f"RGB {rgb} -> Class ID {class_id}")
     
-    # Get list of mask files
     mask_files = [f for f in os.listdir(INPUT_DIR) 
                   if os.path.isfile(os.path.join(INPUT_DIR, f)) and 
                   f.lower().endswith(('.png', '.jpg', '.jpeg'))]
     
     logging.info(f"Found {len(mask_files)} mask files to process")
     
-    # Process each mask
     for mask_file in tqdm(mask_files, desc="Processing masks"):
         input_path = os.path.join(INPUT_DIR, mask_file)
         output_path = os.path.join(OUTPUT_DIR, mask_file)

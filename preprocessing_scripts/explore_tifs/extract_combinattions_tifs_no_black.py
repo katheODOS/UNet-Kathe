@@ -35,7 +35,7 @@ def convert_to_python_types(obj):
 
 def sort_dict_by_value(d, reverse=True):
     """Sort dictionary by value in descending order to have a bettery idea of majority classes/distribution."""
-    if not d:  # Handle empty dictionary
+    if not d: 
         return d
     if isinstance(next(iter(d.values())), dict):
         return dict(sorted(d.items(), key=lambda x: x[1]['count'], reverse=reverse))
@@ -61,7 +61,7 @@ def process_single_tif(file_path):
             hex_str = f"{r:02x}{g:02x}{b:02x}"
             frequency = count / total_pixels
             
-            # Import numerical color labels I've been using to json file formatting
+            # Import numerical color labels I've been using for json file formatting
             if hex_str in color_labels:
                 label = color_labels[hex_str]
                 count_int = int(count)
@@ -107,8 +107,8 @@ def analyze_existing_jsons(json_folder):
     return total_files, label_count_frequency, combinations_by_size
 
 def main():
-    input_folder =r"C:/Users/Admin/Desktop/QGIS/FINAL FILES/COPY OF DATA/rgb rendered mask/zero free masks"
-    json_output_folder =r"C:/Users/Admin/Desktop/QGIS/FINAL FILES/COPY OF DATA/rgb rendered mask/zero free masks/corresponding jsons"
+    input_folder =r"directory/with/no/black/tifs"
+    json_output_folder =r"directory/with/no/black/tifs/jsons"
     
     os.makedirs(json_output_folder, exist_ok=True)
     
@@ -121,17 +121,14 @@ def main():
     
     for filename in sorted(tif_files):
         input_path = os.path.join(input_folder, filename)
-        # Create JSON filename by replacing .tif extension
         json_filename = os.path.splitext(filename)[0] + '.json'
         json_path = os.path.join(json_output_folder, json_filename)
         
         print(f"Processing {filename} -> {json_filename}")
         
-        # Process the TIF file
         color_stats, total_pixels, pixel_frequencies = process_single_tif(input_path)
         present_labels = sorted(color_stats.keys())
         
-        # Use the actual length of present_labels for number_of_labels
         num_labels = len(present_labels)
         total_files += 1
         

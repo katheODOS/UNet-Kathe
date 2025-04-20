@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-root_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap\Dataset DSA\masks\masks_512"
+root_dir = r"directory/where/your/RGBA/files/are"
 
 converted_count = 0
 for subdir, dirs, files in os.walk(root_dir):

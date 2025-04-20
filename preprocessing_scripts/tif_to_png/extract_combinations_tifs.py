@@ -36,7 +36,7 @@ def convert_to_python_types(obj):
 
 def sort_dict_by_value(d, reverse=True):
     """Sort dictionary by value in descending order to have a bettery idea of majority classes/distribution."""
-    if not d:  # Handle empty dictionary
+    if not d:  
         return d
     if isinstance(next(iter(d.values())), dict):
         return dict(sorted(d.items(), key=lambda x: x[1]['count'], reverse=reverse))

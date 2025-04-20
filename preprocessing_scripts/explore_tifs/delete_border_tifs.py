@@ -2,8 +2,8 @@ import os
 import re
 
 # This is for looking at the tifs in QGIS and removing any border tifs that have black pixels as those are not relevant for this step in data preprocessing
-tif_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\COPY OF DATA\rgb rendered mask\json_with_0\corresponding rgb masks"
-json_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\COPY OF DATA\rgb rendered mask\json_with_0"
+tif_dir = r"directory/with/tif/files/that/have/significant/0/label"
+json_dir = r"directory/with/jsons/belonging/to/those/tifs"
 
 def should_delete(number):
     #Convert to integer
@@ -14,6 +14,7 @@ def should_delete(number):
     # 2. Numbers 624-648
     # 3. Numbers divisible by 24
     # 4. Numbers that give remainder 1 when divided by 24
+    # For context the retiling gave me a total of 648 images
 
     specific_numbers = {47, 599, 602, 614, 615, 616, 618, 619, 620, 621, 622, 623}
 
@@ -34,12 +35,10 @@ for tif_file in os.listdir(tif_dir):
     if tif_file.endswith('.tif'):
         number = get_file_number(tif_file)
         if number and should_delete(number):
-            # Delete TIF file
             tif_path = os.path.join(tif_dir, tif_file)
             os.remove(tif_path)
             print(f"Deleted TIF: {tif_file}")
             
-            # Find and delete corresponding JSON
             base_name = os.path.splitext(tif_file)[0]
             for json_file in os.listdir(json_dir):
                 if json_file.endswith('.json') and get_file_number(json_file) == number:

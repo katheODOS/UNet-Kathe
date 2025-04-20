@@ -4,13 +4,13 @@ import numpy as np
 
 # Target size and background color so the models don't complain about mismatching dimensions. Applies to both images and annotations
 TARGET_SIZE = (512, 512)
-BACKGROUND_COLOR = (11, 246, 210)  # New background color
+BACKGROUND_COLOR = (11, 246, 210)  
 
 # Define input and output directories
-input_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\image_png"
-output_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\image_512"
+input_dir = r"directory/with/pngs/to/make/512x512"
+output_dir = r"directory/to/copy/new/512x512/files/into"
 
-# Verify output directory exists
+
 if not os.path.exists(output_dir):
     raise RuntimeError(f"Output directory does not exist: {output_dir}")
 

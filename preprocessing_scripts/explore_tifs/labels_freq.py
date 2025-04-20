@@ -2,15 +2,13 @@ import json
 import os
 from collections import defaultdict
 
-# Directory containing the individual JSON files
-json_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations\masks_json"
-output_path = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations\masks_json\primary_label_frequencies.json"
+json_dir = r"directory/with/tif/jsons"
+output_path = r"directory/to/save/analysis/to/primary_label_frequencies.json"
 
-# Initialize counters
 label_frequencies = defaultdict(int)
 total_files = 0
 
-# Process each individual JSON file
+# The goal is to see what the distirbution of the most common lavbel in a given mask is 
 for filename in os.listdir(json_dir):
     if not (filename.startswith('biodiversity_') and filename.endswith('.json')):
         continue

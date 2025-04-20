@@ -2,8 +2,7 @@ import os
 import rasterio
 import numpy as np
 
-# Directory containing the TIF files
-tif_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\COPY OF DATA\rgb rendered mask\copy of masks"
+tif_dir = r"directory/with/tifs/to/fill"
 
 def fill_black_pixels(data):
     """Fill black pixels with next valid pixel value"""
@@ -13,7 +12,7 @@ def fill_black_pixels(data):
     # Create mask for black pixels
     black_mask = np.all(data == 0, axis=2)
     
-    # For each row
+
     for y in range(height):
         last_valid_pixel = None
         # Forward pass - fill with previous valid pixel

@@ -3,15 +3,12 @@ import numpy as np
 import tifffile
 from PIL import Image
 
-# Define the input and output directories
-root_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\annotation_tif"
-output_root = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\annotation_png"
+root_dir = r"directory/with/tif/files"
+output_root = r"directory/to/save/pngs/into"
 
-# Create output directory if it doesn't exist
 if not os.path.exists(output_root):
     os.makedirs(output_root)
 
-# Verify input directory exists
 if not os.path.exists(root_dir):
     print(f"Error: Directory not found: {root_dir}")
     exit(1)
@@ -19,11 +16,9 @@ if not os.path.exists(root_dir):
 print(f"Starting conversion from: {root_dir}")
 print(f"Saving PNGs to: {output_root}")
 
-# Walk through all subdirectories
 for subdir, dirs, files in os.walk(root_dir):
     print(f"Processing directory: {subdir}")
     
-    # Create corresponding output subdirectory
     rel_path = os.path.relpath(subdir, root_dir)
     output_subdir = os.path.join(output_root, rel_path)
     if not os.path.exists(output_subdir):
@@ -37,7 +32,7 @@ for subdir, dirs, files in os.walk(root_dir):
                 # Read TIFF using tifffile
                 tiff_array = tifffile.imread(input_path)
                 
-                # Ensure the array is uint8 without normalizing
+                # Ensure the array is uint8 without normalizing to avoid interpolation
                 if tiff_array.dtype != np.uint8:
                     tiff_array = tiff_array.astype(np.uint8)
                 

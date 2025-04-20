@@ -2,16 +2,15 @@ import json
 import os
 from collections import defaultdict
 
-json_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations\masks_json"
-output_path = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations\masks_json\secondary_label_frequencies.json"
+json_dir = r"directory/with/json/files"
+output_path = r"directory/with/json/files/secondary_label_frequencies.json"
 
-# Initialize counters
 label_frequencies = defaultdict(int)
 total_files = 0
 single_label_files = []
 processed_files = 0
 
-# Process each JSON file
+# The goal is to generate jsons with ombinations of primary/secondary labels to better understand the distribution of labels across a dataset
 for filename in os.listdir(json_dir):
     if not (filename.startswith('biodiversity_') and filename.endswith('.json')):
         continue

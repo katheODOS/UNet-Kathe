@@ -4,25 +4,22 @@ import shutil
 import re
 
 # Source and target directories
-source_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\index\annotation_tif\json"
-target_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\index\annotation_tif\json_with_14"
-tif_source_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\index\annotation_tif"
-tif_target_dir = r"C:\Users\Admin\Desktop\QGIS\FINAL FILES\index\annotation_tif\json_with_14"
+source_dir = r"directory/with/json/files"
+target_dir = r"directory/to/savge/identifying/jsons/into"
+tif_source_dir = r"directory/with/actual/tifs"
+tif_target_dir = r"directory/to/paste/tifs/targeted/by/json/into"
 
-# Create directories if they don't exist
 for directory in [target_dir, tif_target_dir]:
     if not os.path.exists(directory):
         os.makedirs(directory)
         print(f"Created directory: {directory}")
 
-# Check if target directory is truly empty (ignoring hidden files and subdirectories)
 visible_files = [f for f in os.listdir(target_dir) 
                  if not f.startswith('.') and 
                  os.path.isfile(os.path.join(target_dir, f))]
 
 if not visible_files:
     print(f"Processing JSON files from: {source_dir}")
-    # Process all json files
     files_processed = 0
     
     for filename in os.listdir(source_dir):
@@ -34,7 +31,7 @@ if not visible_files:
                 with open(file_path, 'r') as f:
                     data = json.load(f)
                     
-                    # Check if '14' exists in label_counts
+                    # Check if '14' (was my use case) exists in label_counts
                     if '14' in data.get('label_counts', {}):
                         # Copy file to target directory
                         shutil.copy2(file_path, os.path.join(target_dir, filename))
@@ -49,10 +46,8 @@ else:
     print(f"Found {len(visible_files)} files in target directory. Please empty the directory to process files again.")
     exit(1)
 
-# Find and copy corresponding .tif files
 for json_file in os.listdir(target_dir):
     if json_file.endswith('.json'):
-        # Extract number from filename using regex
         numbers = re.findall(r'\d+', json_file)
         if numbers:
             # Get the last number in the filename
