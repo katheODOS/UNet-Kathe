@@ -9,8 +9,10 @@ mask_source_dir = r"directory/with/tifs/annotations/to/copy"
 
 image_target_dir = r"directory/with/tifs/images/to/copy/into"
 mask_target_dir = r"directory/with/tifs/annotations/to/copy/into"
+
+
+# Define target subdirectories
 subdirs = {
-    "0_single": "0_single_label",
     "2_primary": "2_primary_label",
     "3_any": "3_primary_secondary_label",
     "4_special": "4_primary_secondary_label",
@@ -41,9 +43,6 @@ def check_label_conditions(label_str, label_counts):
     
     conditions = {}
     
-    # Check for single label 0
-    conditions["0_single"] = len(labels) == 1 and labels[0] == '0'
-    
     # Check for primary label 2
     conditions["2_primary"] = labels[0] == '2'
     
@@ -56,8 +55,8 @@ def check_label_conditions(label_str, label_counts):
     # Check for 6 in any position
     conditions["6_any"] = '6' in labels[:2]
     
-    # Check for 9 in any position without 1 primary
-    conditions["9_any"] = '9' in labels and labels[0] != '1'
+    # Check for 9 in any position 
+    conditions["9_any"] = '9' in labels
     
     # Check for 12 as primary
     conditions["12_primary"] = labels[0] == '12'
