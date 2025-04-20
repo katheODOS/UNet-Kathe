@@ -6,5 +6,5 @@ Project Setup
 - in anaconda window: (UNet-Kathe) C:\Users\YourUser\anaconda3\envs\UNet-Kathe>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 - cd UNet-Kathe
 - (UNet-Kathe) C:\Users\YourUser\anaconda3\envs\UNet-Kathe\UNet-Kathe>pip install -r requirements.txt
-- (UNet-Kathe-Training) C:\Users\YourUser\anaconda3\envs\UNet-Kathe-Training\UNet-Kathe>pip install seaborn scikit-learn
+- (UNet-Kathe-Training) C:\Users\YourUser\anaconda3\envs\UNet-Kathe-Training\UNet-Kathe>pip install seaborn scikit-learn albumentations
 - install CUDA
