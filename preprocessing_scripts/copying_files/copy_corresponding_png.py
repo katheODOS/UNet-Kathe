@@ -1,10 +1,9 @@
 import os
 import shutil
 
-# Define base directory
-base_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented"
 
-# Define source and target directories
+base_dir = r"your/directory/with/tifs/and/pngs/here"
+
 sources_and_targets = [
     # Train annotations
     {
@@ -34,25 +33,21 @@ sources_and_targets = [
 
 def copy_corresponding_pngs(tif_dir, png_source, png_target):
     """Copy PNG files that correspond to TIFs from source to target directory"""
-    # Create target directory if it doesn't exist
+
     os.makedirs(png_target, exist_ok=True)
     
     files_processed = 0
     files_missing = 0
     
-    # Get list of TIF files
     tif_files = [f for f in os.listdir(tif_dir) if f.endswith('.tif')]
     
     for tif_file in tif_files:
-        # Get base name without extension
         base_name = os.path.splitext(tif_file)[0]
         png_name = f"{base_name}.png"
         
-        # Define source and target paths for PNG
         png_source_path = os.path.join(png_source, png_name)
         png_target_path = os.path.join(png_target, png_name)
         
-        # Copy if source PNG exists
         if os.path.exists(png_source_path):
             shutil.copy2(png_source_path, png_target_path)
             files_processed += 1
@@ -62,7 +57,6 @@ def copy_corresponding_pngs(tif_dir, png_source, png_target):
     
     return files_processed, files_missing
 
-# Process all directory pairs
 for dirs in sources_and_targets:
     print(f"\nProcessing {dirs['tif_dir']}")
     processed, missing = copy_corresponding_pngs(

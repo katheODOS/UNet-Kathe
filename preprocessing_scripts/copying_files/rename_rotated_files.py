@@ -2,8 +2,8 @@ import os
 import shutil
 import re
 
-# Define directories
-base_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\augmented"
+
+base_dir = r"directory/with/files/augmented/by/rotation"
 images_dir = os.path.join(base_dir, "images")
 annotations_dir = os.path.join(base_dir, "annotations")
 renamed_images_dir = os.path.join(base_dir, "renamed_images")
@@ -19,14 +19,14 @@ def get_rotated_files(directory):
     files = []
     for filename in os.listdir(directory):
         if filename.endswith('.tif'):
-            # Check if file is a rotated version
+            # Check if file is a rotated version: this is the structure I used to differentiate mine
             match = re.match(r'biodiversity_(\d+)_(\d+)\.tif', filename)
             if match:
                 original_num = int(match.group(1))
                 rotation = int(match.group(2))
                 files.append((filename, original_num, rotation))
     
-    # Sort by original number first, then by rotation
+    # Sort by original number first, then by rotation to distinguish between rotations and original images
     return sorted(files, key=lambda x: (x[1], x[2]))
 
 def process_directories():
@@ -34,7 +34,7 @@ def process_directories():
     image_files = get_rotated_files(images_dir)
     annotation_files = get_rotated_files(annotations_dir)
     
-    # Start numbering from 2441
+    # Start numbering from 2441 because Dataset B is 2440 images long (before removing files with no info)
     new_number = 2441
     
     # Process files in pairs to maintain correspondence

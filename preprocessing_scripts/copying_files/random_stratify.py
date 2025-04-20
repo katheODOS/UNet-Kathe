@@ -3,18 +3,19 @@ import shutil
 import random
 import math
 
-# Define directories
-base_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented"
+
+base_dir = r"directory/with/files/to/copy"
 source_ann_dir = os.path.join(base_dir, "sorted", "annotations", "tif")
 source_img_dir = os.path.join(base_dir, "images")
 
-# Target directories
+
 train_ann_dir = os.path.join(base_dir, "sorted", "train", "annotations", "tif")
 train_img_dir = os.path.join(base_dir, "sorted", "train", "images", "tif")
 val_ann_dir = os.path.join(base_dir, "sorted", "val", "annotations", "tif")
 val_img_dir = os.path.join(base_dir, "sorted", "val", "images", "tif")
 
-# Labels to process
+# Labels to process and by 80% of each folder with files sorted based on primary or secondary label prevalence
+
 LABELS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '12', '13']
 
 # Create target directories
@@ -39,22 +40,20 @@ for label in LABELS:
         print(f"Skipping label {label} - directory not found")
         continue
         
-    # Get all TIF files in the label folder
     tif_files = [f for f in os.listdir(label_dir) if f.endswith('.tif')]
     
     if not tif_files:
         print(f"No TIF files found in label {label}")
         continue
     
-    # Calculate split
+    # Split by 80% of each folder with files sorted based on primary or secondary label prevalence
     train_count = math.floor(len(tif_files) * 0.8)
     
     # Randomly select training files
     train_files = set(random.sample(tif_files, train_count))
-    # Remaining files go to validation
     val_files = set(tif_files) - train_files
     
-    # Copy annotation files
+    
     for filename in train_files:
         source_path = os.path.join(label_dir, filename)
         target_path = os.path.join(train_ann_dir, filename)
@@ -73,6 +72,7 @@ for label in LABELS:
     print(f"Val files: {len(val_files)}")
 
 # Copy corresponding images for train and val sets
+
 print("\nCopying corresponding images for training set...")
 train_ann_files = os.listdir(train_ann_dir)
 copy_corresponding_images(train_ann_files, source_img_dir, train_img_dir)

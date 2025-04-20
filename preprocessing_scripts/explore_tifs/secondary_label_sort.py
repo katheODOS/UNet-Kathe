@@ -2,23 +2,23 @@ import os
 import json
 import shutil
 
-# Define directories
+
 json_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations\masks_json"
 
-# Source directories
+
 ann_tif_source = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations"
 ann_png_source = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\annotations\png"
 img_tif_source = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\images"
 img_png_source = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\images\png"
 
-# Base directories for sorted files
+
 sorted_base = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\sorted"
 ann_tif_target = os.path.join(sorted_base, "annotations", "tif")
 ann_png_target = os.path.join(sorted_base, "annotations", "png")
 img_tif_target = os.path.join(sorted_base, "images", "tif")
 img_png_target = os.path.join(sorted_base, "images", "png")
 
-# All possible secondary labels
+
 SECONDARY_LABELS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '12', '13']
 
 def ensure_directories():
@@ -40,21 +40,16 @@ def process_files():
     files_processed = 0
     errors = []
     
-    # First, ensure all target directories exist
-    ensure_directories()
-
-    # Process each JSON file
     for filename in os.listdir(json_dir):
         if 'biodiversity' not in filename or not filename.endswith('.json'):
             continue
 
         json_path = os.path.join(json_dir, filename)
         try:
-            # Read JSON file
+
             with open(json_path, 'r') as f:
                 data = json.load(f)
             
-            # Get secondary label from the label string
             label_parts = data['label'].split('-')
             if len(label_parts) < 2:
                 continue
@@ -74,7 +69,6 @@ def process_files():
                  os.path.join(img_png_target, secondary_label, f"{base_name}.png"))
             ]
 
-            # Copy all files
             for source, target in sources_and_targets:
                 if os.path.exists(source):
                     shutil.copy2(source, target)

@@ -1,27 +1,22 @@
 import os
 import shutil
 
-# Define directories
-annotations_dir = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\overlap augmented index\masks rgb\train"
-source_images_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\image_512"
-target_images_dir = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\overlap augmented index\imgs\train"
+annotations_dir = r"directory/you//copy/the/specific/files/from"
+source_images_dir = r"directory/with/all/the/files/you/need"
+target_images_dir = r"directory/you/copy/the/exact/same/files/from/annotations_dir/into"
 
-# Print directory contents for debugging
 print(f"\nChecking source directory: {source_images_dir}")
 print("Files found:", os.listdir(source_images_dir)[:5], "...")  # Show first 5 files
 
-# Get list of annotation filenames without extension
 annotation_files = [os.path.splitext(f)[0] for f in os.listdir(annotations_dir)]
 print(f"\nFirst few annotation files:", annotation_files[:5], "...")
 
-# Counter for tracking
 copied_count = 0
 not_found_count = 0
 
-# Try both .tif and .png extensions
+# Flexbility in copying files
 extensions = ['.tif', '.png']
 
-# Process each annotation filename
 for base_name in annotation_files:
     found = False
     for ext in extensions:

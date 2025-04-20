@@ -3,11 +3,9 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
-# Define input and output directories
-INPUT_DIR = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\overlap_augmented_index\predictions_single"
-OUTPUT_DIR = r"C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\overlap_augmented_index\predictions"
+INPUT_DIR = r"your/directory/with/singlechannel/predictions/here"
+OUTPUT_DIR = r"your/directory/to/save/rgb/predictions/here"
 
-# Define the mapping from class ID to RGB values
 CLASS_TO_RGB = {
     0: (11, 246, 210),   # ignore index
     1: (39, 179, 65),    # pasture class
@@ -24,32 +22,26 @@ CLASS_TO_RGB = {
 
 def convert_single_to_rgb(image_path, output_path):
     """Convert a single-channel image to RGB using the class mapping."""
-    # Load the single-channel image
     img = Image.open(image_path)
     img_array = np.array(img)
     
-    # Create RGB array
     height, width = img_array.shape
     rgb_array = np.zeros((height, width, 3), dtype=np.uint8)
     
-    # Convert each pixel value to its RGB equivalent
     for class_id, rgb_value in CLASS_TO_RGB.items():
         mask = img_array == class_id
         rgb_array[mask] = rgb_value
     
-    # Convert to PIL Image and save
     rgb_img = Image.fromarray(rgb_array)
     rgb_img.save(output_path)
 
 def main():
-    # Create output directory if it doesn't exist
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # Get list of all PNG files in input directory
     image_files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.png')]
     print(f"Found {len(image_files)} images to process")
     
-    # Process each image with progress bar
+    # Process each image with progress bar if you do images in batches
     for filename in tqdm(image_files, desc="Converting images"):
         input_path = os.path.join(INPUT_DIR, filename)
         output_path = os.path.join(OUTPUT_DIR, filename)
