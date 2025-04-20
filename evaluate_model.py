@@ -162,28 +162,42 @@ def get_dataset_path(model_dir_name):
     """Determine dataset path from model directory name"""
     # Extract dataset identifier from the start of the folder name
     if model_dir_name.startswith('ASA'):
-        return './data/Dataset ASAR'
+        return './data/Dataset A SA'
     elif model_dir_name.startswith('BSA'):
-        return './data/Dataset BSAR'
-    elif model_dir_name.startswith('CSA'):
-        return './data/Dataset CSAR'
+        return './data/Dataset B SA'
     elif model_dir_name.startswith('A'):
-        return './data/Dataset AR'
+        return './data/Dataset A'
     elif model_dir_name.startswith('B'):
-        return './data/Dataset BR'
-    elif model_dir_name.startswith('C'):
-        return './data/Dataset CR'
+        return './data/Dataset B'
+
     
     else:
         raise ValueError(f"Cannot determine dataset path for model: {model_dir_name}")
+
+def is_evaluation_complete(results_dir):
+    """Check if evaluation results are already present and complete"""
+    required_files = [
+        'confusion_matrix.png',
+        'class_accuracies.png',
+        'evaluation_report.txt'
+    ]
+    return (
+        results_dir.exists() and 
+        all((results_dir / file).exists() for file in required_files)
+    )
 
 def process_all_checkpoints():
     """Process all checkpoint directories"""
     checkpoints_dir = Path('./checkpoints')
     
-    # Find all subdirectories in checkpoints
     for model_dir in checkpoints_dir.iterdir():
         if not model_dir.is_dir():
+            continue
+            
+        # Check if evaluation is already complete
+        results_dir = model_dir / 'results'
+        if is_evaluation_complete(results_dir):
+            logging.info(f"Skipping {model_dir.name} - evaluation already complete")
             continue
             
         try:

@@ -1,0 +1,72 @@
+=== Evaluation Report ===
+
+Per-Class Metrics:
+--------------------------------------------------
+
+Class 0:
+Accuracy: 0.0000
+Total pixels: 792963
+Correctly classified: 0
+Mean per-image accuracy: 0.0000
+
+Class 1:
+Accuracy: 0.9768
+Total pixels: 21766139
+Correctly classified: 21260749
+Mean per-image accuracy: 0.9673
+
+Class 2:
+Accuracy: 0.0018
+Total pixels: 503058
+Correctly classified: 900
+Mean per-image accuracy: 0.0021
+
+Class 3:
+Accuracy: 0.0000
+Total pixels: 360972
+Correctly classified: 0
+Mean per-image accuracy: 0.0000
+
+Class 4:
+Accuracy: 0.5266
+Total pixels: 824189
+Correctly classified: 434026
+Mean per-image accuracy: 0.3590
+
+Class 5:
+Accuracy: 0.7368
+Total pixels: 3144132
+Correctly classified: 2316450
+Mean per-image accuracy: 0.7240
+
+Class 6:
+Accuracy: 0.3897
+Total pixels: 1658294
+Correctly classified: 646238
+Mean per-image accuracy: 0.2894
+
+Class 7:
+Accuracy: 0.8212
+Total pixels: 1166293
+Correctly classified: 957705
+Mean per-image accuracy: 0.7045
+
+Class 9:
+Accuracy: 0.0000
+Total pixels: 178563
+Correctly classified: 0
+Mean per-image accuracy: 0.0000
+
+Class 12:
+Accuracy: 0.1600
+Total pixels: 1219077
+Correctly classified: 195103
+Mean per-image accuracy: 0.2330
+
+Class 13:
+Accuracy: 0.5111
+Total pixels: 630032
+Correctly classified: 322023
+Mean per-image accuracy: 0.4319
+
+Overall Accuracy: 0.8105
