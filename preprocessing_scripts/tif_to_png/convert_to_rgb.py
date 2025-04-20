@@ -1,12 +1,12 @@
 import os
 from PIL import Image
 
-root_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap augmented\index\image_512"
+root_dir = r"C:\Users\Admin\Desktop\QGIS\test retiling\512x512 50 percent overlap\Dataset DSA\masks\masks_512"
 
 converted_count = 0
 for subdir, dirs, files in os.walk(root_dir):
     for file in files:
-        if file.lower().endswith(('.png', '.jpg', '.jpeg')):
+        if file.lower().endswith(('.png')):
             file_path = os.path.join(subdir, file)
             try:
                 with Image.open(file_path) as img:

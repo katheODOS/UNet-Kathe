@@ -12,47 +12,21 @@ import traceback
 
 CONFIGURATIONS = [
     {
-        'dataset': {'name': 'Dataset D SA', 'code': 'DSA', 'path': 'Dataset D SA'},
+        'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
         'learning_rate': 1e-7,
         'weight_decay': 1e-7,
         'batch_size': 2,
         'epochs': 10
     },
     {
-        'dataset': {'name': 'Dataset D SA', 'code': 'DSA', 'path': 'Dataset D SA'},
+        'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
         'learning_rate': 1e-7,
         'weight_decay': 1e-7,
         'batch_size': 4,
         'epochs': 15
-    },
-    {
-        'dataset': {'name': 'Dataset D SA', 'code': 'DSA', 'path': 'Dataset D SA'},
-        'learning_rate': 1e-7,
-        'weight_decay': 1e-8,
-        'batch_size': 2,
-        'epochs': 15
-    },
-    {
-        'dataset': {'name': 'Dataset D SA', 'code': 'DSA', 'path': 'Dataset D SA'},
-        'learning_rate': 1e-7,
-        'weight_decay': 1e-8,
-        'batch_size': 4,
-        'epochs': 15
-    },
-    {
-        'dataset': {'name': 'Dataset D SA', 'code': 'DSA', 'path': 'Dataset D SA'},
-        'learning_rate': 1e-7,
-        'weight_decay': 1e-7,
-        'batch_size': 4,
-        'epochs': 10
-    },
-    {
-        'dataset': {'name': 'Dataset D SA', 'code': 'DSA', 'path': 'Dataset D SA'},
-        'learning_rate': 1e-7,
-        'weight_decay': 1e-7,
-        'batch_size': 2,
-        'epochs': 10
     }
+
+
 ]
 
 # Reuse the helper classes and functions from hyperparameter_tuning.py
