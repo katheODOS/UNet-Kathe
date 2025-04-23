@@ -11,20 +11,28 @@ import atexit
 import traceback
 
 CONFIGURATIONS = [
-    {
+   {
         'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
         'learning_rate': 1e-7,
-        'weight_decay': 1e-7,
-        'batch_size': 2,
-        'epochs': 10
+        'weight_decay': 1e-9,
+        'batch_size': 4,
+        'epochs': 20
+    },
+    {
+       'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
+        'learning_rate': 1e-7,
+        'weight_decay': 1e-8,
+        'batch_size': 8,
+        'epochs': 15
     },
     {
         'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
         'learning_rate': 1e-7,
-        'weight_decay': 1e-7,
-        'batch_size': 4,
-        'epochs': 15
+        'weight_decay': 1e-9,
+        'batch_size': 16,
+        'epochs': 20
     }
+
 
 
 ]

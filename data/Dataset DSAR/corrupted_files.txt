@@ -1,0 +1,5 @@
+Corrupted Files List:
+
+File: C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\data\Dataset DSAR\imgs\train\biodiversity_1698.png
+Error: Error: image file is truncated
+

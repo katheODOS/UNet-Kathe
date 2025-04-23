@@ -161,8 +161,8 @@ def get_last_checkpoint(model_dir):
 def get_dataset_path(model_dir_name):
     """Determine dataset path from model directory name"""
     # Extract dataset identifier from the start of the folder name
-    if model_dir_name.startswith('ASA'):
-        return './data/Dataset A SA'
+    if model_dir_name.startswith('DSA'):
+        return './data/Dataset DSAR'
     elif model_dir_name.startswith('BSA'):
         return './data/Dataset B SA'
     elif model_dir_name.startswith('A'):
