@@ -204,3 +204,5 @@ checkpoints/AL1e-04W1e-07B1E5/results/predictions/biodiversity_0615_pred.png
 checkpoints/AL1e-04W1e-07B1E5/results/predictions/biodiversity_0618_pred.png
 checkpoints/AL1e-04W1e-07B1E5/results/predictions/biodiversity_0634_pred.png
 checkpoints/AL1e-04W1e-07B1E5/results/predictions/biodiversity_0637_pred.png
+checkpoints/sort_overall_accuracies.py
+checkpoints/sort_validation_json.py
