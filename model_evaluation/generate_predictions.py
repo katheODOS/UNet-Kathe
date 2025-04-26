@@ -1,24 +1,45 @@
+import sys
+import os
 import torch
 import logging
 from pathlib import Path
-from utils.data_loading import BasicDataset
-from unet import UNet
+
+# Add parent directory to path - this is more reliable
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
+
+# Try importing after fixing path
+try:
+    from utils.data_loading import BasicDataset
+    from unet import UNet
+except ImportError as e:
+    print(f"Import error: {e}")
+    print(f"Current sys.path: {sys.path}")
+    raise
+
 import numpy as np
 from PIL import Image
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-
 # Batch predict all the imaages associated to visualize them. if images are in single channel annotation convert them back to RGB
+
 def get_dataset_path(model_dir_name):
     """Determine dataset path from model directory name"""
     if model_dir_name.startswith('DSA'):
         return './data/Dataset DSAR'
+    elif model_dir_name.startswith('ASA'):
+        return './data/Dataset A SA'
     elif model_dir_name.startswith('BSA'):
-        return './data/Dataset BSAR'
+        return './data/Dataset B SA'
+    elif model_dir_name.startswith('CSA'):
+        return './data/Dataset CSAR'
     elif model_dir_name.startswith('A'):
-        return './data/Dataset AR'
+        return './data/Dataset A'
     elif model_dir_name.startswith('B'):
-        return './data/Dataset BR'
+        return './data/Dataset B'
+    elif model_dir_name.startswith('C'):
+        return './data/Dataset C'
     else:
         raise ValueError(f"Cannot determine dataset path for model: {model_dir_name}")
 

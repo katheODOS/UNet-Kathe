@@ -1,0 +1,99 @@
+================================================================================   
+INFO:root:Running combination 105/216
+INFO:root:================================================================================
+INFO:root:
+            Configuration details:
+            Dataset: Dataset B (B)
+            Learning Rate: 1e-05
+            Batch Size: 4
+            Epochs: 10
+            Weight Decay: 1e-07
+            Checkpoint Directory: checkpoints\BL1e-05W1e-07B4E10
+
+INFO:root:Starting training for this combination...
+================================================================================
+Configuration Details:
+================================================================================   
+Dataset: Dataset B (B)
+Learning Rate: 1e-05
+Batch Size: 4
+Epochs: 10
+Weight Decay: 1e-07
+Checkpoint Directory: checkpoints\BL1e-05W1e-07B4E10
+================================================================================   
+
+INFO:root:Creating dataset with 1943 examples
+INFO:root:Scanning mask files to determine unique values
+100%|#########################################| 1943/1943 [00:44<00:00, 43.83it/s]
+INFO:root:Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]
+INFO:root:Creating dataset with 492 examples
+INFO:root:Scanning mask files to determine unique values
+100%|###########################################| 492/492 [00:17<00:00, 28.41it/s]
+INFO:root:Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]
+wandb: wandb version 0.19.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.5
+wandb: Run data is saved locally in C:\Users\Admin\anaconda3\envs\UNet-Kathe\UNet-Kathe\wandb\run-20250415_094957-fxidcfp2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run different-wood-209
+wandb:  View project at https://wandb.ai/anony-moose-525312484519768883/U-Net?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb:  View run at https://wandb.ai/anony-moose-525312484519768883/U-Net/runs/fxidcfp2?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb: WARNING Do NOT share these links with anyone. They can be used to claim your runs.
+INFO:root:Starting training:
+        Epochs:          10
+        Batch size:      4
+        Learning rate:   1e-05
+        Training size:   1943
+        Validation size: 492
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+        Valid Classes:   [1, 2, 3, 4, 5, 6, 7, 9, 12, 13]
+
+Epoch 1/10:  20%|#7       | 388/1943 [01:45<01:11, 21.67img/s, loss (batch)=0.761]INFO:root:Validation Dice score: 0.6728566288948059
+Epoch 1/10:  40%|###9      | 776/1943 [03:25<00:53, 21.66img/s, loss (batch)=1.04]INFO:root:Validation Dice score: 0.7181355953216553
+Epoch 1/10:  60%|####7   | 1164/1943 [05:05<00:36, 21.63img/s, loss (batch)=0.576]INFO:root:Validation Dice score: 0.7198818922042847
+Epoch 1/10:  80%|######3 | 1552/1943 [06:45<00:18, 21.48img/s, loss (batch)=0.962]INFO:root:Validation Dice score: 0.6677404642105103
+Epoch 1/10: 100%|########9| 1940/1943 [08:25<00:00, 21.64img/s, loss (batch)=1.03]INFO:root:Validation Dice score: 0.6639624238014221
+Epoch 1/10: 100%|#########| 1943/1943 [09:33<00:00,  3.39img/s, loss (batch)=1.05]
+INFO:root:Checkpoint 1 saved!
+Epoch 2/10:  20%|#9        | 384/1943 [01:51<01:11, 21.66img/s, loss (batch)=0.88]INFO:root:Validation Dice score: 0.6378365159034729
+Epoch 2/10:  40%|####3      | 772/1943 [03:31<00:53, 21.73img/s, loss (batch)=1.1]INFO:root:Validation Dice score: 0.6374642848968506
+Epoch 2/10:  60%|####7   | 1160/1943 [05:11<00:36, 21.40img/s, loss (batch)=0.758]INFO:root:Validation Dice score: 0.6444165110588074
+Epoch 2/10:  80%|######3 | 1548/1943 [06:51<00:18, 21.54img/s, loss (batch)=0.636]INFO:root:Validation Dice score: 0.6104996800422668
+Epoch 2/10: 100%|#######9| 1936/1943 [08:21<00:00, 21.59img/s, loss (batch)=0.539]INFO:root:Validation Dice score: 0.6128315925598145
+Epoch 2/10: 100%|#########| 1943/1943 [09:28<00:00,  3.41img/s, loss (batch)=0.54]
+INFO:root:Checkpoint 2 saved!
+Epoch 3/10:  20%|#9        | 380/1943 [01:42<01:11, 21.79img/s, loss (batch)=2.28]INFO:root:Validation Dice score: 0.6306931972503662
+Epoch 3/10:  40%|###9      | 768/1943 [03:23<00:53, 21.84img/s, loss (batch)=1.12]INFO:root:Validation Dice score: 0.6207396388053894
+Epoch 3/10:  59%|#####3   | 1156/1943 [04:53<00:35, 21.87img/s, loss (batch)=1.67]INFO:root:Validation Dice score: 0.6579633355140686
+Epoch 3/10:  79%|######3 | 1544/1943 [06:33<00:18, 21.87img/s, loss (batch)=0.559]INFO:root:Validation Dice score: 0.6285598278045654
+Epoch 3/10:  99%|########9| 1932/1943 [08:03<00:00, 21.68img/s, loss (batch)=2.14]INFO:root:Validation Dice score: 0.6203871965408325
+Epoch 3/10: 100%|########| 1943/1943 [09:13<00:00,  3.51img/s, loss (batch)=0.999]
+INFO:root:Checkpoint 3 saved!
+Epoch 4/10:  19%|##1        | 376/1943 [01:50<01:12, 21.65img/s, loss (batch)=1.8]INFO:root:Validation Dice score: 0.6250330209732056
+Epoch 4/10:  39%|###5     | 764/1943 [03:20<00:55, 21.24img/s, loss (batch)=0.579]INFO:root:Validation Dice score: 0.5941960215568542
+Epoch 4/10:  59%|####7   | 1152/1943 [05:00<00:36, 21.55img/s, loss (batch)=0.848]INFO:root:Validation Dice score: 0.5995726585388184
+Epoch 4/10:  79%|#######1 | 1540/1943 [06:40<00:18, 21.96img/s, loss (batch)=0.77]INFO:root:Validation Dice score: 0.6340398788452148
+Epoch 4/10:  99%|#######9| 1928/1943 [08:10<00:00, 21.50img/s, loss (batch)=0.531]INFO:root:Validation Dice score: 0.6358377933502197
+Epoch 4/10: 100%|#########| 1943/1943 [09:19<00:00,  3.47img/s, loss (batch)=1.55]
+INFO:root:Checkpoint 4 saved!
+Epoch 5/10:  19%|#9        | 372/1943 [01:41<01:12, 21.62img/s, loss (batch)=1.33]INFO:root:Validation Dice score: 0.646673858165741
+Epoch 5/10:  39%|###9      | 760/1943 [03:21<00:54, 21.54img/s, loss (batch)=1.07]INFO:root:Validation Dice score: 0.6061491370201111
+Epoch 5/10:  59%|####7   | 1148/1943 [05:01<00:36, 21.76img/s, loss (batch)=0.567]INFO:root:Validation Dice score: 0.6143306493759155
+Epoch 5/10:  79%|######3 | 1536/1943 [06:31<00:19, 21.34img/s, loss (batch)=0.894]INFO:root:Validation Dice score: 0.6307606101036072
+Epoch 5/10:  99%|#########9| 1924/1943 [08:11<00:00, 21.34img/s, loss (batch)=1.4]INFO:root:Validation Dice score: 0.6276179552078247
+Epoch 5/10: 100%|#########| 1943/1943 [09:19<00:00,  3.47img/s, loss (batch)=2.01]
+INFO:root:Checkpoint 5 saved!
+Epoch 6/10:  19%|#8        | 368/1943 [01:52<01:12, 21.74img/s, loss (batch)=0.64]INFO:root:Validation Dice score: 0.6144964098930359
+Epoch 6/10:  39%|###5     | 756/1943 [03:22<00:54, 21.74img/s, loss (batch)=0.584]INFO:root:Validation Dice score: 0.6034253239631653
+Epoch 6/10:  59%|####7   | 1144/1943 [05:02<00:37, 21.52img/s, loss (batch)=0.673]INFO:root:Validation Dice score: 0.6304102540016174
+Epoch 6/10:  79%|######3 | 1532/1943 [06:32<00:19, 21.56img/s, loss (batch)=0.638]INFO:root:Validation Dice score: 0.6134929060935974
+Epoch 6/10:  99%|#######9| 1920/1943 [08:12<00:01, 22.57img/s, loss (batch)=0.592]INFO:root:Validation Dice score: 0.6069163680076599
+Epoch 6/10: 100%|########| 1943/1943 [09:15<00:00,  3.50img/s, loss (batch)=0.671]
+INFO:root:Checkpoint 6 saved!
+Epoch 7/10:  19%|#6       | 364/1943 [01:47<01:10, 22.43img/s, loss (batch)=0.938]INFO:root:Validation Dice score: 0.6087242960929871
+Epoch 7/10:  39%|###4     | 752/1943 [03:17<00:53, 22.46img/s, loss (batch)=0.783]INFO:root:Validation Dice score: 0.6229347586631775
+Epoch 7/10:  59%|####6   | 1140/1943 [04:47<00:38, 20.98img/s, loss (batch)=0.483]INFO:root:Validation Dice score: 0.6150273084640503
+Epoch 7/10:  79%|######2 | 1528/1943 [06:27<00:18, 22.48img/s, loss (batch)=0.543]Traceback (most recent call last):                      | 0/123 [00:00<?, ?batch/s]

@@ -1,0 +1,13 @@
+
+INFO: Creating dataset with 495 examplesINFO: Scanning mask files to determine unique valuesINFO: Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]INFO: Creating dataset with 139 examplesINFO: Scanning mask files to determine unique valuesINFO: Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]INFO: Starting training:
+        Epochs:          5
+        Batch size:      2
+        Learning rate:   1e-07
+        Training size:   495
+        Validation size: 139
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+        Valid Classes:   [1, 2, 3, 4, 5, 6, 7, 9, 12, 13]
+    INFO: Validation Dice score: 0.15208296477794647INFO: Validation Dice score: 0.1837874948978424INFO: Validation Dice score: 0.22669821977615356INFO: Validation Dice score: 0.24634845554828644INFO: Validation Dice score: 0.2605874538421631INFO: Checkpoint 1 saved!INFO: Validation Dice score: 0.2685979902744293INFO: Validation Dice score: 0.31029531359672546INFO: Validation Dice score: 0.3453950583934784INFO: Validation Dice score: 0.36298051476478577INFO: Validation Dice score: 0.4431150257587433INFO: Checkpoint 2 saved!INFO: Validation Dice score: 0.5299862027168274INFO: Validation Dice score: 0.5588674545288086INFO: Validation Dice score: 0.6254035234451294INFO: Validation Dice score: 0.6187039017677307INFO: Validation Dice score: 0.6704133152961731INFO: Checkpoint 3 saved!INFO: Validation Dice score: 0.5965602397918701INFO: Validation Dice score: 0.6375707387924194INFO: Validation Dice score: 0.6779600977897644INFO: Validation Dice score: 0.7142281532287598INFO: Validation Dice score: 0.6992762684822083INFO: Checkpoint 4 saved!INFO: Validation Dice score: 0.6693812012672424INFO: Validation Dice score: 0.6836391687393188INFO: Validation Dice score: 0.6707533597946167INFO: Validation Dice score: 0.6715264320373535INFO: Validation Dice score: 0.6890316605567932INFO: Checkpoint 5 saved!
