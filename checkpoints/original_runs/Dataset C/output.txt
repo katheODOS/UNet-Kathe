@@ -1,0 +1,92 @@
+PS C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet> python train.py --classes 11          
+INFO: Using device cuda                                                                   
+INFO: Network:
+        3 input channels
+        11 output channels (classes)
+        Transposed conv upscaling
+INFO: Creating dataset with 3018 examples
+INFO: Scanning mask files to determine unique values
+100%|████████████████████████████████████████████████| 3018/3018 [01:04<00:00, 46.95it/s]
+INFO: Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]
+INFO: Creating dataset with 761 examples
+INFO: Scanning mask files to determine unique values
+100%|██████████████████████████████████████████████████| 761/761 [00:22<00:00, 33.80it/s]
+INFO: Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]
+wandb: Currently logged in as: anony-moose-525312484519768883. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.19.8 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.5
+wandb: Run data is saved locally in C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\wandb\run-20250331_093906-7b6eeu2g
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sunny-jazz-67
+wandb:  View project at https://wandb.ai/anony-moose-525312484519768883/U-Net?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb:  View run at https://wandb.ai/anony-moose-525312484519768883/U-Net/runs/7b6eeu2g?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb: WARNING Do NOT share these links with anyone. They can be used to claim your runs. 
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   3018
+        Validation size: 761
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+        Valid Classes:   [1, 2, 3, 4, 5, 6, 7, 9, 12, 13]
+
+train.py:81: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = torch.cuda.amp.GradScaler(enabled=amp)
+Epoch 1/5:  20%|███▌              | 603/3018 [02:20<03:19, 12.12img/s, loss (batch)=3.03]INFO: Validation Dice score: 0.6838242411613464
+Epoch 1/5:  40%|██████▍         | 1206/3018 [04:30<02:28, 12.20img/s, loss (batch)=0.585]INFO: Validation Dice score: 0.6816478967666626
+Epoch 1/5:  60%|█████████▌      | 1809/3018 [06:50<01:40, 12.06img/s, loss (batch)=0.506]INFO: Validation Dice score: 0.6343134045600891
+Epoch 1/5:  80%|████████████▊   | 2412/3018 [09:00<00:49, 12.13img/s, loss (batch)=0.633]INFO: Validation Dice score: 0.5999897122383118
+Epoch 1/5: 100%|████████████████▉| 3015/3018 [11:10<00:00, 12.22img/s, loss (batch)=4.79]INFO: Validation Dice score: 0.6483559012413025
+Epoch 1/5: 100%|█████████████████| 3018/3018 [12:15<00:00,  4.10img/s, loss (batch)=0.37]
+INFO: Checkpoint 1 saved!
+Epoch 2/5:  20%|███▌              | 600/3018 [02:14<03:23, 11.90img/s, loss (batch)=0.39]INFO: Validation Dice score: 0.5829005241394043
+Epoch 2/5:  40%|██████▍         | 1203/3018 [04:34<02:29, 12.11img/s, loss (batch)=0.282]INFO: Validation Dice score: 0.6405602097511292
+Epoch 2/5:  60%|██████████▏      | 1806/3018 [06:44<01:38, 12.25img/s, loss (batch)=1.02]INFO: Validation Dice score: 0.5984017848968506
+Epoch 2/5:  80%|████████████▊   | 2409/3018 [08:55<00:50, 12.10img/s, loss (batch)=0.309]INFO: Validation Dice score: 0.6114267110824585
+Epoch 2/5: 100%|███████████████▉| 3012/3018 [11:05<00:00, 12.01img/s, loss (batch)=0.561]INFO: Validation Dice score: 0.5638519525527954
+Epoch 2/5: 100%|████████████████| 3018/3018 [12:15<00:00,  4.11img/s, loss (batch)=0.213]
+INFO: Checkpoint 2 saved!
+Epoch 3/5:  20%|███▌              | 597/3018 [02:20<03:21, 11.99img/s, loss (batch)=1.56]INFO: Validation Dice score: 0.576802134513855
+Epoch 3/5:  40%|██████▎         | 1200/3018 [04:30<02:31, 12.00img/s, loss (batch)=0.235]INFO: Validation Dice score: 0.5833422541618347
+Epoch 3/5:  60%|█████████▌      | 1803/3018 [06:40<01:41, 12.02img/s, loss (batch)=0.955]INFO: Validation Dice score: 0.535824179649353
+Epoch 3/5:  80%|█████████████▌   | 2406/3018 [08:50<00:49, 12.25img/s, loss (batch)=1.41]INFO: Validation Dice score: 0.5862970948219299
+Epoch 3/5: 100%|███████████████▉| 3009/3018 [11:00<00:00, 12.30img/s, loss (batch)=0.915]INFO: Validation Dice score: 0.5768505334854126
+Epoch 3/5: 100%|████████████████| 3018/3018 [12:13<00:00,  4.12img/s, loss (batch)=0.168]
+INFO: Checkpoint 3 saved!
+Epoch 4/5:  20%|███▌              | 594/3018 [02:17<03:20, 12.08img/s, loss (batch)=3.55]INFO: Validation Dice score: 0.5774353742599487
+Epoch 4/5:  40%|██████▎         | 1197/3018 [04:27<02:32, 11.97img/s, loss (batch)=0.148]INFO: Validation Dice score: 0.5600226521492004
+Epoch 4/5:  60%|██████████▏      | 1800/3018 [06:37<01:40, 12.15img/s, loss (batch)=1.48]INFO: Validation Dice score: 0.5753564238548279
+Epoch 4/5:  80%|████████████▋   | 2403/3018 [08:57<00:50, 12.11img/s, loss (batch)=0.364]INFO: Validation Dice score: 0.5539878606796265
+Epoch 4/5: 100%|█████████████████▉| 3006/3018 [11:07<00:00, 12.44img/s, loss (batch)=2.2]INFO: Validation Dice score: 0.5627860426902771
+Epoch 4/5: 100%|████████████████| 3018/3018 [12:12<00:00,  4.12img/s, loss (batch)=0.845]
+INFO: Checkpoint 4 saved!
+Epoch 5/5:  20%|███▎             | 591/3018 [02:14<03:22, 12.00img/s, loss (batch)=0.523]INFO: Validation Dice score: 0.5224653482437134
+Epoch 5/5:  40%|██████▎         | 1194/3018 [04:34<02:30, 12.14img/s, loss (batch)=0.478]INFO: Validation Dice score: 0.5111056566238403
+Epoch 5/5:  60%|█████████▌      | 1797/3018 [06:45<01:39, 12.26img/s, loss (batch)=0.592]INFO: Validation Dice score: 0.5359313488006592
+Epoch 5/5:  80%|█████████████▌   | 2400/3018 [08:55<00:50, 12.23img/s, loss (batch)=1.67]INFO: Validation Dice score: 0.5444265007972717
+Epoch 5/5: 100%|███████████████▉| 3003/3018 [11:05<00:01, 11.91img/s, loss (batch)=0.233]INFO: Validation Dice score: 0.5323106646537781
+Epoch 5/5: 100%|████████████████| 3018/3018 [12:18<00:00,  4.09img/s, loss (batch)=0.279]
+INFO: Checkpoint 5 saved!
+wandb: Waiting for W&B process to finish... (success).
+wandb: \ 2.930 MB of 2.930 MB uploaded (0.000 MB deduped)
+wandb: Run history:
+wandb:           epoch ▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆████████
+wandb:   learning rate ██████▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            step ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:      train loss ▁▂▂▂▂▃▁▃▂▃▁▂▁▁▁▂▂▂▁▂█▂▂▃▁▃▂▁▁▂▃▂▁▂▂▁▄▂▂▂
+wandb: validation Dice ██▆▅▇▄▆▅▅▃▄▄▂▄▄▄▃▄▃▃▁▁▂▂▂
+wandb:
+wandb: Run summary:
+wandb:           epoch 5
+wandb:   learning rate 0.0
+wandb:            step 15090
+wandb:      train loss 0.27851
+wandb: validation Dice 0.53231
+wandb:
+wandb: Synced sunny-jazz-67: https://wandb.ai/anony-moose-525312484519768883/U-Net/runs/7b6eeu2g?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb: Synced 5 W&B file(s), 75 media file(s), 0 artifact file(s) and 0 other file(s)     
+wandb: Find logs at: .\wandb\run-20250331_093906-7b6eeu2g\logs

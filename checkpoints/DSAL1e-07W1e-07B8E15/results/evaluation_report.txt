@@ -1,0 +1,85 @@
+=== Evaluation Report ===
+
+Per-Class Metrics:
+--------------------------------------------------
+
+Class 0:
+Accuracy: 0.0000
+Total pixels: 814162
+Correctly classified: 0
+Mean per-image accuracy: 0.0000
+
+Class 1:
+Accuracy: 0.9555
+Total pixels: 21975668
+Correctly classified: 20996691
+Mean per-image accuracy: 0.9422
+
+Class 2:
+Accuracy: 0.3169
+Total pixels: 387949
+Correctly classified: 122952
+Mean per-image accuracy: 0.2124
+
+Class 3:
+Accuracy: 0.9196
+Total pixels: 301804
+Correctly classified: 277540
+Mean per-image accuracy: 0.6772
+
+Class 4:
+Accuracy: 0.3734
+Total pixels: 759947
+Correctly classified: 283766
+Mean per-image accuracy: 0.2113
+
+Class 5:
+Accuracy: 0.7280
+Total pixels: 3015373
+Correctly classified: 2195085
+Mean per-image accuracy: 0.7116
+
+Class 6:
+Accuracy: 0.7799
+Total pixels: 1894345
+Correctly classified: 1477426
+Mean per-image accuracy: 0.5583
+
+Class 7:
+Accuracy: 0.7615
+Total pixels: 926381
+Correctly classified: 705395
+Mean per-image accuracy: 0.5786
+
+Class 9:
+Accuracy: 0.2117
+Total pixels: 165883
+Correctly classified: 35114
+Mean per-image accuracy: 0.1257
+
+Class 12:
+Accuracy: 0.9473
+Total pixels: 1247823
+Correctly classified: 1182042
+Mean per-image accuracy: 0.7592
+
+Class 13:
+Accuracy: 0.3245
+Total pixels: 492233
+Correctly classified: 159729
+Mean per-image accuracy: 0.2320
+
+Overall Accuracy: 0.8579
+
+Confusion Matrix (percentages):
+Class 0: 0.00, 0.50, 0.00, 0.00, 0.00, 0.00, 0.01, 0.00, 0.00, 0.49, 0.00
+Class 1: 0.00, 0.96, 0.00, 0.00, 0.00, 0.01, 0.03, 0.00, 0.00, 0.00, 0.00
+Class 2: 0.00, 0.07, 0.32, 0.34, 0.19, 0.06, 0.01, 0.01, 0.00, 0.00, 0.00
+Class 3: 0.00, 0.02, 0.01, 0.92, 0.03, 0.02, 0.00, 0.00, 0.00, 0.00, 0.00
+Class 4: 0.00, 0.11, 0.03, 0.05, 0.37, 0.31, 0.09, 0.03, 0.00, 0.00, 0.01
+Class 5: 0.00, 0.18, 0.00, 0.01, 0.03, 0.73, 0.02, 0.01, 0.00, 0.01, 0.00
+Class 6: 0.00, 0.18, 0.00, 0.00, 0.01, 0.02, 0.78, 0.00, 0.00, 0.01, 0.00
+Class 7: 0.00, 0.12, 0.00, 0.00, 0.01, 0.07, 0.01, 0.76, 0.00, 0.02, 0.02
+Class 9: 0.00, 0.63, 0.00, 0.00, 0.00, 0.02, 0.00, 0.00, 0.21, 0.14, 0.00
+Class 12: 0.00, 0.03, 0.00, 0.00, 0.00, 0.01, 0.01, 0.00, 0.00, 0.95, 0.00
+Class 13: 0.00, 0.36, 0.00, 0.00, 0.09, 0.07, 0.02, 0.13, 0.00, 0.00, 0.32

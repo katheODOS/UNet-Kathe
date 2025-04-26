@@ -1,0 +1,99 @@
+PS C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet>
+
+
+
+
+                                                    python train.py --classes 11                           
+INFO: Using device cuda
+INFO: Network:
+        3 input channels
+        11 output channels (classes)
+        Transposed conv upscaling
+INFO: Creating dataset with 1943 examples
+INFO: Scanning mask files to determine unique values
+  0%|                                                                            | 0/1943 [00:07<?, ?it/s]
+INFO: Creating dataset with 1943 examples
+INFO: Scanning mask files to determine unique values
+100%|█████████████████████████████████████████████████████████████████| 1943/1943 [00:38<00:00, 50.16it/s]
+INFO: Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]
+INFO: Creating dataset with 492 examples
+INFO: Scanning mask files to determine unique values
+100%|███████████████████████████████████████████████████████████████████| 492/492 [00:16<00:00, 30.11it/s]
+INFO: Unique mask values: [[0, 0, 0], [39, 179, 65], [168, 232, 84], [173, 173, 173], [217, 217, 217], [230, 87, 196], [250, 62, 119], [250, 148, 65], [252, 126, 187], [255, 193, 122], [255, 207, 74]]
+wandb: Currently logged in as: anony-moose-525312484519768883. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.19.8 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.5
+wandb: Run data is saved locally in C:\Users\Admin\anaconda3\envs\unet\Pytorch-UNet\wandb\run-20250321_232925-0dpdtu61
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run colorful-galaxy-21
+wandb:  View project at https://wandb.ai/anony-moose-525312484519768883/U-Net?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb:  View run at https://wandb.ai/anony-moose-525312484519768883/U-Net/runs/0dpdtu61?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb: WARNING Do NOT share these links with anyone. They can be used to claim your runs.
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   1943
+        Validation size: 492
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+
+train.py:85: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = torch.cuda.amp.GradScaler(enabled=amp)
+Epoch 1/5:  20%|███████▏                            | 388/1943 [01:28<01:17, 19.97img/s, loss (batch)=1.6]INFO: Validation Dice score: 0.7026637196540833
+Epoch 1/5:  40%|█████████████▌                    | 776/1943 [02:12<00:58, 20.12img/s, loss (batch)=0.706]INFO: Validation Dice score: 0.7058951258659363
+Epoch 1/5:  60%|███████████████████▊             | 1164/1943 [02:35<00:38, 20.36img/s, loss (batch)=0.459]INFO: Validation Dice score: 0.6740261316299438
+Epoch 1/5:  80%|██████████████████████████▎      | 1552/1943 [03:08<00:20, 19.53img/s, loss (batch)=0.652]INFO: Validation Dice score: 0.7271934747695923
+Epoch 1/5: 100%|████████████████████████████████▉| 1940/1943 [03:53<00:00, 20.44img/s, loss (batch)=0.361]INFO: Validation Dice score: 0.7143896222114563
+Epoch 1/5: 100%|█████████████████████████████████| 1943/1943 [03:57<00:00,  8.19img/s, loss (batch)=0.463]
+INFO: Checkpoint 1 saved in checkpoints!
+Epoch 2/5:  20%|██████▉                            | 385/1943 [01:27<01:17, 20.23img/s, loss (batch)=2.63]INFO: Validation Dice score: 0.718670129776001
+Epoch 2/5:  40%|█████████████▉                     | 773/1943 [02:01<00:59, 19.55img/s, loss (batch)=1.64]INFO: Validation Dice score: 0.6524240374565125
+Epoch 2/5:  60%|████████████████████▎             | 1161/1943 [02:45<00:39, 19.94img/s, loss (batch)=5.53]INFO: Validation Dice score: 0.6861993670463562
+Epoch 2/5:  80%|██████████████████████████▎      | 1549/1943 [03:07<00:19, 20.19img/s, loss (batch)=0.254]INFO: Validation Dice score: 0.7114651203155518
+Epoch 2/5: 100%|████████████████████████████████▉| 1937/1943 [03:42<00:00, 19.65img/s, loss (batch)=0.295]INFO: Validation Dice score: 0.7230072021484375
+Epoch 2/5: 100%|██████████████████████████████████| 1943/1943 [03:57<00:00,  8.19img/s, loss (batch)=0.28]
+INFO: Checkpoint 2 saved in checkpoints!
+Epoch 3/5:  20%|██████▋                           | 382/1943 [01:38<01:17, 20.25img/s, loss (batch)=0.592]INFO: Validation Dice score: 0.6912937164306641
+Epoch 3/5:  40%|█████████████▍                    | 770/1943 [02:01<00:58, 19.97img/s, loss (batch)=0.369]INFO: Validation Dice score: 0.7036662697792053
+Epoch 3/5:  60%|███████████████████▋             | 1158/1943 [02:34<00:39, 19.98img/s, loss (batch)=0.921]INFO: Validation Dice score: 0.5215262770652771
+Epoch 3/5:  80%|██████████████████████████▎      | 1546/1943 [03:18<00:20, 19.69img/s, loss (batch)=0.197]INFO: Validation Dice score: 0.6959354877471924
+Epoch 3/5: 100%|████████████████████████████████▊| 1934/1943 [03:40<00:00, 20.56img/s, loss (batch)=0.388]INFO: Validation Dice score: 0.6904630064964294
+Epoch 3/5: 100%|██████████████████████████████████| 1943/1943 [03:55<00:00,  8.23img/s, loss (batch)=2.49]
+INFO: Checkpoint 3 saved in checkpoints!
+Epoch 4/5:  20%|██████▊                            | 379/1943 [01:42<01:18, 19.90img/s, loss (batch)=4.24]INFO: Validation Dice score: 0.6488941311836243
+Epoch 4/5:  39%|█████████████▍                    | 767/1943 [02:22<00:59, 19.69img/s, loss (batch)=0.752]INFO: Validation Dice score: 0.6334887146949768
+Epoch 4/5:  59%|████████████████████▏             | 1155/1943 [02:43<00:39, 20.04img/s, loss (batch)=0.32]INFO: Validation Dice score: 0.6593342423439026
+Epoch 4/5:  79%|██████████████████████████▏      | 1543/1943 [03:16<00:19, 20.05img/s, loss (batch)=0.152]INFO: Validation Dice score: 0.6827271580696106
+Epoch 4/5:  99%|████████████████████████████████▊| 1931/1943 [03:49<00:00, 20.22img/s, loss (batch)=0.325]INFO: Validation Dice score: 0.6635259389877319
+Epoch 4/5: 100%|██████████████████████████████████| 1943/1943 [04:04<00:00,  7.95img/s, loss (batch)=2.74]
+INFO: Checkpoint 4 saved in checkpoints!
+Epoch 5/5:  19%|██████▊                            | 376/1943 [01:29<01:20, 19.57img/s, loss (batch)=5.82]INFO: Validation Dice score: 0.6633409857749939
+Epoch 5/5:  39%|█████████████▊                     | 764/1943 [02:02<00:58, 20.07img/s, loss (batch)=1.54]INFO: Validation Dice score: 0.6394478678703308
+Epoch 5/5:  59%|███████████████████▌             | 1152/1943 [02:48<00:40, 19.68img/s, loss (batch)=0.277]INFO: Validation Dice score: 0.672272801399231
+Epoch 5/5:  79%|██████████████████████████▏      | 1540/1943 [03:08<00:20, 19.56img/s, loss (batch)=0.574]INFO: Validation Dice score: 0.6589837074279785
+Epoch 5/5:  99%|█████████████████████████████████▋| 1928/1943 [03:58<00:00, 19.81img/s, loss (batch)=1.03]INFO: Validation Dice score: 0.6332234740257263
+Epoch 5/5: 100%|█████████████████████████████████| 1943/1943 [04:03<00:00,  7.98img/s, loss (batch)=0.209]
+INFO: Checkpoint 5 saved in checkpoints!
+wandb: Waiting for W&B process to finish... (success).
+wandb: \ 2.798 MB of 2.798 MB uploaded (0.000 MB deduped)
+wandb: Run history:
+wandb:           epoch ▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆████████
+wandb:   learning rate █████████▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:            step ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:      train loss ▃▂▇▂▂▁▂▂▂▂▄▄▁▂▄▁▂▂▂▁▁▂▃▂▃▁▃▁▃▄█▂▁▁▂▃▂▁▂▂
+wandb: validation Dice ▇▇▆███▅▇▇█▇▇▁▇▇▅▅▆▆▆▆▅▆▆▅
+wandb:
+wandb: Run summary:
+wandb:           epoch 5
+wandb:   learning rate 0.0
+wandb:            step 9715
+wandb:      train loss 0.20906
+wandb: validation Dice 0.63322
+wandb:
+wandb: Synced colorful-galaxy-21: https://wandb.ai/anony-moose-525312484519768883/U-Net/runs/0dpdtu61?apiKey=41e01e48b2a4d6ae9361934e4b58e0fd29ed7ec0
+wandb: Synced 5 W&B file(s), 75 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: .\wandb\run-20250321_232925-0dpdtu61\logs

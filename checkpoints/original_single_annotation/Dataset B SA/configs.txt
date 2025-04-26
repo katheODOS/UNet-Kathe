@@ -1,0 +1,21 @@
+iteration was trained with the loss function modified from dice to weighted cross entropy loss      
+
+model,
+device,
+epochs: int = 5,
+batch_size: int = 1,
+learning_rate: float = 1e-5,
+val_percent: float = 0.1,
+save_checkpoint: bool = True,
+img_scale: float = 0.5,
+amp: bool = False,
+weight_decay: float = 1e-8,
+momentum: float = 0.999,
+gradient_clipping: float = 1.0,
+
+and the 512x512 single channel annotation (where 0 is the ignore index and we preserve the relevant classes of 1,2,3,4,5,6,7,9,12,13) .png tiles with 256 pixel (50%) overlap.
+training set is 1943 images
+val set is 492 images. 
+
+notes: the data was stratified such that the percentage of labels between the two classes are representative of all data.
+secondary label stratification 
