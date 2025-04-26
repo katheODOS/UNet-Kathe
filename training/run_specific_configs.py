@@ -3,8 +3,8 @@ import sys
 import logging
 from pathlib import Path
 import torch
-import train
-from train import train_model, UNet
+import training.train as train
+from training.train import train_model, UNet
 import wandb
 from io import StringIO
 import atexit
@@ -38,7 +38,7 @@ CONFIGURATIONS = [
 ]
 
 # Reuse the helper classes and functions from hyperparameter_tuning.py
-from hyperparameter_tuning import (
+from training.hyperparameter_tuning import (
     SafeOutputCapture, cleanup_wandb, setup_checkpoint_dir,
     save_run_output, is_training_completed, run_training_configuration
 )

@@ -6,10 +6,10 @@ import re
 def extract_validation_score(output_file):
     """Extract validation Dice score from output file"""
     try:
+        # Changed to use UTF-8 encoding
         with open(output_file, 'r', encoding='utf-8') as f:
             content = f.read()
-            matches = re.findall(r'wandb: validation Dice\s+(\d+\.\d+)', content) # Found towards the end of every generated output file
-            
+            matches = re.findall(r'wandb: validation Dice\s+(\d+\.\d+)', content)
             if matches:
                 return float(matches[-1])
     except Exception as e:
@@ -33,6 +33,7 @@ def process_checkpoints():
         print("No validation scores found!")
         return
     
+    # Update file writing to use UTF-8
     with open(checkpoint_dir / 'validation_scores.json', 'w', encoding='utf-8') as f:
         json.dump(scores_dict, f, indent=4)
     

@@ -4,8 +4,8 @@ import logging
 from pathlib import Path
 from itertools import product
 import torch
-import train
-from train import train_model, UNet
+import training.train as train
+from training.train import train_model, UNet
 import wandb
 import io
 from contextlib import redirect_stdout

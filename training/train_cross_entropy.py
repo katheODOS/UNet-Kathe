@@ -15,7 +15,7 @@ from tqdm import tqdm
 import numpy as np
 
 import wandb
-from evaluate import evaluate
+from model_evaluation.evaluate import evaluate
 from unet import UNet
 from utils.data_loading import BasicDataset
 from utils.dice_score import dice_loss

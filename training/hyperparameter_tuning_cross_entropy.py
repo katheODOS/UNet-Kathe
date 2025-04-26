@@ -4,8 +4,8 @@ import logging
 from pathlib import Path
 from itertools import product
 import torch
-import train_cross_entropy
-from train_cross_entropy import train_model, UNet
+import training.train_cross_entropy as train_cross_entropy
+from training.train_cross_entropy import train_model, UNet
 import wandb
 import io
 from contextlib import redirect_stdout

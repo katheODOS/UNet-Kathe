@@ -20,7 +20,6 @@ def process_accuracies():
     checkpoint_dir = Path('./checkpoints')
     accuracies_dict = {}
     
-    # Iterate through checkpoint subdirectories
     for folder in checkpoint_dir.iterdir():
         if folder.is_dir():
             results_dir = folder / 'results'
@@ -35,11 +34,9 @@ def process_accuracies():
         print("No overall accuracies found!")
         return
     
-    # Save full accuracies dictionary to JSON
     with open(checkpoint_dir / 'overall_accuracies.json', 'w', encoding='utf-8') as f:
         json.dump(accuracies_dict, f, indent=4)
     
-    # Create sorted accuracies text file
     sorted_accuracies = sorted(accuracies_dict.items(), key=lambda x: x[1], reverse=True)
     with open(checkpoint_dir / 'overall_accuracies_sorted.txt', 'w', encoding='utf-8') as f:
         for folder_name, accuracy in sorted_accuracies:
