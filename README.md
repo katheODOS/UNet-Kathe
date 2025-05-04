@@ -1,4 +1,4 @@
-Hello! Thank you for visiting my Bachelor's capstone project :3 please find information that can help you navigat these files and the setup below. 
+Hello! Thank you for visiting my Bachelor's capstone project :3 please find information that can help you navigate these files and the setup below. 
 
 Project Setup
 -install anaconda: https://www.anaconda.com/download 
