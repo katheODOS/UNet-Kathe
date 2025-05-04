@@ -1,0 +1,12 @@
+Model Metrics Comparison - BSAL1e-07W1e-08B1E10
+============================================================
+
+Dataset: Dataset B SA
+Learning Rate: 1e-07
+
+Overall Accuracy: 0.800500
+Validation Dice F1: 0.720020
+----------------------------------------
+Difference (Accuracy - F1): 0.080480
+Absolute Difference: 0.080480
+

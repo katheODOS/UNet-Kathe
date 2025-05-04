@@ -77,7 +77,6 @@ def plot_results(confusion_mat, class_accuracies, save_dir):
     # Plot confusion matrix with percentages
     plt.figure(figsize=(12, 10))
     
-    # Use YlGn colormap as requested
     ax = sns.heatmap(conf_mat_percent, annot=True, fmt='.2f', cmap='YlGn',
                     vmin=0, vmax=1.0, cbar_kws={'label': ''})
     
@@ -85,13 +84,11 @@ def plot_results(confusion_mat, class_accuracies, save_dir):
     plt.xlabel('Predicted label', fontsize=14)
     plt.ylabel('True label', fontsize=14)
     
-    # If you have class names, use them for labels
     if len(CLASS_NAMES) == confusion_mat.shape[0]:
         tick_positions = np.arange(len(CLASS_NAMES)) + 0.5
         plt.xticks(tick_positions, CLASS_NAMES, rotation=45, ha='right', fontsize=10)
         plt.yticks(tick_positions, CLASS_NAMES, rotation=0, fontsize=10)
     else:
-        # Otherwise use original class numbers
         tick_positions = np.arange(len(ORIGINAL_CLASSES)) + 0.5
         plt.xticks(tick_positions, ORIGINAL_CLASSES, rotation=45)
         plt.yticks(tick_positions, ORIGINAL_CLASSES, rotation=0)
@@ -107,16 +104,15 @@ def plot_results(confusion_mat, class_accuracies, save_dir):
     plt.figure(figsize=(15, 8))
     accuracies = [np.mean(vals) if vals else 0 for vals in class_accuracies.values()]
     
-    # Use YlGn colormap from matplotlib
     cmap = plt.get_cmap('YlGn')
     colors = [cmap(i) for i in np.linspace(0.3, 0.9, len(accuracies))]  # Start at 0.3 to avoid too light colors
     
     bars = plt.bar(range(len(accuracies)), accuracies, color=colors)
     
     # Enhance the plot with better styling and full model name
-    plt.title(f'Per-Class Accuracies\n{model_name}', fontsize=14, pad=20)
-    plt.xlabel('Class', fontsize=12)
-    plt.ylabel('Accuracy', fontsize=12)
+    plt.title(f'Per-Class Accuracies\n{model_name}', fontsize=16, pad=20)
+    plt.xlabel('Class', fontsize=15)
+    plt.ylabel('Accuracy', fontsize=15)
     plt.ylim(0, 1)
     
     # Add value labels on top of each bar

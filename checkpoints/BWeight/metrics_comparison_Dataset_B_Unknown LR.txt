@@ -1,0 +1,12 @@
+Model Metrics Comparison - BWeight
+============================================================
+
+Dataset: Dataset B
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.777400
+Validation Dice F1: 0.512120
+----------------------------------------
+Difference (Accuracy - F1): 0.265280
+Absolute Difference: 0.265280
+

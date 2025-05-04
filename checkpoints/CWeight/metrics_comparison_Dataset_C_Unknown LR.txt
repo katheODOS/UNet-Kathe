@@ -1,0 +1,12 @@
+Model Metrics Comparison - CWeight
+============================================================
+
+Dataset: Dataset C
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.717700
+Validation Dice F1: 0.485020
+----------------------------------------
+Difference (Accuracy - F1): 0.232680
+Absolute Difference: 0.232680
+

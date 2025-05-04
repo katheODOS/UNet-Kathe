@@ -1,0 +1,23 @@
+Optimal Model Runs
+=================
+
+Criteria:
+1. |Overall Accuracy - F1 Score| < 0.1
+2. All classes (except 0) have mean per-image accuracy > 0.0
+
+Found 2 optimal models:
+
+1. DSAL1e-07W1e-08B16E15
+   Dataset: Dataset D SA
+   Learning Rate: 1e-07
+   Overall Accuracy: 0.8498
+   F1 Score: 0.7500
+   Difference: 0.0998
+
+2. DSAL1e-07W1e-08B4E15
+   Dataset: Dataset D SA
+   Learning Rate: 1e-07
+   Overall Accuracy: 0.8445
+   F1 Score: 0.7451
+   Difference: 0.0994
+

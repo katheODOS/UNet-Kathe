@@ -1,0 +1,12 @@
+Model Metrics Comparison - ASAOriginal
+============================================================
+
+Dataset: Dataset A SA
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.711200
+Validation Dice F1: 0.710480
+----------------------------------------
+Difference (Accuracy - F1): 0.000720
+Absolute Difference: 0.000720
+

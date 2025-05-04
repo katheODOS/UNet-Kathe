@@ -1,0 +1,12 @@
+Model Metrics Comparison - ASAL1e-07W1e-07B1E10
+============================================================
+
+Dataset: Dataset A SA
+Learning Rate: 1e-07
+
+Overall Accuracy: 0.731400
+Validation Dice F1: 0.726610
+----------------------------------------
+Difference (Accuracy - F1): 0.004790
+Absolute Difference: 0.004790
+

@@ -1,0 +1,12 @@
+Model Metrics Comparison - AOriginal_LR1e-07_e15_B1
+============================================================
+
+Dataset: Dataset A
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.725700
+Validation Dice F1: 0.707430
+----------------------------------------
+Difference (Accuracy - F1): 0.018270
+Absolute Difference: 0.018270
+

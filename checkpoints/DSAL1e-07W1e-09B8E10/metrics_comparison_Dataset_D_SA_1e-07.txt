@@ -1,0 +1,12 @@
+Model Metrics Comparison - DSAL1e-07W1e-09B8E10
+============================================================
+
+Dataset: Dataset D SA
+Learning Rate: 1e-07
+
+Overall Accuracy: 0.853800
+Validation Dice F1: 0.737910
+----------------------------------------
+Difference (Accuracy - F1): 0.115890
+Absolute Difference: 0.115890
+

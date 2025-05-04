@@ -1,0 +1,12 @@
+Model Metrics Comparison - AL1e-04W1e-09B1E10
+============================================================
+
+Dataset: Dataset A
+Learning Rate: 1e-04
+
+Overall Accuracy: 0.732500
+Validation Dice F1: 0.579460
+----------------------------------------
+Difference (Accuracy - F1): 0.153040
+Absolute Difference: 0.153040
+

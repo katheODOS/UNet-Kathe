@@ -1,0 +1,12 @@
+Model Metrics Comparison - CSAWeight
+============================================================
+
+Dataset: Dataset C SA
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.744200
+Validation Dice F1: 0.484550
+----------------------------------------
+Difference (Accuracy - F1): 0.259650
+Absolute Difference: 0.259650
+

@@ -1,0 +1,12 @@
+Model Metrics Comparison - Dataset A
+============================================================
+
+Dataset: Dataset D
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.668300
+Validation Dice F1: 0.684520
+----------------------------------------
+Difference (Accuracy - F1): -0.016220
+Absolute Difference: 0.016220
+

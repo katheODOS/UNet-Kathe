@@ -1,0 +1,12 @@
+Model Metrics Comparison - ASAROriginal_LR1e-07_e10_B2
+============================================================
+
+Dataset: Dataset A SA
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.722000
+Validation Dice F1: 0.677440
+----------------------------------------
+Difference (Accuracy - F1): 0.044560
+Absolute Difference: 0.044560
+

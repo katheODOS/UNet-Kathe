@@ -1,0 +1,12 @@
+Model Metrics Comparison - ASAWeight
+============================================================
+
+Dataset: Dataset A SA
+Learning Rate: Unknown LR
+
+Overall Accuracy: 0.715700
+Validation Dice F1: 0.610200
+----------------------------------------
+Difference (Accuracy - F1): 0.105500
+Absolute Difference: 0.105500
+
