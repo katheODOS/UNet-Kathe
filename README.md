@@ -1,6 +1,8 @@
 Hello! Thank you for visiting my Bachelor's capstone project :3 please find information that can help you navigate these files and the setup below. 
 
-Project Setup
+_UNet-Kathe is built upon Alexandre Milesi's Pytorch implementation of the UNet (https://github.com/milesial/Pytorch-UNet)._ The idea, as stated in my thesis paper, is basically to build upon Alexandre's awesome work with functionalities that helped me test the feasibility of using the Biodiversity dataset in production. This project would not have been possible without his repository. 
+
+Project Setup:
 -install anaconda: https://www.anaconda.com/download 
 - create venv (I use python 3.8.20) with 'conda create --name UNet-Kathe python=3.8.20'
 - conda activate UNet-Kathe
