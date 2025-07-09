@@ -8,16 +8,13 @@ import logging
 # Define the mapping from class ID to RGB values
 CLASS_TO_RGB = {
     0: (11, 246, 210),   # ignore index
-    1: (39, 179, 65),    # pasture class
-    2: (230, 87, 196),   # woodland class
-    3: (252, 126, 187),  # conifer class
-    4: (255, 207, 74),   # shrub
-    5: (250, 62, 119),   # hedgerow
-    6: (250, 148, 65),   # seminatural grassland
-    7: (173, 173, 173),  # artificial surface
-    9: (255, 193, 122),  # bare field
-    12: (168, 232, 84),  # arable
-    13: (217, 217, 217), # artificial garden
+    1: (250, 62, 119),    # pasture class
+    2: (168, 232, 84),   # woodland class
+    3: (242, 180, 92),  # conifer class
+    4: (59, 141, 247),   # shrub
+    5: (116, 116, 116),   # hedgerow
+    6: (217, 217, 217),   # seminatural grassland
+
 }
 
 def is_single_channel(image_path):

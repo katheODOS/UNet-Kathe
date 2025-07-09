@@ -14,7 +14,8 @@ import matplotlib.colors as mcolors
 from utils.data_loading import BasicDataset
 from unet import UNet
 
-ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6, 7, 9, 12, 13]
+ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6]
+CLASS_NAMES = ['Background pixels', 'Forest land', 'Grassland', 'Crop land', 'Water body', 'Artificial Surface', 'Other']
 
 def evaluate_model(net, dataloader, device, n_classes):
     net.eval()
@@ -328,4 +329,3 @@ ex: python evaluate_model.py --model checkpoints/original_single_annotation/defa
 
 
 '''
-

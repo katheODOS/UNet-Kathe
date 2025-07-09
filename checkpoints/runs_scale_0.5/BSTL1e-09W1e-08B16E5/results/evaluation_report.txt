@@ -1,0 +1,57 @@
+=== Evaluation Report ===
+
+Per-Class Metrics:
+--------------------------------------------------
+
+Class 0:
+Accuracy: 0.7733
+Total pixels: 842918
+Correctly classified: 651860
+Mean per-image accuracy: 0.4502
+
+Class 1:
+Accuracy: 0.7075
+Total pixels: 4654198
+Correctly classified: 3292639
+Mean per-image accuracy: 0.6384
+
+Class 2:
+Accuracy: 0.8963
+Total pixels: 23411596
+Correctly classified: 20984046
+Mean per-image accuracy: 0.8788
+
+Class 3:
+Accuracy: 0.8705
+Total pixels: 1600425
+Correctly classified: 1393238
+Mean per-image accuracy: 0.6384
+
+Class 4:
+Accuracy: nan
+Total pixels: 0
+Correctly classified: 0
+Mean per-image accuracy: 0.0000
+
+Class 5:
+Accuracy: 0.3979
+Total pixels: 1027966
+Correctly classified: 409005
+Mean per-image accuracy: 0.2488
+
+Class 6:
+Accuracy: 0.3570
+Total pixels: 510001
+Correctly classified: 182094
+Mean per-image accuracy: 0.2926
+
+Overall Accuracy: 0.8398
+
+Confusion Matrix (percentages):
+Class 0: 0.77, 0.00, 0.01, 0.00, 0.12, 0.00, 0.09
+Class 1: 0.01, 0.71, 0.10, 0.01, 0.11, 0.01, 0.06
+Class 2: 0.00, 0.03, 0.90, 0.03, 0.02, 0.00, 0.02
+Class 3: 0.00, 0.02, 0.04, 0.87, 0.04, 0.00, 0.03
+Class 4: 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
+Class 5: 0.00, 0.05, 0.06, 0.05, 0.23, 0.40, 0.21
+Class 6: 0.00, 0.08, 0.16, 0.01, 0.26, 0.13, 0.36

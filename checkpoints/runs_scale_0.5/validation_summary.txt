@@ -1,0 +1,1968 @@
+Run: BSTL1e-05W1e-06B16E10
+Final validation dice score: 0.7127
+Best performance: Epoch 1, Dice score: 0.7523
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B16E15
+Final validation dice score: 0.7616
+Best performance: Epoch 13, Dice score: 0.7648
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B16E20
+Final validation dice score: 0.6982
+Best performance: Epoch 1, Dice score: 0.7201
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B16E25
+Final validation dice score: 0.7240
+Best performance: Epoch 1, Dice score: 0.7478
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B16E5
+Final validation dice score: 0.7457
+Best performance: Epoch 1, Dice score: 0.7632
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B1E10
+Final validation dice score: 0.7002
+Best performance: Epoch 5, Dice score: 0.7629
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B1E15
+Final validation dice score: 0.6484
+Best performance: Epoch 2, Dice score: 0.7169
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B1E20
+Final validation dice score: 0.7071
+Best performance: Epoch 12, Dice score: 0.7592
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B1E25
+Final validation dice score: 0.7086
+Best performance: Epoch 13, Dice score: 0.7257
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B1E5
+Final validation dice score: 0.6868
+Best performance: Epoch 5, Dice score: 0.6868
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B2E10
+Final validation dice score: 0.7800
+Best performance: Epoch 6, Dice score: 0.7858
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B2E15
+Final validation dice score: 0.7567
+Best performance: Epoch 11, Dice score: 0.7992
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B2E20
+Final validation dice score: 0.7937
+Best performance: Epoch 10, Dice score: 0.8036
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B2E25
+Final validation dice score: 0.7632
+Best performance: Epoch 7, Dice score: 0.7932
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B2E5
+Final validation dice score: 0.7322
+Best performance: Epoch 4, Dice score: 0.7920
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B4E10
+Final validation dice score: 0.7229
+Best performance: Epoch 10, Dice score: 0.7229
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B4E15
+Final validation dice score: 0.7905
+Best performance: Epoch 14, Dice score: 0.8033
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B4E20
+Final validation dice score: 0.7696
+Best performance: Epoch 3, Dice score: 0.7773
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B4E25
+Final validation dice score: 0.7470
+Best performance: Epoch 24, Dice score: 0.7553
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B4E5
+Final validation dice score: 0.7496
+Best performance: Epoch 5, Dice score: 0.7496
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B8E10
+Final validation dice score: 0.7614
+Best performance: Epoch 10, Dice score: 0.7614
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B8E15
+Final validation dice score: 0.7013
+Best performance: Epoch 2, Dice score: 0.7170
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B8E20
+Final validation dice score: 0.7168
+Best performance: Epoch 14, Dice score: 0.7256
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B8E25
+Final validation dice score: 0.7387
+Best performance: Epoch 22, Dice score: 0.7426
+--------------------------------------------------
+Run: BSTL1e-05W1e-06B8E5
+Final validation dice score: 0.7221
+Best performance: Epoch 5, Dice score: 0.7221
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B16E10
+Final validation dice score: 0.7356
+Best performance: Epoch 1, Dice score: 0.7458
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B16E15
+Final validation dice score: 0.7909
+Best performance: Epoch 11, Dice score: 0.7956
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B16E20
+Final validation dice score: 0.7385
+Best performance: Epoch 1, Dice score: 0.7644
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B16E25
+Final validation dice score: 0.7374
+Best performance: Epoch 22, Dice score: 0.7527
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B16E5
+Final validation dice score: 0.7605
+Best performance: Epoch 5, Dice score: 0.7605
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B1E10
+Final validation dice score: 0.7456
+Best performance: Epoch 5, Dice score: 0.7532
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B1E15
+Final validation dice score: 0.7336
+Best performance: Epoch 4, Dice score: 0.7645
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B1E20
+Final validation dice score: 0.7567
+Best performance: Epoch 5, Dice score: 0.7617
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B1E25
+Final validation dice score: 0.7241
+Best performance: Epoch 7, Dice score: 0.7729
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B1E5
+Final validation dice score: 0.7456
+Best performance: Epoch 5, Dice score: 0.7456
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B2E10
+Final validation dice score: 0.7954
+Best performance: Epoch 6, Dice score: 0.7970
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B2E15
+Final validation dice score: 0.7796
+Best performance: Epoch 7, Dice score: 0.7922
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B2E20
+Final validation dice score: 0.7821
+Best performance: Epoch 6, Dice score: 0.7930
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B2E25
+Final validation dice score: 0.7793
+Best performance: Epoch 20, Dice score: 0.7885
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B2E5
+Final validation dice score: 0.7840
+Best performance: Epoch 5, Dice score: 0.7840
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B4E10
+Final validation dice score: 0.7245
+Best performance: Epoch 8, Dice score: 0.7327
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B4E15
+Final validation dice score: 0.7583
+Best performance: Epoch 9, Dice score: 0.7822
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B4E20
+Final validation dice score: 0.7229
+Best performance: Epoch 2, Dice score: 0.7501
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B4E25
+Final validation dice score: 0.7364
+Best performance: Epoch 22, Dice score: 0.7451
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B4E5
+Final validation dice score: 0.7345
+Best performance: Epoch 2, Dice score: 0.7439
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B8E10
+Final validation dice score: 0.7120
+Best performance: Epoch 9, Dice score: 0.7151
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B8E15
+Final validation dice score: 0.7947
+Best performance: Epoch 11, Dice score: 0.7954
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B8E20
+Final validation dice score: 0.7330
+Best performance: Epoch 5, Dice score: 0.7466
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B8E25
+Final validation dice score: 0.7480
+Best performance: Epoch 20, Dice score: 0.7485
+--------------------------------------------------
+Run: BSTL1e-05W1e-07B8E5
+Final validation dice score: 0.7260
+Best performance: Epoch 4, Dice score: 0.7272
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B16E10
+Final validation dice score: 0.7715
+Best performance: Epoch 3, Dice score: 0.7716
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B16E15
+Final validation dice score: 0.7148
+Best performance: Epoch 1, Dice score: 0.7374
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B16E20
+Final validation dice score: 0.7583
+Best performance: Epoch 15, Dice score: 0.7623
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B16E25
+Final validation dice score: 0.7192
+Best performance: Epoch 23, Dice score: 0.7412
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B16E5
+Final validation dice score: 0.7265
+Best performance: Epoch 5, Dice score: 0.7265
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B1E10
+Final validation dice score: 0.7159
+Best performance: Epoch 5, Dice score: 0.7168
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B1E15
+Final validation dice score: 0.7541
+Best performance: Epoch 12, Dice score: 0.7756
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B1E20
+Final validation dice score: 0.7072
+Best performance: Epoch 2, Dice score: 0.7364
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B1E25
+Final validation dice score: 0.7768
+Best performance: Epoch 25, Dice score: 0.7768
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B1E5
+Final validation dice score: 0.6509
+Best performance: Epoch 2, Dice score: 0.7670
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B2E10
+Final validation dice score: 0.8002
+Best performance: Epoch 4, Dice score: 0.8030
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B2E15
+Final validation dice score: 0.7808
+Best performance: Epoch 14, Dice score: 0.7941
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B2E20
+Final validation dice score: 0.8050
+Best performance: Epoch 18, Dice score: 0.8097
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B2E25
+Final validation dice score: 0.7323
+Best performance: Epoch 17, Dice score: 0.7617
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B2E5
+Final validation dice score: 0.7965
+Best performance: Epoch 4, Dice score: 0.7994
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B4E10
+Final validation dice score: 0.7824
+Best performance: Epoch 8, Dice score: 0.7907
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B4E15
+Final validation dice score: 0.7083
+Best performance: Epoch 3, Dice score: 0.7213
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B4E20
+Final validation dice score: 0.7946
+Best performance: Epoch 13, Dice score: 0.8028
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B4E25
+Final validation dice score: 0.7996
+Best performance: Epoch 23, Dice score: 0.8001
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B4E5
+Final validation dice score: 0.7339
+Best performance: Epoch 3, Dice score: 0.7359
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B8E10
+Final validation dice score: 0.7058
+Best performance: Epoch 7, Dice score: 0.7125
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B8E15
+Final validation dice score: 0.6977
+Best performance: Epoch 2, Dice score: 0.7085
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B8E20
+Final validation dice score: 0.7020
+Best performance: Epoch 17, Dice score: 0.7116
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B8E25
+Final validation dice score: 0.7036
+Best performance: Epoch 2, Dice score: 0.7200
+--------------------------------------------------
+Run: BSTL1e-05W1e-08B8E5
+Final validation dice score: 0.7319
+Best performance: Epoch 3, Dice score: 0.7348
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B16E10
+Final validation dice score: 0.7259
+Best performance: Epoch 9, Dice score: 0.7323
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B16E15
+Final validation dice score: 0.7910
+Best performance: Epoch 5, Dice score: 0.7945
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B16E20
+Final validation dice score: 0.7349
+Best performance: Epoch 19, Dice score: 0.7395
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B16E25
+Final validation dice score: 0.7715
+Best performance: Epoch 24, Dice score: 0.7847
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B16E5
+Final validation dice score: 0.7490
+Best performance: Epoch 5, Dice score: 0.7490
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B1E10
+Final validation dice score: 0.6794
+Best performance: Epoch 3, Dice score: 0.7584
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B1E15
+Final validation dice score: 0.6613
+Best performance: Epoch 6, Dice score: 0.7035
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B1E20
+Final validation dice score: 0.7465
+Best performance: Epoch 9, Dice score: 0.7680
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B1E25
+Final validation dice score: 0.7179
+Best performance: Epoch 25, Dice score: 0.7179
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B1E5
+Final validation dice score: 0.6517
+Best performance: Epoch 1, Dice score: 0.7461
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B2E10
+Final validation dice score: 0.7997
+Best performance: Epoch 8, Dice score: 0.8001
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B2E15
+Final validation dice score: 0.7811
+Best performance: Epoch 8, Dice score: 0.7982
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B2E20
+Final validation dice score: 0.7974
+Best performance: Epoch 6, Dice score: 0.8022
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B2E25
+Final validation dice score: 0.7958
+Best performance: Epoch 16, Dice score: 0.8022
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B2E5
+Final validation dice score: 0.7593
+Best performance: Epoch 4, Dice score: 0.7871
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B4E10
+Final validation dice score: 0.7820
+Best performance: Epoch 10, Dice score: 0.7820
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B4E15
+Final validation dice score: 0.7316
+Best performance: Epoch 9, Dice score: 0.7395
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B4E20
+Final validation dice score: 0.7088
+Best performance: Epoch 2, Dice score: 0.7241
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B4E25
+Final validation dice score: 0.7275
+Best performance: Epoch 23, Dice score: 0.7373
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B4E5
+Final validation dice score: 0.7783
+Best performance: Epoch 5, Dice score: 0.7783
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B8E10
+Final validation dice score: 0.7255
+Best performance: Epoch 8, Dice score: 0.7415
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B8E15
+Final validation dice score: 0.7424
+Best performance: Epoch 9, Dice score: 0.7489
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B8E20
+Final validation dice score: 0.7499
+Best performance: Epoch 11, Dice score: 0.7509
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B8E25
+Final validation dice score: 0.8004
+Best performance: Epoch 25, Dice score: 0.8004
+--------------------------------------------------
+Run: BSTL1e-05W1e-09B8E5
+Final validation dice score: 0.7316
+Best performance: Epoch 1, Dice score: 0.7325
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B16E10
+Final validation dice score: 0.8000
+Best performance: Epoch 6, Dice score: 0.8022
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B16E15
+Final validation dice score: 0.7984
+Best performance: Epoch 8, Dice score: 0.8076
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B16E20
+Final validation dice score: 0.8005
+Best performance: Epoch 3, Dice score: 0.8117
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B16E25
+Final validation dice score: 0.7959
+Best performance: Epoch 15, Dice score: 0.7979
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B16E5
+Final validation dice score: 0.7930
+Best performance: Epoch 2, Dice score: 0.8022
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B1E10
+Final validation dice score: 0.7431
+Best performance: Epoch 10, Dice score: 0.7431
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B1E15
+Final validation dice score: 0.7148
+Best performance: Epoch 2, Dice score: 0.7535
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B1E20
+Final validation dice score: 0.7035
+Best performance: Epoch 15, Dice score: 0.7590
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B1E25
+Final validation dice score: 0.7041
+Best performance: Epoch 3, Dice score: 0.7604
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B1E5
+Final validation dice score: 0.6937
+Best performance: Epoch 2, Dice score: 0.7392
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B2E10
+Final validation dice score: 0.7513
+Best performance: Epoch 9, Dice score: 0.7617
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B2E15
+Final validation dice score: 0.7673
+Best performance: Epoch 2, Dice score: 0.7858
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B2E20
+Final validation dice score: 0.7653
+Best performance: Epoch 19, Dice score: 0.7789
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B2E25
+Final validation dice score: 0.7490
+Best performance: Epoch 7, Dice score: 0.7673
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B2E5
+Final validation dice score: 0.7679
+Best performance: Epoch 4, Dice score: 0.7758
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B4E10
+Final validation dice score: 0.7782
+Best performance: Epoch 10, Dice score: 0.7782
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B4E15
+Final validation dice score: 0.7809
+Best performance: Epoch 10, Dice score: 0.7855
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B4E20
+Final validation dice score: 0.7815
+Best performance: Epoch 12, Dice score: 0.7910
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B4E25
+Final validation dice score: 0.7857
+Best performance: Epoch 4, Dice score: 0.7925
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B4E5
+Final validation dice score: 0.7934
+Best performance: Epoch 4, Dice score: 0.7937
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B8E10
+Final validation dice score: 0.7875
+Best performance: Epoch 10, Dice score: 0.7875
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B8E15
+Final validation dice score: 0.7860
+Best performance: Epoch 15, Dice score: 0.7860
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B8E20
+Final validation dice score: 0.7990
+Best performance: Epoch 4, Dice score: 0.8015
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B8E25
+Final validation dice score: 0.7908
+Best performance: Epoch 20, Dice score: 0.7916
+--------------------------------------------------
+Run: BSTL1e-06W1e-06B8E5
+Final validation dice score: 0.7654
+Best performance: Epoch 3, Dice score: 0.7763
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B16E10
+Final validation dice score: 0.7823
+Best performance: Epoch 3, Dice score: 0.7965
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B16E15
+Final validation dice score: 0.7870
+Best performance: Epoch 12, Dice score: 0.7917
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B16E20
+Final validation dice score: 0.7992
+Best performance: Epoch 20, Dice score: 0.7992
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B16E25
+Final validation dice score: 0.7913
+Best performance: Epoch 18, Dice score: 0.7940
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B16E5
+Final validation dice score: 0.7989
+Best performance: Epoch 3, Dice score: 0.7989
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B1E10
+Final validation dice score: 0.7145
+Best performance: Epoch 4, Dice score: 0.7837
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B1E15
+Final validation dice score: 0.6150
+Best performance: Epoch 3, Dice score: 0.7468
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B1E20
+Final validation dice score: 0.6898
+Best performance: Epoch 16, Dice score: 0.7675
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B1E25
+Final validation dice score: 0.7127
+Best performance: Epoch 22, Dice score: 0.7249
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B1E5
+Final validation dice score: 0.6355
+Best performance: Epoch 2, Dice score: 0.7146
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B2E10
+Final validation dice score: 0.7855
+Best performance: Epoch 10, Dice score: 0.7855
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B2E15
+Final validation dice score: 0.7993
+Best performance: Epoch 10, Dice score: 0.7996
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B2E20
+Final validation dice score: 0.7892
+Best performance: Epoch 6, Dice score: 0.7954
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B2E25
+Final validation dice score: 0.7796
+Best performance: Epoch 14, Dice score: 0.7992
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B2E5
+Final validation dice score: 0.7768
+Best performance: Epoch 3, Dice score: 0.7814
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B4E10
+Final validation dice score: 0.7617
+Best performance: Epoch 9, Dice score: 0.7724
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B4E15
+Final validation dice score: 0.7878
+Best performance: Epoch 13, Dice score: 0.7965
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B4E20
+Final validation dice score: 0.8058
+Best performance: Epoch 20, Dice score: 0.8058
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B4E25
+Final validation dice score: 0.7981
+Best performance: Epoch 18, Dice score: 0.8037
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B4E5
+Final validation dice score: 0.7407
+Best performance: Epoch 4, Dice score: 0.7435
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B8E10
+Final validation dice score: 0.7611
+Best performance: Epoch 1, Dice score: 0.8022
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B8E15
+Final validation dice score: 0.7901
+Best performance: Epoch 15, Dice score: 0.7901
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B8E20
+Final validation dice score: 0.7980
+Best performance: Epoch 17, Dice score: 0.7984
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B8E25
+Final validation dice score: 0.7920
+Best performance: Epoch 1, Dice score: 0.7958
+--------------------------------------------------
+Run: BSTL1e-06W1e-07B8E5
+Final validation dice score: 0.7718
+Best performance: Epoch 1, Dice score: 0.7930
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B16E10
+Final validation dice score: 0.8025
+Best performance: Epoch 5, Dice score: 0.8025
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B16E15
+Final validation dice score: 0.7938
+Best performance: Epoch 12, Dice score: 0.8006
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B16E20
+Final validation dice score: 0.7942
+Best performance: Epoch 11, Dice score: 0.8023
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B16E25
+Final validation dice score: 0.7890
+Best performance: Epoch 3, Dice score: 0.8033
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B16E5
+Final validation dice score: 0.7963
+Best performance: Epoch 2, Dice score: 0.7995
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B1E10
+Final validation dice score: 0.7698
+Best performance: Epoch 3, Dice score: 0.7743
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B1E15
+Final validation dice score: 0.6745
+Best performance: Epoch 5, Dice score: 0.7426
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B1E20
+Final validation dice score: 0.7002
+Best performance: Epoch 5, Dice score: 0.7506
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B1E25
+Final validation dice score: 0.7340
+Best performance: Epoch 14, Dice score: 0.7814
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B1E5
+Final validation dice score: 0.6835
+Best performance: Epoch 4, Dice score: 0.7351
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B2E10
+Final validation dice score: 0.7520
+Best performance: Epoch 3, Dice score: 0.7832
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B2E15
+Final validation dice score: 0.7872
+Best performance: Epoch 14, Dice score: 0.7884
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B2E20
+Final validation dice score: 0.7866
+Best performance: Epoch 10, Dice score: 0.7957
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B2E25
+Final validation dice score: 0.7792
+Best performance: Epoch 22, Dice score: 0.7985
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B2E5
+Final validation dice score: 0.7411
+Best performance: Epoch 4, Dice score: 0.7619
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B4E10
+Final validation dice score: 0.7816
+Best performance: Epoch 7, Dice score: 0.7894
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B4E15
+Final validation dice score: 0.8003
+Best performance: Epoch 8, Dice score: 0.8020
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B4E20
+Final validation dice score: 0.7854
+Best performance: Epoch 18, Dice score: 0.7889
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B4E25
+Final validation dice score: 0.7855
+Best performance: Epoch 7, Dice score: 0.8015
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B4E5
+Final validation dice score: 0.7790
+Best performance: Epoch 5, Dice score: 0.7790
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B8E10
+Final validation dice score: 0.7770
+Best performance: Epoch 1, Dice score: 0.7967
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B8E15
+Final validation dice score: 0.7716
+Best performance: Epoch 12, Dice score: 0.7832
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B8E20
+Final validation dice score: 0.7913
+Best performance: Epoch 20, Dice score: 0.7913
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B8E25
+Final validation dice score: 0.7903
+Best performance: Epoch 25, Dice score: 0.7903
+--------------------------------------------------
+Run: BSTL1e-06W1e-08B8E5
+Final validation dice score: 0.7835
+Best performance: Epoch 4, Dice score: 0.7843
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B16E10
+Final validation dice score: 0.7996
+Best performance: Epoch 2, Dice score: 0.7996
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B16E15
+Final validation dice score: 0.7830
+Best performance: Epoch 4, Dice score: 0.8032
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B16E20
+Final validation dice score: 0.7930
+Best performance: Epoch 2, Dice score: 0.8082
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B16E25
+Final validation dice score: 0.7913
+Best performance: Epoch 3, Dice score: 0.7913
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B16E5
+Final validation dice score: 0.7874
+Best performance: Epoch 2, Dice score: 0.8039
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B1E10
+Final validation dice score: 0.6664
+Best performance: Epoch 5, Dice score: 0.7602
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B1E15
+Final validation dice score: 0.7688
+Best performance: Epoch 10, Dice score: 0.7843
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B1E20
+Final validation dice score: 0.7170
+Best performance: Epoch 4, Dice score: 0.7657
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B1E25
+Final validation dice score: 0.7076
+Best performance: Epoch 10, Dice score: 0.7672
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B1E5
+Final validation dice score: 0.6679
+Best performance: Epoch 3, Dice score: 0.6985
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B2E10
+Final validation dice score: 0.7902
+Best performance: Epoch 10, Dice score: 0.7902
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B2E15
+Final validation dice score: 0.7638
+Best performance: Epoch 5, Dice score: 0.7781
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B2E20
+Final validation dice score: 0.7603
+Best performance: Epoch 12, Dice score: 0.7759
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B2E25
+Final validation dice score: 0.7571
+Best performance: Epoch 16, Dice score: 0.7856
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B2E5
+Final validation dice score: 0.7583
+Best performance: Epoch 5, Dice score: 0.7583
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B4E10
+Final validation dice score: 0.7781
+Best performance: Epoch 5, Dice score: 0.7937
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B4E15
+Final validation dice score: 0.7874
+Best performance: Epoch 12, Dice score: 0.7911
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B4E20
+Final validation dice score: 0.7900
+Best performance: Epoch 9, Dice score: 0.7946
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B4E25
+Final validation dice score: 0.7996
+Best performance: Epoch 21, Dice score: 0.8030
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B4E5
+Final validation dice score: 0.7942
+Best performance: Epoch 5, Dice score: 0.7942
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B8E10
+Final validation dice score: 0.7866
+Best performance: Epoch 9, Dice score: 0.7935
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B8E15
+Final validation dice score: 0.7855
+Best performance: Epoch 7, Dice score: 0.7937
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B8E20
+Final validation dice score: 0.7864
+Best performance: Epoch 18, Dice score: 0.7883
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B8E25
+Final validation dice score: 0.7962
+Best performance: Epoch 23, Dice score: 0.7983
+--------------------------------------------------
+Run: BSTL1e-06W1e-09B8E5
+Final validation dice score: 0.7730
+Best performance: Epoch 5, Dice score: 0.7730
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B16E10
+Final validation dice score: 0.8038
+Best performance: Epoch 10, Dice score: 0.8038
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B16E15
+Final validation dice score: 0.8093
+Best performance: Epoch 12, Dice score: 0.8152
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B16E20
+Final validation dice score: 0.8248
+Best performance: Epoch 20, Dice score: 0.8248
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B16E25
+Final validation dice score: 0.8186
+Best performance: Epoch 23, Dice score: 0.8207
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B16E5
+Final validation dice score: 0.7755
+Best performance: Epoch 5, Dice score: 0.7755
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B1E10
+Final validation dice score: 0.7287
+Best performance: Epoch 9, Dice score: 0.7457
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B1E15
+Final validation dice score: 0.6441
+Best performance: Epoch 10, Dice score: 0.7821
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B1E20
+Final validation dice score: 0.6764
+Best performance: Epoch 15, Dice score: 0.7607
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B1E25
+Final validation dice score: 0.6195
+Best performance: Epoch 5, Dice score: 0.7852
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B1E5
+Final validation dice score: 0.7164
+Best performance: Epoch 1, Dice score: 0.7460
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B2E10
+Final validation dice score: 0.7829
+Best performance: Epoch 1, Dice score: 0.7855
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B2E15
+Final validation dice score: 0.7853
+Best performance: Epoch 11, Dice score: 0.7949
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B2E20
+Final validation dice score: 0.7973
+Best performance: Epoch 18, Dice score: 0.8066
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B2E25
+Final validation dice score: 0.8016
+Best performance: Epoch 16, Dice score: 0.8135
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B2E5
+Final validation dice score: 0.7796
+Best performance: Epoch 5, Dice score: 0.7796
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B4E10
+Final validation dice score: 0.7931
+Best performance: Epoch 7, Dice score: 0.8011
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B4E15
+Final validation dice score: 0.7964
+Best performance: Epoch 7, Dice score: 0.8041
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B4E20
+Final validation dice score: 0.8050
+Best performance: Epoch 19, Dice score: 0.8116
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B4E25
+Final validation dice score: 0.8181
+Best performance: Epoch 25, Dice score: 0.8181
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B4E5
+Final validation dice score: 0.7901
+Best performance: Epoch 3, Dice score: 0.7908
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B8E10
+Final validation dice score: 0.7966
+Best performance: Epoch 8, Dice score: 0.8038
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B8E15
+Final validation dice score: 0.7955
+Best performance: Epoch 10, Dice score: 0.8040
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B8E20
+Final validation dice score: 0.8053
+Best performance: Epoch 18, Dice score: 0.8092
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B8E25
+Final validation dice score: 0.8128
+Best performance: Epoch 24, Dice score: 0.8143
+--------------------------------------------------
+Run: BSTL1e-07W1e-06B8E5
+Final validation dice score: 0.7979
+Best performance: Epoch 4, Dice score: 0.8113
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B16E10
+Final validation dice score: 0.7964
+Best performance: Epoch 10, Dice score: 0.7964
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B16E15
+Final validation dice score: 0.8132
+Best performance: Epoch 15, Dice score: 0.8132
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B16E20
+Final validation dice score: 0.8058
+Best performance: Epoch 11, Dice score: 0.8088
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B16E25
+Final validation dice score: 0.8181
+Best performance: Epoch 25, Dice score: 0.8181
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B16E5
+Final validation dice score: 0.6429
+Best performance: Epoch 2, Dice score: 0.6429
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B1E10
+Final validation dice score: 0.6833
+Best performance: Epoch 1, Dice score: 0.7655
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B1E15
+Final validation dice score: 0.7665
+Best performance: Epoch 9, Dice score: 0.7692
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B1E20
+Final validation dice score: 0.7626
+Best performance: Epoch 15, Dice score: 0.7656
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B1E25
+Final validation dice score: 0.6804
+Best performance: Epoch 10, Dice score: 0.7745
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B1E5
+Final validation dice score: 0.6637
+Best performance: Epoch 3, Dice score: 0.7493
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B2E10
+Final validation dice score: 0.7776
+Best performance: Epoch 9, Dice score: 0.8029
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B2E15
+Final validation dice score: 0.7809
+Best performance: Epoch 4, Dice score: 0.7921
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B2E20
+Final validation dice score: 0.8043
+Best performance: Epoch 18, Dice score: 0.8132
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B2E25
+Final validation dice score: 0.7809
+Best performance: Epoch 7, Dice score: 0.7951
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B2E5
+Final validation dice score: 0.7253
+Best performance: Epoch 1, Dice score: 0.7712
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B4E10
+Final validation dice score: 0.7991
+Best performance: Epoch 8, Dice score: 0.8084
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B4E15
+Final validation dice score: 0.7722
+Best performance: Epoch 14, Dice score: 0.7956
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B4E20
+Final validation dice score: 0.7960
+Best performance: Epoch 19, Dice score: 0.8116
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B4E25
+Final validation dice score: 0.8107
+Best performance: Epoch 19, Dice score: 0.8156
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B4E5
+Final validation dice score: 0.7808
+Best performance: Epoch 3, Dice score: 0.7912
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B8E10
+Final validation dice score: 0.7960
+Best performance: Epoch 4, Dice score: 0.8099
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B8E15
+Final validation dice score: 0.8152
+Best performance: Epoch 15, Dice score: 0.8152
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B8E20
+Final validation dice score: 0.8163
+Best performance: Epoch 20, Dice score: 0.8163
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B8E25
+Final validation dice score: 0.8063
+Best performance: Epoch 24, Dice score: 0.8129
+--------------------------------------------------
+Run: BSTL1e-07W1e-07B8E5
+Final validation dice score: 0.8022
+Best performance: Epoch 5, Dice score: 0.8022
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B16E10
+Final validation dice score: 0.8115
+Best performance: Epoch 10, Dice score: 0.8115
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B16E15
+Final validation dice score: 0.7870
+Best performance: Epoch 14, Dice score: 0.7996
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B16E20
+Final validation dice score: 0.8000
+Best performance: Epoch 19, Dice score: 0.8044
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B16E25
+Final validation dice score: 0.8091
+Best performance: Epoch 23, Dice score: 0.8186
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B16E5
+Final validation dice score: 0.7775
+Best performance: Epoch 4, Dice score: 0.7786
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B1E10
+Final validation dice score: 0.6766
+Best performance: Epoch 6, Dice score: 0.7596
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B1E15
+Final validation dice score: 0.7559
+Best performance: Epoch 12, Dice score: 0.7771
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B1E20
+Final validation dice score: 0.6835
+Best performance: Epoch 17, Dice score: 0.7651
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B1E25
+Final validation dice score: 0.7319
+Best performance: Epoch 18, Dice score: 0.7982
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B1E5
+Final validation dice score: 0.7825
+Best performance: Epoch 5, Dice score: 0.7825
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B2E10
+Final validation dice score: 0.7789
+Best performance: Epoch 6, Dice score: 0.7937
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B2E15
+Final validation dice score: 0.7963
+Best performance: Epoch 4, Dice score: 0.8005
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B2E20
+Final validation dice score: 0.7950
+Best performance: Epoch 17, Dice score: 0.8119
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B2E25
+Final validation dice score: 0.7788
+Best performance: Epoch 5, Dice score: 0.7962
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B2E5
+Final validation dice score: 0.8013
+Best performance: Epoch 5, Dice score: 0.8013
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B4E10
+Final validation dice score: 0.7872
+Best performance: Epoch 7, Dice score: 0.7936
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B4E15
+Final validation dice score: 0.7889
+Best performance: Epoch 13, Dice score: 0.8008
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B4E20
+Final validation dice score: 0.8055
+Best performance: Epoch 19, Dice score: 0.8110
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B4E25
+Final validation dice score: 0.8111
+Best performance: Epoch 24, Dice score: 0.8205
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B4E5
+Final validation dice score: 0.7857
+Best performance: Epoch 4, Dice score: 0.7959
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B8E10
+Final validation dice score: 0.8042
+Best performance: Epoch 10, Dice score: 0.8042
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B8E15
+Final validation dice score: 0.8085
+Best performance: Epoch 14, Dice score: 0.8130
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B8E20
+Final validation dice score: 0.8086
+Best performance: Epoch 12, Dice score: 0.8186
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B8E25
+Final validation dice score: 0.8132
+Best performance: Epoch 25, Dice score: 0.8132
+--------------------------------------------------
+Run: BSTL1e-07W1e-08B8E5
+Final validation dice score: 0.7900
+Best performance: Epoch 3, Dice score: 0.8049
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B16E10
+Final validation dice score: 0.7989
+Best performance: Epoch 8, Dice score: 0.8038
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B16E15
+Final validation dice score: 0.8057
+Best performance: Epoch 15, Dice score: 0.8057
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B16E20
+Final validation dice score: 0.8071
+Best performance: Epoch 16, Dice score: 0.8105
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B16E25
+Final validation dice score: 0.8088
+Best performance: Epoch 22, Dice score: 0.8173
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B16E5
+Final validation dice score: 0.7860
+Best performance: Epoch 4, Dice score: 0.7925
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B1E10
+Final validation dice score: 0.6814
+Best performance: Epoch 2, Dice score: 0.7633
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B1E15
+Final validation dice score: 0.7007
+Best performance: Epoch 6, Dice score: 0.7557
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B1E20
+Final validation dice score: 0.7242
+Best performance: Epoch 4, Dice score: 0.7461
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B1E25
+Final validation dice score: 0.7169
+Best performance: Epoch 13, Dice score: 0.7684
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B1E5
+Final validation dice score: 0.6682
+Best performance: Epoch 2, Dice score: 0.7784
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B2E10
+Final validation dice score: 0.7948
+Best performance: Epoch 7, Dice score: 0.8009
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B2E15
+Final validation dice score: 0.7795
+Best performance: Epoch 7, Dice score: 0.8025
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B2E20
+Final validation dice score: 0.7985
+Best performance: Epoch 11, Dice score: 0.8063
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B2E25
+Final validation dice score: 0.7973
+Best performance: Epoch 19, Dice score: 0.8069
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B2E5
+Final validation dice score: 0.7609
+Best performance: Epoch 3, Dice score: 0.7903
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B4E10
+Final validation dice score: 0.8024
+Best performance: Epoch 9, Dice score: 0.8116
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B4E15
+Final validation dice score: 0.8053
+Best performance: Epoch 12, Dice score: 0.8103
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B4E20
+Final validation dice score: 0.8142
+Best performance: Epoch 20, Dice score: 0.8142
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B4E25
+Final validation dice score: 0.8014
+Best performance: Epoch 24, Dice score: 0.8065
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B4E5
+Final validation dice score: 0.7931
+Best performance: Epoch 4, Dice score: 0.8038
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B8E10
+Final validation dice score: 0.8016
+Best performance: Epoch 7, Dice score: 0.8096
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B8E15
+Final validation dice score: 0.8101
+Best performance: Epoch 8, Dice score: 0.8107
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B8E20
+Final validation dice score: 0.8103
+Best performance: Epoch 20, Dice score: 0.8103
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B8E25
+Final validation dice score: 0.8158
+Best performance: Epoch 25, Dice score: 0.8158
+--------------------------------------------------
+Run: BSTL1e-07W1e-09B8E5
+Final validation dice score: 0.8097
+Best performance: Epoch 5, Dice score: 0.8097
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B16E10
+Final validation dice score: 0.7356
+Best performance: Epoch 10, Dice score: 0.7356
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B16E15
+Final validation dice score: 0.7919
+Best performance: Epoch 12, Dice score: 0.7940
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B16E20
+Final validation dice score: 0.8263
+Best performance: Epoch 20, Dice score: 0.8263
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B16E25
+Final validation dice score: 0.8231
+Best performance: Epoch 25, Dice score: 0.8231
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B16E5
+Final validation dice score: 0.6327
+Best performance: Epoch 5, Dice score: 0.6327
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B1E10
+Final validation dice score: 0.7630
+Best performance: Epoch 8, Dice score: 0.7787
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B1E15
+Final validation dice score: 0.7135
+Best performance: Epoch 11, Dice score: 0.7958
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B1E20
+Final validation dice score: 0.6945
+Best performance: Epoch 9, Dice score: 0.8066
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B1E25
+Final validation dice score: 0.7254
+Best performance: Epoch 14, Dice score: 0.8145
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B1E5
+Final validation dice score: 0.7853
+Best performance: Epoch 5, Dice score: 0.7853
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B2E10
+Final validation dice score: 0.8058
+Best performance: Epoch 7, Dice score: 0.8146
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B2E15
+Final validation dice score: 0.8118
+Best performance: Epoch 14, Dice score: 0.8244
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B2E23
+Final validation dice score: 0.8273
+Best performance: Epoch 20, Dice score: 0.8575
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B2E5
+Final validation dice score: 0.7683
+Best performance: Epoch 5, Dice score: 0.7683
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B4E10
+Final validation dice score: 0.8113
+Best performance: Epoch 10, Dice score: 0.8113
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B4E15
+Final validation dice score: 0.8195
+Best performance: Epoch 14, Dice score: 0.8284
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B4E20
+Final validation dice score: 0.8438
+Best performance: Epoch 20, Dice score: 0.8438
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B4E5
+Final validation dice score: 0.7491
+Best performance: Epoch 5, Dice score: 0.7491
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B8E10
+Final validation dice score: 0.7516
+Best performance: Epoch 9, Dice score: 0.7736
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B8E15
+Final validation dice score: 0.8125
+Best performance: Epoch 15, Dice score: 0.8125
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B8E20
+Final validation dice score: 0.8411
+Best performance: Epoch 20, Dice score: 0.8411
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B8E25
+Final validation dice score: 0.8498
+Best performance: Epoch 25, Dice score: 0.8498
+--------------------------------------------------
+Run: BSTL1e-08W1e-06B8E5
+Final validation dice score: 0.7125
+Best performance: Epoch 5, Dice score: 0.7125
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B16E10
+Final validation dice score: 0.7060
+Best performance: Epoch 10, Dice score: 0.7060
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B16E15
+Final validation dice score: 0.7567
+Best performance: Epoch 14, Dice score: 0.7722
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B16E20
+Final validation dice score: 0.8112
+Best performance: Epoch 20, Dice score: 0.8112
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B16E25
+Final validation dice score: 0.8321
+Best performance: Epoch 24, Dice score: 0.8333
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B16E5
+Final validation dice score: 0.4960
+Best performance: Epoch 5, Dice score: 0.4960
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B1E10
+Final validation dice score: 0.7436
+Best performance: Epoch 9, Dice score: 0.7842
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B1E15
+Final validation dice score: 0.6916
+Best performance: Epoch 7, Dice score: 0.8007
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B1E20
+Final validation dice score: 0.6847
+Best performance: Epoch 16, Dice score: 0.7935
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B1E25
+Final validation dice score: 0.7334
+Best performance: Epoch 22, Dice score: 0.7939
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B1E5
+Final validation dice score: 0.7854
+Best performance: Epoch 5, Dice score: 0.7854
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B2E10
+Final validation dice score: 0.7939
+Best performance: Epoch 7, Dice score: 0.8091
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B2E15
+Final validation dice score: 0.8456
+Best performance: Epoch 15, Dice score: 0.8456
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B2E20
+Final validation dice score: 0.8375
+Best performance: Epoch 19, Dice score: 0.8406
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B2E5
+Final validation dice score: 0.7939
+Best performance: Epoch 5, Dice score: 0.7939
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B4E10
+Final validation dice score: 0.8094
+Best performance: Epoch 10, Dice score: 0.8094
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B4E15
+Final validation dice score: 0.8194
+Best performance: Epoch 13, Dice score: 0.8268
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B4E20
+Final validation dice score: 0.8444
+Best performance: Epoch 20, Dice score: 0.8444
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B4E25
+Final validation dice score: 0.8460
+Best performance: Epoch 24, Dice score: 0.8570
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B4E5
+Final validation dice score: 0.7739
+Best performance: Epoch 4, Dice score: 0.7916
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B8E10
+Final validation dice score: 0.7522
+Best performance: Epoch 10, Dice score: 0.7522
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B8E15
+Final validation dice score: 0.8247
+Best performance: Epoch 15, Dice score: 0.8247
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B8E20
+Final validation dice score: 0.8459
+Best performance: Epoch 20, Dice score: 0.8459
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B8E25
+Final validation dice score: 0.8386
+Best performance: Epoch 22, Dice score: 0.8396
+--------------------------------------------------
+Run: BSTL1e-08W1e-07B8E5
+Final validation dice score: 0.7648
+Best performance: Epoch 5, Dice score: 0.7648
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B16E10
+Final validation dice score: 0.7789
+Best performance: Epoch 10, Dice score: 0.7789
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B16E15
+Final validation dice score: 0.7751
+Best performance: Epoch 15, Dice score: 0.7751
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B16E20
+Final validation dice score: 0.8087
+Best performance: Epoch 20, Dice score: 0.8087
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B16E25
+Final validation dice score: 0.8371
+Best performance: Epoch 24, Dice score: 0.8373
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B16E5
+Final validation dice score: 0.6169
+Best performance: Epoch 5, Dice score: 0.6169
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B1E10
+Final validation dice score: 0.7437
+Best performance: Epoch 8, Dice score: 0.7637
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B1E15
+Final validation dice score: 0.6739
+Best performance: Epoch 6, Dice score: 0.7892
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B1E20
+Final validation dice score: 0.7616
+Best performance: Epoch 10, Dice score: 0.8083
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B1E25
+Final validation dice score: 0.6907
+Best performance: Epoch 19, Dice score: 0.7954
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B1E5
+Final validation dice score: 0.7483
+Best performance: Epoch 5, Dice score: 0.7483
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B2E10
+Final validation dice score: 0.8059
+Best performance: Epoch 9, Dice score: 0.8140
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B2E15
+Final validation dice score: 0.8218
+Best performance: Epoch 12, Dice score: 0.8293
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B2E25
+Final validation dice score: 0.8380
+Best performance: Epoch 23, Dice score: 0.8703
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B2E5
+Final validation dice score: 0.7997
+Best performance: Epoch 5, Dice score: 0.7997
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B4E10
+Final validation dice score: 0.8097
+Best performance: Epoch 10, Dice score: 0.8097
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B4E15
+Final validation dice score: 0.8104
+Best performance: Epoch 14, Dice score: 0.8322
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B4E5
+Final validation dice score: 0.7959
+Best performance: Epoch 5, Dice score: 0.7959
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B8E10
+Final validation dice score: 0.8071
+Best performance: Epoch 10, Dice score: 0.8071
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B8E15
+Final validation dice score: 0.8156
+Best performance: Epoch 15, Dice score: 0.8156
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B8E20
+Final validation dice score: 0.8349
+Best performance: Epoch 19, Dice score: 0.8389
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B8E25
+Final validation dice score: 0.8426
+Best performance: Epoch 22, Dice score: 0.8464
+--------------------------------------------------
+Run: BSTL1e-08W1e-08B8E5
+Final validation dice score: 0.6906
+Best performance: Epoch 5, Dice score: 0.6906
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B16E10
+Final validation dice score: 0.7230
+Best performance: Epoch 10, Dice score: 0.7230
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B16E15
+Final validation dice score: 0.7695
+Best performance: Epoch 14, Dice score: 0.7729
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B16E20
+Final validation dice score: 0.8009
+Best performance: Epoch 20, Dice score: 0.8009
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B16E25
+Final validation dice score: 0.8204
+Best performance: Epoch 25, Dice score: 0.8204
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B16E5
+Final validation dice score: 0.7193
+Best performance: Epoch 5, Dice score: 0.7193
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B1E10
+Final validation dice score: 0.7354
+Best performance: Epoch 7, Dice score: 0.7598
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B1E15
+Final validation dice score: 0.6195
+Best performance: Epoch 7, Dice score: 0.8078
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B1E20
+Final validation dice score: 0.7191
+Best performance: Epoch 10, Dice score: 0.7795
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B1E25
+Final validation dice score: 0.6349
+Best performance: Epoch 14, Dice score: 0.8017
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B1E5
+Final validation dice score: 0.7546
+Best performance: Epoch 5, Dice score: 0.7546
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B2E10
+Final validation dice score: 0.8039
+Best performance: Epoch 10, Dice score: 0.8039
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B2E15
+Final validation dice score: 0.8384
+Best performance: Epoch 14, Dice score: 0.8395
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B2E20
+Final validation dice score: 0.8407
+Best performance: Epoch 19, Dice score: 0.8472
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B2E5
+Final validation dice score: 0.7984
+Best performance: Epoch 5, Dice score: 0.7984
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B4E10
+Final validation dice score: 0.7963
+Best performance: Epoch 8, Dice score: 0.7997
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B4E15
+Final validation dice score: 0.8134
+Best performance: Epoch 14, Dice score: 0.8272
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B4E20
+Final validation dice score: 0.8363
+Best performance: Epoch 19, Dice score: 0.8474
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B4E5
+Final validation dice score: 0.7183
+Best performance: Epoch 5, Dice score: 0.7183
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B8E10
+Final validation dice score: 0.7780
+Best performance: Epoch 9, Dice score: 0.7830
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B8E15
+Final validation dice score: 0.8078
+Best performance: Epoch 15, Dice score: 0.8078
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B8E20
+Final validation dice score: 0.8309
+Best performance: Epoch 18, Dice score: 0.8343
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B8E25
+Final validation dice score: 0.8401
+Best performance: Epoch 25, Dice score: 0.8401
+--------------------------------------------------
+Run: BSTL1e-08W1e-09B8E5
+Final validation dice score: 0.6795
+Best performance: Epoch 5, Dice score: 0.6795
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B16E10
+Final validation dice score: 0.4943
+Best performance: Epoch 10, Dice score: 0.4943
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B16E15
+Final validation dice score: 0.5849
+Best performance: Epoch 15, Dice score: 0.5849
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B16E20
+Final validation dice score: 0.7002
+Best performance: Epoch 20, Dice score: 0.7002
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B16E25
+Final validation dice score: 0.6464
+Best performance: Epoch 24, Dice score: 0.6588
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B16E5
+Final validation dice score: 0.3186
+Best performance: Epoch 5, Dice score: 0.3186
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B1E10
+Final validation dice score: 0.6866
+Best performance: Epoch 10, Dice score: 0.6866
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B1E15
+Final validation dice score: 0.7069
+Best performance: Epoch 15, Dice score: 0.7069
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B1E20
+Final validation dice score: 0.7210
+Best performance: Epoch 10, Dice score: 0.7459
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B1E25
+Final validation dice score: 0.6553
+Best performance: Epoch 17, Dice score: 0.7458
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B1E5
+Final validation dice score: 0.6346
+Best performance: Epoch 3, Dice score: 0.6583
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B2E10
+Final validation dice score: 0.7186
+Best performance: Epoch 10, Dice score: 0.7186
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B2E15
+Final validation dice score: 0.7634
+Best performance: Epoch 15, Dice score: 0.7634
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B2E20
+Final validation dice score: 0.7685
+Best performance: Epoch 18, Dice score: 0.7729
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B2E25
+Final validation dice score: 0.7518
+Best performance: Epoch 20, Dice score: 0.7778
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B2E5
+Final validation dice score: 0.6059
+Best performance: Epoch 5, Dice score: 0.6059
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B4E10
+Final validation dice score: 0.6556
+Best performance: Epoch 9, Dice score: 0.6752
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B4E15
+Final validation dice score: 0.7683
+Best performance: Epoch 15, Dice score: 0.7683
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B4E20
+Final validation dice score: 0.7453
+Best performance: Epoch 20, Dice score: 0.7453
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B4E25
+Final validation dice score: 0.7609
+Best performance: Epoch 23, Dice score: 0.7761
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B4E5
+Final validation dice score: 0.5452
+Best performance: Epoch 5, Dice score: 0.5452
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B8E10
+Final validation dice score: 0.5058
+Best performance: Epoch 10, Dice score: 0.5058
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B8E15
+Final validation dice score: 0.5354
+Best performance: Epoch 14, Dice score: 0.5556
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B8E20
+Final validation dice score: 0.6622
+Best performance: Epoch 20, Dice score: 0.6622
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B8E25
+Final validation dice score: 0.6732
+Best performance: Epoch 25, Dice score: 0.6732
+--------------------------------------------------
+Run: BSTL1e-09W1e-06B8E5
+Final validation dice score: 0.4685
+Best performance: Epoch 5, Dice score: 0.4685
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B16E10
+Final validation dice score: 0.5330
+Best performance: Epoch 10, Dice score: 0.5330
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B16E15
+Final validation dice score: 0.4691
+Best performance: Epoch 15, Dice score: 0.4691
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B16E20
+Final validation dice score: 0.6572
+Best performance: Epoch 20, Dice score: 0.6572
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B16E25
+Final validation dice score: 0.5564
+Best performance: Epoch 25, Dice score: 0.5564
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B16E5
+Final validation dice score: 0.3181
+Best performance: Epoch 5, Dice score: 0.3181
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B1E10
+Final validation dice score: 0.6864
+Best performance: Epoch 8, Dice score: 0.6867
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B1E15
+Final validation dice score: 0.6870
+Best performance: Epoch 13, Dice score: 0.7132
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B1E20
+Final validation dice score: 0.7108
+Best performance: Epoch 19, Dice score: 0.7361
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B1E25
+Final validation dice score: 0.6900
+Best performance: Epoch 25, Dice score: 0.6900
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B1E5
+Final validation dice score: 0.6122
+Best performance: Epoch 5, Dice score: 0.6122
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B2E10
+Final validation dice score: 0.7416
+Best performance: Epoch 10, Dice score: 0.7416
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B2E15
+Final validation dice score: 0.7435
+Best performance: Epoch 12, Dice score: 0.7468
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B2E20
+Final validation dice score: 0.7557
+Best performance: Epoch 20, Dice score: 0.7557
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B2E25
+Final validation dice score: 0.7935
+Best performance: Epoch 25, Dice score: 0.7935
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B2E5
+Final validation dice score: 0.5940
+Best performance: Epoch 3, Dice score: 0.6184
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B4E10
+Final validation dice score: 0.6898
+Best performance: Epoch 10, Dice score: 0.6898
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B4E15
+Final validation dice score: 0.7080
+Best performance: Epoch 13, Dice score: 0.7206
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B4E20
+Final validation dice score: 0.7494
+Best performance: Epoch 14, Dice score: 0.7793
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B4E25
+Final validation dice score: 0.6933
+Best performance: Epoch 24, Dice score: 0.7042
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B4E5
+Final validation dice score: 0.5369
+Best performance: Epoch 5, Dice score: 0.5369
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B8E10
+Final validation dice score: 0.6332
+Best performance: Epoch 10, Dice score: 0.6332
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B8E15
+Final validation dice score: 0.6592
+Best performance: Epoch 13, Dice score: 0.6713
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B8E20
+Final validation dice score: 0.6894
+Best performance: Epoch 20, Dice score: 0.6894
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B8E25
+Final validation dice score: 0.6744
+Best performance: Epoch 25, Dice score: 0.6744
+--------------------------------------------------
+Run: BSTL1e-09W1e-07B8E5
+Final validation dice score: 0.4768
+Best performance: Epoch 5, Dice score: 0.4768
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B16E10
+Final validation dice score: 0.4176
+Best performance: Epoch 10, Dice score: 0.4176
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B16E15
+Final validation dice score: 0.6397
+Best performance: Epoch 15, Dice score: 0.6397
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B16E20
+Final validation dice score: 0.6145
+Best performance: Epoch 18, Dice score: 0.6499
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B16E25
+Final validation dice score: 0.6509
+Best performance: Epoch 25, Dice score: 0.6509
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B16E5
+Final validation dice score: 0.3418
+Best performance: Epoch 5, Dice score: 0.3418
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B1E10
+Final validation dice score: 0.6891
+Best performance: Epoch 9, Dice score: 0.7064
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B1E15
+Final validation dice score: 0.6979
+Best performance: Epoch 9, Dice score: 0.7084
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B1E20
+Final validation dice score: 0.7099
+Best performance: Epoch 11, Dice score: 0.7466
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B1E25
+Final validation dice score: 0.7361
+Best performance: Epoch 13, Dice score: 0.7453
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B1E5
+Final validation dice score: 0.5647
+Best performance: Epoch 4, Dice score: 0.6037
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B2E10
+Final validation dice score: 0.6918
+Best performance: Epoch 10, Dice score: 0.6918
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B2E15
+Final validation dice score: 0.7492
+Best performance: Epoch 14, Dice score: 0.7593
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B2E20
+Final validation dice score: 0.7764
+Best performance: Epoch 18, Dice score: 0.7882
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B2E25
+Final validation dice score: 0.7878
+Best performance: Epoch 25, Dice score: 0.7878
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B2E5
+Final validation dice score: 0.4515
+Best performance: Epoch 5, Dice score: 0.4515
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B4E10
+Final validation dice score: 0.6487
+Best performance: Epoch 9, Dice score: 0.6736
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B4E15
+Final validation dice score: 0.7422
+Best performance: Epoch 15, Dice score: 0.7422
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B4E20
+Final validation dice score: 0.7512
+Best performance: Epoch 20, Dice score: 0.7512
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B4E25
+Final validation dice score: 0.7158
+Best performance: Epoch 23, Dice score: 0.7462
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B4E5
+Final validation dice score: 0.5554
+Best performance: Epoch 5, Dice score: 0.5554
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B8E10
+Final validation dice score: 0.5690
+Best performance: Epoch 10, Dice score: 0.5690
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B8E15
+Final validation dice score: 0.6874
+Best performance: Epoch 15, Dice score: 0.6874
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B8E20
+Final validation dice score: 0.7073
+Best performance: Epoch 19, Dice score: 0.7160
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B8E25
+Final validation dice score: 0.7750
+Best performance: Epoch 25, Dice score: 0.7750
+--------------------------------------------------
+Run: BSTL1e-09W1e-08B8E5
+Final validation dice score: 0.4005
+Best performance: Epoch 5, Dice score: 0.4005
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B16E10
+Final validation dice score: 0.5156
+Best performance: Epoch 10, Dice score: 0.5156
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B16E15
+Final validation dice score: 0.5712
+Best performance: Epoch 15, Dice score: 0.5712
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B16E20
+Final validation dice score: 0.6341
+Best performance: Epoch 19, Dice score: 0.6355
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B16E25
+Final validation dice score: 0.6413
+Best performance: Epoch 25, Dice score: 0.6413
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B16E5
+Final validation dice score: 0.3311
+Best performance: Epoch 5, Dice score: 0.3311
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B1E10
+Final validation dice score: 0.6598
+Best performance: Epoch 7, Dice score: 0.6730
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B1E15
+Final validation dice score: 0.6291
+Best performance: Epoch 14, Dice score: 0.6837
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B1E20
+Final validation dice score: 0.6307
+Best performance: Epoch 14, Dice score: 0.7056
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B1E25
+Final validation dice score: 0.6820
+Best performance: Epoch 17, Dice score: 0.7448
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B1E5
+Final validation dice score: 0.6962
+Best performance: Epoch 5, Dice score: 0.6962
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B2E10
+Final validation dice score: 0.7340
+Best performance: Epoch 9, Dice score: 0.7505
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B2E15
+Final validation dice score: 0.7395
+Best performance: Epoch 15, Dice score: 0.7395
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B2E20
+Final validation dice score: 0.8018
+Best performance: Epoch 20, Dice score: 0.8018
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B2E25
+Final validation dice score: 0.7750
+Best performance: Epoch 25, Dice score: 0.7750
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B2E5
+Final validation dice score: 0.5400
+Best performance: Epoch 5, Dice score: 0.5400
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B4E10
+Final validation dice score: 0.6430
+Best performance: Epoch 10, Dice score: 0.6430
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B4E15
+Final validation dice score: 0.7289
+Best performance: Epoch 14, Dice score: 0.7415
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B4E20
+Final validation dice score: 0.7587
+Best performance: Epoch 19, Dice score: 0.7722
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B4E25
+Final validation dice score: 0.7806
+Best performance: Epoch 24, Dice score: 0.7902
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B4E5
+Final validation dice score: 0.4864
+Best performance: Epoch 4, Dice score: 0.4945
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B8E10
+Final validation dice score: 0.5755
+Best performance: Epoch 10, Dice score: 0.5755
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B8E15
+Final validation dice score: 0.6788
+Best performance: Epoch 15, Dice score: 0.6788
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B8E20
+Final validation dice score: 0.7300
+Best performance: Epoch 16, Dice score: 0.7312
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B8E25
+Final validation dice score: 0.7525
+Best performance: Epoch 25, Dice score: 0.7525
+--------------------------------------------------
+Run: BSTL1e-09W1e-09B8E5
+Final validation dice score: 0.4242
+Best performance: Epoch 5, Dice score: 0.4242
+--------------------------------------------------

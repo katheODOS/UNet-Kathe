@@ -28,6 +28,10 @@ def get_dataset_path(model_dir_name):
     """Determine dataset path from model directory name"""
     if model_dir_name.startswith('DSA'):
         return './data/Dataset DSAR'
+    elif model_dir_name.startswith('BST'):
+        return './data/Dataset BST'
+    elif model_dir_name.startswith('ESA'):
+        return './data/Dataset ESAR'
     elif model_dir_name.startswith('ASA'):
         return './data/Dataset A SA'
     elif model_dir_name.startswith('BSA'):
@@ -52,7 +56,7 @@ def get_last_checkpoint(model_dir):
 
 def predict_img(net, img, device):
     net.eval()
-    img = torch.from_numpy(BasicDataset.preprocess(img, scale=0.5, is_mask=False))
+    img = torch.from_numpy(BasicDataset.preprocess(img, scale=1.0, is_mask=False))
     img = img.unsqueeze(0)
     img = img.to(device=device, dtype=torch.float32)
 
@@ -95,11 +99,17 @@ def process_checkpoints():
             logging.info(f"Using checkpoint: {checkpoint_file.name}")
             logging.info(f"Loading validation images from: {val_imgs_dir}")
             
+            # Load state dict first to determine the number of classes
             state_dict = torch.load(checkpoint_file, map_location=device)
             if 'mask_values' in state_dict:
                 state_dict.pop('mask_values')
+            
+            # Determine number of classes from the output layer weights
+            n_classes = state_dict['outc.conv.weight'].size(0)
+            logging.info(f"Model has {n_classes} output classes")
                 
-            net = UNet(n_channels=3, n_classes=11, bilinear=True)
+            # Create model with the correct number of classes
+            net = UNet(n_channels=3, n_classes=n_classes, bilinear=True)
             net.to(device=device)
             net.load_state_dict(state_dict)
             

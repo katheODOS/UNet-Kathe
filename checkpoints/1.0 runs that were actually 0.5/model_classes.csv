@@ -1,0 +1,14 @@
+model_name,checkpoint,n_classes,status,mask_values
+ancient runs,,No checkpoint found,Missing,
+BSTL1e-07W1e-07B4E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-07W1e-08B16E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-07W1e-08B4E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-07W1e-08B8E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-07W1e-09B8E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-08W1e-08B4E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-08W1e-08B8E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-08W1e-09B8E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-09W1e-07B16E15,checkpoint_epoch15.pth,7,OK,"[0, 1, 2, 3, 5, 6]"
+BSTL1e-09W1e-08B16E20,,No checkpoint found,Missing,
+E runs,,No checkpoint found,Missing,
+visualizations,,No checkpoint found,Missing,

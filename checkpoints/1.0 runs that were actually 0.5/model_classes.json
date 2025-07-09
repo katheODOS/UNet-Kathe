@@ -1,0 +1,156 @@
+[
+  {
+    "model_name": "ancient runs",
+    "checkpoint": null,
+    "n_classes": "No checkpoint found",
+    "status": "Missing",
+    "mask_values": NaN
+  },
+  {
+    "model_name": "BSTL1e-07W1e-07B4E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-07W1e-08B16E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-07W1e-08B4E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-07W1e-08B8E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-07W1e-09B8E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-08W1e-08B4E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-08W1e-08B8E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-08W1e-09B8E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-09W1e-07B16E15",
+    "checkpoint": "checkpoint_epoch15.pth",
+    "n_classes": 7,
+    "status": "OK",
+    "mask_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "model_name": "BSTL1e-09W1e-08B16E20",
+    "checkpoint": null,
+    "n_classes": "No checkpoint found",
+    "status": "Missing",
+    "mask_values": NaN
+  },
+  {
+    "model_name": "E runs",
+    "checkpoint": null,
+    "n_classes": "No checkpoint found",
+    "status": "Missing",
+    "mask_values": NaN
+  },
+  {
+    "model_name": "visualizations",
+    "checkpoint": null,
+    "n_classes": "No checkpoint found",
+    "status": "Missing",
+    "mask_values": NaN
+  }
+]

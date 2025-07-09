@@ -14,7 +14,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 import wandb
-from model_evaluation.evaluate import evaluate
+from evaluate import evaluate
 from unet import UNet
 from utils.data_loading import BasicDataset
 from utils.dice_score import dice_loss
@@ -31,7 +31,7 @@ def train_model(
         batch_size: int = 1,
         learning_rate: float = 1e-5,
         save_checkpoint: bool = True,
-        img_scale: float = 0.5,
+        img_scale: float = 1.0,
         amp: bool = False,
         weight_decay: float = 1e-8,
         momentum: float = 0.999,
@@ -50,8 +50,8 @@ def train_model(
     n_val = len(val_set)
 
     # Define valid classes (excluding background/ignore)
-    valid_classes = [1, 2, 3, 4, 5, 6, 7, 9, 12, 13]
-    n_classes = len(valid_classes) + 1  # +1 for background class
+    valid_classes = [1, 2, 3, 5, 6]  # This matches the actual classes in Dataset BST
+    n_classes = 7  # Total number of class channels (0-6)
 
     # (Initialize logging)
     experiment = wandb.init(project='U-Net', resume='allow', anonymous='must')
@@ -108,10 +108,10 @@ def train_model(
                     
                     # Add Dice loss for multi-class segmentation
                     loss += dice_loss(
-                        F.softmax(masks_pred, dim=1).float(),
-                        F.one_hot(true_masks, n_classes).permute(0, 3, 1, 2).float(),
-                        multiclass=True
-                    )
+                    F.softmax(masks_pred, dim=1).float(),
+                    F.one_hot(true_masks, 7).permute(0, 3, 1, 2).float(),  # Explicitly use 7 classes (0-6)
+                    multiclass=True
+                )
 
                 optimizer.zero_grad(set_to_none=True)
                 grad_scaler.scale(loss).backward()
@@ -177,11 +177,10 @@ def get_args():
     parser.add_argument('--learning-rate', '-l', metavar='LR', type=float, default=1e-5,
                         help='Learning rate', dest='lr')
     parser.add_argument('--load', '-f', type=str, default=False, help='Load model from a .pth file')
-    parser.add_argument('--scale', '-s', type=float, default=0.5, help='Downscaling factor of the images')
+    parser.add_argument('--scale', '-s', type=float, default=1.0, help='Downscaling factor of the images')
     parser.add_argument('--amp', action='store_true', default=False, help='Use mixed precision')
     parser.add_argument('--bilinear', action='store_true', default=False, help='Use bilinear upsampling')
-    parser.add_argument('--classes', '-c', type=int, default=11, help='Number of classes (including background)')
-
+    parser.add_argument('--classes', '-c', type=int, default=7, help='Number of classes (including background)')
     return parser.parse_args()
 
 
@@ -195,8 +194,7 @@ if __name__ == '__main__':
     # Change here to adapt to your data
     # n_channels=3 for RGB images
     # n_classes is the number of probabilities you want to get per pixel
-    model = UNet(n_channels=3, n_classes=args.classes, bilinear=args.bilinear)
-    model = model.to(memory_format=torch.channels_last)
+    model = UNet(n_channels=3, n_classes=7, bilinear=args.bilinear)  # 7 because it includes class 0    model = model.to(memory_format=torch.channels_last)
 
     logging.info(f'Network:\n'
                  f'\t{model.n_channels} input channels\n'

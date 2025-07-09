@@ -25,28 +25,23 @@ def hex_to_rgb(hex_color):
     """Convert hex color to RGB tuple"""
     return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
 
-
 class BasicDataset(Dataset):
     def __init__(self, images_dir: str, mask_dir: str, scale: float = 1.0, mask_suffix: str = ''):
-        # RGB to class mapping
+        # RGB to class mapping for Dataset BST
         self.rgb_classes = {
-            hex_to_rgb("27b341"): 1,    # Will map to 1
-            hex_to_rgb("e657c4"): 2,    # Will map to 2
-            hex_to_rgb("fc7ebb"): 3,    # Will map to 3
-            hex_to_rgb("ffcf4a"): 4,    # Will map to 4
-            hex_to_rgb("fa3e77"): 5,    # Will map to 5
-            hex_to_rgb("fa9441"): 6,    # Will map to 6
-            hex_to_rgb("adadad"): 7,    # Will map to 7
-            hex_to_rgb("ffc17a"): 9,    # Will map to 8
-            hex_to_rgb("a8e854"): 12,   # Will map to 9
-            hex_to_rgb("d9d9d9"): 13    # Will map to 10
+            hex_to_rgb("27b341"): 1,    # Class 1
+            hex_to_rgb("e657c4"): 2,    # Class 2
+            hex_to_rgb("fc7ebb"): 3,    # Class 3
+            hex_to_rgb("fa3e77"): 5,    # Class 5
+            hex_to_rgb("fa9441"): 6,    # Class 6
         }
 
-        # Create a contiguous mapping while preserving 0 as background/ignore
-        unique_classes = sorted(list(self.rgb_classes.values()))
-        self.class_map = {old_class: idx + 1 for idx, old_class in enumerate(unique_classes)}
-        # Total number of classes including background (0)
-        self.n_classes = len(unique_classes) + 1
+        # For Dataset BST, we preserve the original class indices (not contiguous)
+        # This means we use class indices 0, 1, 2, 3, 5, 6
+        self.class_map = {old_class: old_class for old_class in self.rgb_classes.values()}
+        
+        # We still need 7 classes total (0-6)
+        self.n_classes = 7
 
         self.images_dir = Path(images_dir)
         self.mask_dir = Path(mask_dir)

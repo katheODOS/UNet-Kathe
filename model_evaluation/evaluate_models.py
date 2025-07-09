@@ -5,6 +5,9 @@ import logging
 from pathlib import Path
 import datetime
 import time
+import matplotlib
+# Set non-interactive backend to avoid tkinter thread issues
+matplotlib.use('Agg')
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
@@ -27,10 +30,8 @@ from sklearn.metrics import confusion_matrix, classification_report
 from tqdm import tqdm
 import matplotlib.colors as mcolors
 
-ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6, 7, 9, 12, 13]
-CLASS_NAMES = ['Border Pixels', 'Pasture', 'Woodland', 'Conifer', 'Shrub', 
-               'Hedgerow', 'Semi-natural Grassland', 'Artificial Surface', 
-               'Bare Field', 'Arable', 'Artificial Garden']
+ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6]
+CLASS_NAMES = ['Border Pixels', 'Forest land', 'Crop land', 'Water body', 'Artificial Surface', 'Other']
 
 def evaluate_model(net, dataloader, device, n_classes):
     net.eval()
@@ -182,9 +183,9 @@ def get_args():
     parser.add_argument('--input', '-i', required=True, help='Path to validation images')
     parser.add_argument('--masks', '-ma', required=True, help='Path to ground truth masks')
     parser.add_argument('--output', '-o', default='evaluation_results', help='Output directory for results')
-    parser.add_argument('--classes', '-c', type=int, default=11, help='Number of classes')
+    parser.add_argument('--classes', '-c', type=int, default=7, help='Number of classes')
     parser.add_argument('--batch-size', '-b', type=int, default=1, help='Batch size')
-    parser.add_argument('--scale', '-s', type=float, default=0.5, help='Scale factor for images')
+    parser.add_argument('--scale', '-s', type=float, default=1.0, help='Scale factor for images')
     parser.add_argument('--bilinear', action='store_true', default=None,
                        help='Use bilinear upsampling (if not specified, will auto-detect)')
     return parser.parse_args()
@@ -203,6 +204,8 @@ def get_dataset_path(model_dir_name):
     # Extract dataset identifier from the start of the folder name
     if model_dir_name.startswith('ASA'):
         return './data/Dataset A SA'
+    elif model_dir_name.startswith('BST'):
+        return './data/Dataset BST'
     elif model_dir_name.startswith('BSA'):
         return './data/Dataset B SA'
     elif model_dir_name.startswith('CSA'):
@@ -232,7 +235,7 @@ def is_evaluation_complete(results_dir):
         all((results_dir / file).exists() for file in required_files)
     )
 
-def was_recently_modified(folder_path, hours=3):
+def was_recently_modified(folder_path, hours=144):
     """Check if any files inside a folder were modified within the specified hours"""
     if not folder_path.exists():
         return False, None, None
@@ -317,7 +320,7 @@ def process_all_checkpoints():
                 bilinear = detect_model_type(state_dict)
                 
                 # Initialize and load model
-                net = UNet(n_channels=3, n_classes=11, bilinear=bilinear)
+                net = UNet(n_channels=3, n_classes=7, bilinear=bilinear)
                 net.to(device)
                 net.load_state_dict(state_dict)
                 
@@ -330,7 +333,7 @@ def process_all_checkpoints():
                                       pin_memory=True)
                 
                 # Evaluate
-                confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, 11)
+                confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, 7)
                 
                 # Save results in the model's directory
                 plot_results(confusion_mat, class_accuracies, results_dir)

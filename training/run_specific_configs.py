@@ -11,30 +11,62 @@ import atexit
 import traceback
 
 CONFIGURATIONS = [
-   {
-        'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
-        'learning_rate': 1e-7,
-        'weight_decay': 1e-9,
+    {
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
+        'weight_decay': 1e-6,
         'batch_size': 4,
-        'epochs': 20
+        'epochs': 55,
+        'scale' : 0.75
     },
     {
-       'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
-        'learning_rate': 1e-7,
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
+        'weight_decay': 1e-6,
+        'batch_size': 4,
+        'epochs': 60,
+        'scale' : 0.75
+    },
+    {
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
+        'weight_decay': 1e-6,
+        'batch_size': 2,
+        'epochs': 20,
+        'scale' : 0.75
+    },
+    {
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
         'weight_decay': 1e-8,
-        'batch_size': 8,
-        'epochs': 15
+        'batch_size': 2,
+        'epochs': 55,
+        'scale' : 0.75
     },
     {
-        'dataset': {'name': 'Dataset DSAR', 'code': 'DSA', 'path': 'Dataset DSAR'},
-        'learning_rate': 1e-7,
-        'weight_decay': 1e-9,
-        'batch_size': 16,
-        'epochs': 20
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
+        'weight_decay': 1e-7,
+        'batch_size': 2,
+        'epochs': 55,
+        'scale' : 0.75
+    },
+    {
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
+        'weight_decay': 1e-6,
+        'batch_size': 4,
+        'epochs': 45,
+        'scale' : 0.75
+    },
+    {
+        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'learning_rate': 1e-8,
+        'weight_decay': 1e-6,
+        'batch_size': 4,
+        'epochs': 60,
+        'scale' : 0.75
     }
-
-
-
 ]
 
 # Reuse the helper classes and functions from hyperparameter_tuning.py

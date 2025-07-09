@@ -16,17 +16,15 @@ import atexit
 import re
 
 # Hyperparameter configurations
-LEARNING_RATES = [1e-7, 1e-6]
-BATCH_SIZES = [1, 2, 4]
-EPOCHS = [10, 15]
-WEIGHT_DECAYS = [1e-9, 1e-8, 1e-7]
+LEARNING_RATES = [1e-9, 1e-8, 1e-7, 1e-6, 1e-5]
+BATCH_SIZES = [1, 2, 4, 8, 16]
+EPOCHS = [5, 10, 15, 20, 25]
+WEIGHT_DECAYS = [1e-9, 1e-8, 1e-7, 1e-6]
 
 # Dataset configurations with path mappings
 DATASETS = {
-    #'A': {'name': 'Dataset A', 'code': 'A', 'path': 'Dataset A'},
-    #'B': {'name': 'Dataset B', 'code': 'B', 'path': 'Dataset B'},
-    'ASA': {'name': 'Dataset A SA', 'code': 'ASA', 'path': 'Dataset A SA'},
-    'BSA': {'name': 'Dataset B SA', 'code': 'BSA', 'path': 'Dataset B SA'}
+    'BST': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+   
 }
 
 def setup_checkpoint_dir(dataset_code, lr, wd, epochs, batch_size):
@@ -35,6 +33,20 @@ def setup_checkpoint_dir(dataset_code, lr, wd, epochs, batch_size):
     checkpoint_dir = Path('./checkpoints') / dir_name
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     return checkpoint_dir
+
+def get_removal_list():
+    """Read folder names from remove_checkpoints.txt that should be skipped"""
+    removal_list_path = Path('./remove_checkpoints.txt')
+    if not removal_list_path.exists():
+        logging.warning("remove_checkpoints.txt not found, no configurations will be skipped")
+        return set()
+    
+    try:
+        with open(removal_list_path, 'r') as f:
+            return {line.strip() for line in f if line.strip()}
+    except Exception as e:
+        logging.error(f"Error reading removal list: {e}")
+        return set()
 
 def save_run_output(output_text, checkpoint_dir):
     """Save the run output to output.txt"""
@@ -92,7 +104,8 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
     """Run training with specific configuration and capture output"""
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    model = UNet(n_channels=3, n_classes=11, bilinear=True)
+    # Initialize model with 7 classes (0-6)
+    model = UNet(n_channels=3, n_classes=7, bilinear=True)
     model = model.to(device=device)
     
     with SafeOutputCapture() as output:
@@ -114,7 +127,7 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
             train.dir_mask = Path(dataset_path) / 'masks'
             train.dir_checkpoint = checkpoint_dir
             
-            # Do full training at once, we'll monitor the output for early stopping
+            # Do full training at once
             train_model(
                 model=model,
                 epochs=epochs,
@@ -125,16 +138,6 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
                 save_checkpoint=True,
                 weight_decay=weight_decay
             )
-            
-            # Check if we should have stopped early
-            current_output = output.get_output()
-            validation_scores = re.findall(r'INFO: Validation Dice score: (\d+\.\d+)', current_output)
-            
-            # Add early stopping note if applicable
-            if len(validation_scores) >= 5:  # We have at least 5 scores
-                early_scores = [float(score) for score in validation_scores[:5]]
-                if max(early_scores) < 0.65:
-                    sys.stdout.write("\nNote: Early stopping would have occurred after epoch 5 (score below 0.65)\n")
             
             # Restore directory variables
             train.dir_img = original_img_dir
@@ -150,7 +153,7 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
             atexit.unregister(cleanup_wandb)
             
         return output.get_output()
-
+    
 def is_training_completed(checkpoint_dir, epochs):
     """Check if training was already completed for this configuration"""
     final_checkpoint = checkpoint_dir / f'checkpoint_epoch{epochs}.pth'
@@ -158,6 +161,11 @@ def is_training_completed(checkpoint_dir, epochs):
 
 def main():
     logging.basicConfig(level=logging.INFO)
+    
+    # Load the removal list
+    removal_list = get_removal_list()
+    if removal_list:
+        logging.info(f"Loaded {len(removal_list)} configurations to skip")
     
     # Create all possible combinations of hyperparameters
     configs = list(product(
@@ -183,6 +191,11 @@ def main():
             checkpoint_dir = setup_checkpoint_dir(
                 dataset_info['code'], lr, weight_decay, epochs, batch_size
             )
+            
+            # Check if this configuration should be skipped based on folder name
+            if checkpoint_dir.name in removal_list:
+                logging.info(f"Skipping configuration {checkpoint_dir.name} as it's in the removal list")
+                continue
             
             # Check if this combination was already completed
             if is_training_completed(checkpoint_dir, epochs):
