@@ -14,8 +14,8 @@ import matplotlib.colors as mcolors
 from utils.data_loading import BasicDataset
 from unet import UNet
 
-ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6]
-CLASS_NAMES = ['Background pixels', 'Forest land', 'Grassland', 'Crop land', 'Water body', 'Artificial Surface', 'Other']
+ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6, 7]
+CLASS_NAMES = ['Background pixels', 'Forest land', 'Grassland', 'Crop land', 'Water body', 'Artificial Surface', 'Other', 'Semi-natural Grassland']
 
 def evaluate_model(net, dataloader, device, n_classes):
     net.eval()
@@ -144,7 +144,7 @@ def get_args():
     parser.add_argument('--input', '-i', required=True, help='Path to validation images')
     parser.add_argument('--masks', '-ma', required=True, help='Path to ground truth masks')
     parser.add_argument('--output', '-o', default='evaluation_results', help='Output directory for results')
-    parser.add_argument('--classes', '-c', type=int, default=11, help='Number of classes')
+    parser.add_argument('--classes', '-c', type=int, default=8, help='Number of classes')
     parser.add_argument('--batch-size', '-b', type=int, default=1, help='Batch size')
     parser.add_argument('--scale', '-s', type=float, default=0.5, help='Scale factor for images')
     parser.add_argument('--bilinear', action='store_true', default=None,

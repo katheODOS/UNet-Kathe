@@ -105,7 +105,7 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # Initialize model with 7 classes (0-6)
-    model = UNet(n_channels=3, n_classes=7, bilinear=True)
+    model = UNet(n_channels=3, n_classes=8, bilinear=True)
     model = model.to(device=device)
     
     with SafeOutputCapture() as output:

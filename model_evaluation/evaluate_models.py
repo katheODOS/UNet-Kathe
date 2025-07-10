@@ -6,7 +6,6 @@ from pathlib import Path
 import datetime
 import time
 import matplotlib
-# Set non-interactive backend to avoid tkinter thread issues
 matplotlib.use('Agg')
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -30,8 +29,8 @@ from sklearn.metrics import confusion_matrix, classification_report
 from tqdm import tqdm
 import matplotlib.colors as mcolors
 
-ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6]
-CLASS_NAMES = ['Border Pixels', 'Forest land', 'Crop land', 'Water body', 'Artificial Surface', 'Other']
+ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6, 7]
+CLASS_NAMES = ['Border Pixels', 'Forest land', 'Crop land', 'Water body', 'Artificial Surface', 'Other', 'Semi-natural Grassland']
 
 def evaluate_model(net, dataloader, device, n_classes):
     net.eval()
@@ -183,7 +182,7 @@ def get_args():
     parser.add_argument('--input', '-i', required=True, help='Path to validation images')
     parser.add_argument('--masks', '-ma', required=True, help='Path to ground truth masks')
     parser.add_argument('--output', '-o', default='evaluation_results', help='Output directory for results')
-    parser.add_argument('--classes', '-c', type=int, default=7, help='Number of classes')
+    parser.add_argument('--classes', '-c', type=int, default=8, help='Number of classes')
     parser.add_argument('--batch-size', '-b', type=int, default=1, help='Batch size')
     parser.add_argument('--scale', '-s', type=float, default=1.0, help='Scale factor for images')
     parser.add_argument('--bilinear', action='store_true', default=None,
@@ -320,7 +319,7 @@ def process_all_checkpoints():
                 bilinear = detect_model_type(state_dict)
                 
                 # Initialize and load model
-                net = UNet(n_channels=3, n_classes=7, bilinear=bilinear)
+                net = UNet(n_channels=3, n_classes=8, bilinear=bilinear)
                 net.to(device)
                 net.load_state_dict(state_dict)
                 
@@ -333,7 +332,7 @@ def process_all_checkpoints():
                                       pin_memory=True)
                 
                 # Evaluate
-                confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, 7)
+                confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, 8)
                 
                 # Save results in the model's directory
                 plot_results(confusion_mat, class_accuracies, results_dir)

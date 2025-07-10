@@ -50,8 +50,8 @@ def train_model(
     n_val = len(val_set)
 
     # Define valid classes (excluding background/ignore)
-    valid_classes = [1, 2, 3, 5, 6]  # This matches the actual classes in Dataset BST
-    n_classes = 7  # Total number of class channels (0-6)
+    valid_classes = [1, 2, 3, 5, 6, 7]  # This matches the actual classes in Dataset BST
+    n_classes = 8  # Total number of class channels (0-7)
 
     # (Initialize logging)
     experiment = wandb.init(project='U-Net', resume='allow', anonymous='must')
@@ -109,7 +109,7 @@ def train_model(
                     # Add Dice loss for multi-class segmentation
                     loss += dice_loss(
                     F.softmax(masks_pred, dim=1).float(),
-                    F.one_hot(true_masks, 7).permute(0, 3, 1, 2).float(),  # Explicitly use 7 classes (0-6)
+                    F.one_hot(true_masks, 8).permute(0, 3, 1, 2).float(),  # Explicitly use 8 classes (0-7)
                     multiclass=True
                 )
 
@@ -180,7 +180,7 @@ def get_args():
     parser.add_argument('--scale', '-s', type=float, default=1.0, help='Downscaling factor of the images')
     parser.add_argument('--amp', action='store_true', default=False, help='Use mixed precision')
     parser.add_argument('--bilinear', action='store_true', default=False, help='Use bilinear upsampling')
-    parser.add_argument('--classes', '-c', type=int, default=7, help='Number of classes (including background)')
+    parser.add_argument('--classes', '-c', type=int, default=8, help='Number of classes (including background)')
     return parser.parse_args()
 
 
@@ -194,7 +194,7 @@ if __name__ == '__main__':
     # Change here to adapt to your data
     # n_channels=3 for RGB images
     # n_classes is the number of probabilities you want to get per pixel
-    model = UNet(n_channels=3, n_classes=7, bilinear=args.bilinear)  # 7 because it includes class 0    model = model.to(memory_format=torch.channels_last)
+    model = UNet(n_channels=3, n_classes=8, bilinear=args.bilinear)  # 8 because it includes class 0    model = model.to(memory_format=torch.channels_last)
 
     logging.info(f'Network:\n'
                  f'\t{model.n_channels} input channels\n'
