@@ -24,12 +24,13 @@ WEIGHT_DECAYS = [1e-9, 1e-8, 1e-7, 1e-6]
 # Dataset configurations with path mappings
 DATASETS = {
     'BST': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+    'SBT Semi': {'name': 'Dataset SBT Semi', 'code': 'BST-Semi', 'path': 'Dataset SBT Semi'},
    
 }
 
-def setup_checkpoint_dir(dataset_code, lr, wd, epochs, batch_size):
+def setup_checkpoint_dir(dataset_code, lr, wd, epochs, batch_size, scale):
     """Create and return checkpoint directory for specific configuration"""
-    dir_name = f"{dataset_code}L{lr:.0e}W{wd:.0e}B{batch_size}E{epochs}"
+    dir_name = f"{dataset_code}L{lr:.0e}W{wd:.0e}B{batch_size}E{epochs}S{scale:.2f}"
     checkpoint_dir = Path('./checkpoints') / dir_name
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     return checkpoint_dir

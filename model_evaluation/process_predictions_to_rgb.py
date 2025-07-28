@@ -14,7 +14,7 @@ CLASS_TO_RGB = {
     4: (59, 141, 247),   # water body
     5: (116, 116, 116),   # artificial surface
     6: (217, 217, 217),   # other
-    7: (1, 1, 1)    # Semi-natural grassland 
+    7: (255, 214, 33)    # Semi-natural grassland 
 }
 
 def is_single_channel(image_path):
@@ -41,6 +41,7 @@ def convert_single_to_rgb(image_path, output_path):
     rgb_img.save(output_path)
 
 def process_checkpoint_predictions():
+    
     """Process predictions in all checkpoint directories"""
     checkpoints_dir = Path('./checkpoints')
     

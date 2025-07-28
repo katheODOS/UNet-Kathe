@@ -2,47 +2,39 @@ Run: 1.0 runs that were actually 0.5
 Final validation dice score: 0.0000
 Best performance: Epoch 0, Dice score: 0.0000
 --------------------------------------------------
-Run: ancient runs
-Final validation dice score: 0.0000
-Best performance: Epoch 0, Dice score: 0.0000
---------------------------------------------------
 Run: best_runs_scale_0.5
 Final validation dice score: 0.0000
 Best performance: Epoch 0, Dice score: 0.0000
 --------------------------------------------------
-Run: BSTL1e-08W1e-06B2E20
-Final validation dice score: 0.8434
-Best performance: Epoch 20, Dice score: 0.8434
---------------------------------------------------
-Run: BSTL1e-08W1e-06B4E45
-Final validation dice score: 0.8976
-Best performance: Epoch 44, Dice score: 0.8987
---------------------------------------------------
-Run: BSTL1e-08W1e-06B4E55_1.0
-Final validation dice score: 0.8999
-Best performance: Epoch 52, Dice score: 0.9003
---------------------------------------------------
-Run: BSTL1e-08W1e-06B4E60
-Final validation dice score: 0.9079
-Best performance: Epoch 58, Dice score: 0.9134
---------------------------------------------------
-Run: BSTL1e-08W1e-06B4E60_1.0
-Final validation dice score: 0.9096
-Best performance: Epoch 51, Dice score: 0.9111
---------------------------------------------------
-Run: BSTL1e-08W1e-07B2E55
-Final validation dice score: 0.8802
-Best performance: Epoch 52, Dice score: 0.9129
---------------------------------------------------
-Run: BSTL1e-08W1e-08B2E55
-Final validation dice score: 0.9024
-Best performance: Epoch 48, Dice score: 0.9026
+Run: BST best runs txt files
+Final validation dice score: 0.0000
+Best performance: Epoch 0, Dice score: 0.0000
 --------------------------------------------------
 Run: E runs
 Final validation dice score: 0.0000
 Best performance: Epoch 0, Dice score: 0.0000
 --------------------------------------------------
-Run: runs_scale_0.5
+Run: SBT-Semi-NewL1e-08W1e-06B4E60S0.75
 Final validation dice score: 0.0000
 Best performance: Epoch 0, Dice score: 0.0000
+--------------------------------------------------
+Run: SBT-Semi-NewL1e-08W1e-06B4E60S1.00
+Final validation dice score: 0.8786
+Best performance: Epoch 55, Dice score: 0.8790
+--------------------------------------------------
+Run: SBT-SemiL1e-08W1e-06B4E60S0.75
+Final validation dice score: 0.8673
+Best performance: Epoch 57, Dice score: 0.8756
+--------------------------------------------------
+Run: SBT-SemiL1e-08W1e-06B4E60S1.00
+Final validation dice score: 0.8748
+Best performance: Epoch 60, Dice score: 0.8748
+--------------------------------------------------
+Run: SBT-SemiL1e-08W1e-08B2E55S0.75
+Final validation dice score: 0.0000
+Best performance: Epoch 0, Dice score: 0.0000
+--------------------------------------------------
+Run: SBT-SemiL1e-08W1e-08B2E55S1.00
+Final validation dice score: 0.8238
+Best performance: Epoch 42, Dice score: 0.8651
 --------------------------------------------------

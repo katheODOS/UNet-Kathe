@@ -12,15 +12,15 @@ import traceback
 
 CONFIGURATIONS = [
     {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+        'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
         'learning_rate': 1e-8,
         'weight_decay': 1e-6,
         'batch_size': 4,
-        'epochs': 55,
-        'scale' : 0.75
+        'epochs': 60,
+        'scale' : 1.0
     },
     {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
         'learning_rate': 1e-8,
         'weight_decay': 1e-6,
         'batch_size': 4,
@@ -28,43 +28,19 @@ CONFIGURATIONS = [
         'scale' : 0.75
     },
     {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
-        'learning_rate': 1e-8,
-        'weight_decay': 1e-6,
-        'batch_size': 2,
-        'epochs': 20,
-        'scale' : 0.75
-    },
-    {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
         'learning_rate': 1e-8,
         'weight_decay': 1e-8,
         'batch_size': 2,
         'epochs': 55,
-        'scale' : 0.75
+        'scale' : 1.0
     },
     {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
+         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
         'learning_rate': 1e-8,
-        'weight_decay': 1e-7,
+        'weight_decay': 1e-8,
         'batch_size': 2,
         'epochs': 55,
-        'scale' : 0.75
-    },
-    {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
-        'learning_rate': 1e-8,
-        'weight_decay': 1e-6,
-        'batch_size': 4,
-        'epochs': 45,
-        'scale' : 0.75
-    },
-    {
-        'dataset': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
-        'learning_rate': 1e-8,
-        'weight_decay': 1e-6,
-        'batch_size': 4,
-        'epochs': 60,
         'scale' : 0.75
     }
 ]
@@ -95,7 +71,8 @@ def main():
                 config['learning_rate'],
                 config['weight_decay'],
                 config['epochs'],
-                config['batch_size']
+                config['batch_size'],
+                config['scale']
             )
             
             # Check if this combination was already completed

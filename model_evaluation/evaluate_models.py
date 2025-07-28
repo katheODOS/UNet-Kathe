@@ -30,7 +30,20 @@ from tqdm import tqdm
 import matplotlib.colors as mcolors
 
 ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6, 7]
-CLASS_NAMES = ['Border Pixels', 'Forest land', 'Crop land', 'Water body', 'Artificial Surface', 'Other', 'Semi-natural Grassland']
+CLASS_NAMES = ['Border Pixels', 'Forest land', 'Grassland', 'Crop land', 'Water body', 'Artificial Surface', 'Other', 'Semi-natural Grassland']
+
+def calculate_iou(confusion_matrix):
+    """Calculate IoU for each class from confusion matrix."""
+    intersection = np.diag(confusion_matrix)
+    ground_truth_sum = np.sum(confusion_matrix, axis=1)
+    predicted_sum = np.sum(confusion_matrix, axis=0)
+    union = ground_truth_sum + predicted_sum - intersection
+    
+    iou = np.zeros_like(intersection, dtype=float)
+    valid_classes = union > 0
+    iou[valid_classes] = intersection[valid_classes] / union[valid_classes]
+    
+    return iou
 
 def evaluate_model(net, dataloader, device, n_classes):
     net.eval()
@@ -64,7 +77,10 @@ def evaluate_model(net, dataloader, device, n_classes):
                         accuracy = (pred[mask] == class_idx).mean()
                         class_accuracies[class_idx].append(accuracy)
     
-    return confusion_mat, class_accuracies
+    total_pixels = confusion_mat.sum()
+    iou_scores = calculate_iou(confusion_mat)
+    
+    return confusion_mat, class_accuracies, iou_scores, total_pixels
 
 
 def plot_results(confusion_mat, class_accuracies, save_dir):
@@ -141,7 +157,26 @@ def save_metrics(confusion_mat, class_accuracies, save_dir):
     # Calculate metrics
     total = confusion_mat.sum(axis=1)
     correct = np.diag(confusion_mat)
-    accuracies = correct / total
+    
+    # Add debugging information
+    logging.info("\nDebugging metrics calculation:")
+    logging.info("Confusion matrix shape: {}".format(confusion_mat.shape))
+    logging.info("Confusion matrix:\n{}".format(confusion_mat))
+    logging.info("\nTotal pixels per class:")
+    for i, t in enumerate(total):
+        logging.info(f"Class {i}: {t}")
+    logging.info("\nCorrect predictions per class:")
+    for i, c in enumerate(correct):
+        logging.info(f"Class {i}: {c}")
+    
+    # Avoid division by zero
+    accuracies = np.zeros_like(total, dtype=float)
+    valid_classes = total > 0
+    accuracies[valid_classes] = correct[valid_classes] / total[valid_classes]
+    
+    logging.info("\nCalculated accuracies per class:")
+    for i, acc in enumerate(accuracies):
+        logging.info(f"Class {i}: {acc:.4f}")
     
     # Save detailed report
     with open(save_dir / 'evaluation_report.txt', 'w') as f:
@@ -170,6 +205,31 @@ def save_metrics(confusion_mat, class_accuracies, save_dir):
                 row_percentages = ['0.00' for _ in range(confusion_mat.shape[1])]
             f.write(f'Class {ORIGINAL_CLASSES[i]}: {", ".join(row_percentages)}\n')
 
+def save_iou_metrics(iou_scores, total_pixels, save_dir):
+    """Save IoU metrics to a file."""
+    save_path = Path(save_dir) / 'miou.txt'
+    
+    with open(save_path, 'w') as f:
+        f.write('=== Intersection over Union (IoU) Metrics ===\n\n')
+        
+        # Per-class IoU
+        f.write('Per-Class IoU:\n')
+        f.write('-' * 50 + '\n')
+        valid_ious = []
+        
+        for idx, (iou, class_name) in enumerate(zip(iou_scores, CLASS_NAMES)):
+            if idx == 0:  # Skip border pixels class
+                continue
+            f.write(f'Class {idx} ({class_name}): {iou:.4f}\n')
+            if iou > 0:  # Only include non-zero IoUs in mean calculation
+                valid_ious.append(iou)
+        
+        # Mean IoU (excluding border pixels)
+        mean_iou = np.mean(valid_ious) if valid_ious else 0
+        f.write(f'\nMean IoU (excluding border pixels): {mean_iou:.4f}\n')
+        
+        # Total pixels evaluated
+        f.write(f'\nTotal pixels evaluated: {total_pixels:,}\n')
 
 def detect_model_type(state_dict):
     """Detect if model uses bilinear upsampling based on state dict keys"""
@@ -203,6 +263,10 @@ def get_dataset_path(model_dir_name):
     # Extract dataset identifier from the start of the folder name
     if model_dir_name.startswith('ASA'):
         return './data/Dataset A SA'
+    elif model_dir_name.startswith('SBT-Semi'):
+        return './data/Dataset SBT Semi'
+    elif model_dir_name.startswith('SBT-Semi-New'):
+        return './data/Dataset SBT Semi New'
     elif model_dir_name.startswith('BST'):
         return './data/Dataset BST'
     elif model_dir_name.startswith('BSA'):
@@ -264,7 +328,7 @@ def was_recently_modified(folder_path, hours=144):
 
 def process_all_checkpoints():
     """Process all checkpoint directories"""
-    checkpoints_dir = Path('./checkpoints')
+    checkpoints_dir = Path('.checkpoints/best_runs_scale_0.5')
     
     for model_dir in checkpoints_dir.iterdir():
         if not model_dir.is_dir():
@@ -273,17 +337,14 @@ def process_all_checkpoints():
         # Create results directory inside the checkpoint directory
         results_dir = model_dir / 'results'
         
-        # Check if any result files were recently modified (within last 3 hours)
-        recently_modified, mod_time, threshold = was_recently_modified(results_dir, hours=3)
+        # Check if recently modified
+        recently_modified, mod_time, threshold = was_recently_modified(results_dir, hours=0)
         if recently_modified:
-            logging.info(f"Skipping {model_dir.name} - result files were recently modified at {mod_time} (threshold: {threshold})")
+            logging.info(f"Skipping {model_dir.name} - result files were recently modified at {mod_time}")
             continue
             
-        # Note: We're no longer checking if evaluation is complete
-        # This will overwrite existing results
-            
         try:
-            # Get the correct dataset path based on model directory name
+            # Get dataset paths
             dataset_base = get_dataset_path(model_dir.name)
             input_dir = Path(dataset_base) / 'imgs' / 'val'
             masks_dir = Path(dataset_base) / 'masks' / 'val'
@@ -292,57 +353,59 @@ def process_all_checkpoints():
                 logging.error(f"Missing validation data for {model_dir.name} in {dataset_base}")
                 continue
                 
-            # Find the last checkpoint in this directory
+            # Get checkpoint
             last_checkpoint = get_last_checkpoint(model_dir)
             if not last_checkpoint:
                 logging.warning(f"No checkpoints found in {model_dir}")
                 continue
-                
-            # Create results directory inside the checkpoint directory
-            results_dir = model_dir / 'results'
+            
             results_dir.mkdir(exist_ok=True)
             
             logging.info(f"\nProcessing {model_dir.name}")
             logging.info(f"Using checkpoint: {last_checkpoint.name}")
             logging.info(f"Using validation data from: {dataset_base}")
             
-            # Set up device
+            # Set up device and load checkpoint
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+            state_dict = torch.load(str(last_checkpoint), map_location=device)
+            if 'mask_values' in state_dict:
+                state_dict.pop('mask_values')
+            
+            # Debug logging
+            logging.info(f"Loading checkpoint with dimensions:")
+            logging.info(f"Output conv weight shape: {state_dict['outc.conv.weight'].shape}")
+            logging.info(f"Output conv bias shape: {state_dict['outc.conv.bias'].shape}")
+            
+            # Initialize model
+            bilinear = detect_model_type(state_dict)
+            net = UNet(n_channels=3, n_classes=8, bilinear=bilinear)
+            net.to(device)
             
             try:
-                # Load checkpoint
-                state_dict = torch.load(str(last_checkpoint), map_location=device)
-                if 'mask_values' in state_dict:
-                    state_dict.pop('mask_values')
-                
-                # Auto-detect model type
-                bilinear = detect_model_type(state_dict)
-                
-                # Initialize and load model
-                net = UNet(n_channels=3, n_classes=8, bilinear=bilinear)
-                net.to(device)
                 net.load_state_dict(state_dict)
-                
-                # Create dataset and dataloader
-                val_dataset = BasicDataset(input_dir, masks_dir, scale=0.5)
-                val_loader = DataLoader(val_dataset, 
-                                      batch_size=1,
-                                      shuffle=False,
-                                      num_workers=4,
-                                      pin_memory=True)
-                
-                # Evaluate
-                confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, 8)
-                
-                # Save results in the model's directory
-                plot_results(confusion_mat, class_accuracies, results_dir)
-                save_metrics(confusion_mat, class_accuracies, results_dir)
-                
-                logging.info(f"Results saved in {results_dir}")
-                
-            except Exception as e:
-                logging.error(f"Error processing {model_dir.name}: {str(e)}")
+            except RuntimeError as e:
+                logging.error("State dict loading failed:")
+                logging.error(f"Model expects shape: {net.outc.conv.weight.shape}")
+                logging.error(f"Checkpoint provides shape: {state_dict['outc.conv.weight'].shape}")
                 continue
+            
+            # Create dataset and evaluate
+            val_dataset = BasicDataset(input_dir, masks_dir, scale=1.0)
+            val_loader = DataLoader(val_dataset, 
+                                  batch_size=1,
+                                  shuffle=False,
+                                  num_workers=4,
+                                  pin_memory=True)
+            
+            # Evaluate
+            confusion_mat, class_accuracies, iou_scores, total_pixels = evaluate_model(net, val_loader, device, 8)
+            
+            # Save all results
+            plot_results(confusion_mat, class_accuracies, results_dir)
+            save_metrics(confusion_mat, class_accuracies, results_dir)
+            save_iou_metrics(iou_scores, total_pixels, results_dir)
+            
+            logging.info(f"Results saved in {results_dir}")
             
         except Exception as e:
             logging.error(f"Error processing {model_dir.name}: {str(e)}")
@@ -392,12 +455,13 @@ if __name__ == '__main__':
         
         # Evaluate
         logging.info('Starting evaluation...')
-        confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, args.classes)
+        confusion_mat, class_accuracies, iou_scores, total_pixels = evaluate_model(net, val_loader, device, args.classes)
         
-        # Save and plot results
+        # Save all results
         logging.info('Saving results...')
         plot_results(confusion_mat, class_accuracies, args.output)
         save_metrics(confusion_mat, class_accuracies, args.output)
+        save_iou_metrics(iou_scores, total_pixels, args.output)
         
         logging.info(f'Evaluation complete! Results saved in {args.output}')
     else:

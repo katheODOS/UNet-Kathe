@@ -62,10 +62,10 @@ def check_state_dict(state_dict_path):
     return state_dict
 
 def main():
-    # Check a model with 7 classes
-    model_7 = UNet(n_channels=3, n_classes=7, bilinear=False)
-    print("=== Model with 7 classes ===")
-    print_model_dims(model_7)
+    # Check a model with 8 classes
+    model_8 = UNet(n_channels=3, n_classes=8, bilinear=False)
+    print("=== Model with 8 classes ===")
+    print_model_dims(model_8)
     
     # Check a model with 11 classes
     model_11 = UNet(n_channels=3, n_classes=11, bilinear=False)

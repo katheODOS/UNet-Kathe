@@ -34,7 +34,7 @@ class BasicDataset(Dataset):
             hex_to_rgb("fc7ebb"): 3,    # Class 3
             hex_to_rgb("fa3e77"): 5,    # Class 5
             hex_to_rgb("fa9441"): 6,
-            hex_to_rgb("hexhere"): 7    # Class 7
+            hex_to_rgb("ffd621"): 7    # Class 7
         }
 
         # For Dataset BST, we preserve the original class indices (not contiguous)

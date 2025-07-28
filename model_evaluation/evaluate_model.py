@@ -146,7 +146,7 @@ def get_args():
     parser.add_argument('--output', '-o', default='evaluation_results', help='Output directory for results')
     parser.add_argument('--classes', '-c', type=int, default=8, help='Number of classes')
     parser.add_argument('--batch-size', '-b', type=int, default=1, help='Batch size')
-    parser.add_argument('--scale', '-s', type=float, default=0.5, help='Scale factor for images')
+    parser.add_argument('--scale', '-s', type=float, default=1.0, help='Scale factor for images')
     parser.add_argument('--bilinear', action='store_true', default=None,
                        help='Use bilinear upsampling (if not specified, will auto-detect)')
     return parser.parse_args()
@@ -164,6 +164,10 @@ def get_dataset_path(model_dir_name):
     # Extract dataset identifier from the start of the folder name
     if model_dir_name.startswith('DSA'):
         return './data/Dataset DSAR'
+    elif model_dir_name.startswith('SBT-Semi'):
+        return './data/Dataset SBT Semi'
+    elif model_dir_name.startswith('SBT-Semi-New'):
+        return './data/Dataset SBT Semi New'    
     elif model_dir_name.startswith('BSA'):
         return './data/Dataset B SA'
     elif model_dir_name.startswith('A'):
@@ -243,7 +247,7 @@ def process_all_checkpoints():
                 net.load_state_dict(state_dict)
                 
                 # Create dataset and dataloader
-                val_dataset = BasicDataset(input_dir, masks_dir, scale=0.5)
+                val_dataset = BasicDataset(input_dir, masks_dir, scale=1.0)
                 val_loader = DataLoader(val_dataset, 
                                       batch_size=1,
                                       shuffle=False,

@@ -67,7 +67,7 @@ def predict_directory(input_dir, output_dir, checkpoint_path):
         
         # Process all images in the input directory
         input_path = Path(input_dir)
-        image_files = list(input_path.glob('*.png')) + list(input_path.glob('*.jpg')) + list(input_path.glob('*.tif'))
+        image_files = list(input_path.glob('*.png')) + list(input_path.glob('*.tif'))
         
         if not image_files:
             logging.warning(f"No image files found in {input_dir}")
@@ -97,12 +97,12 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     
     parser = argparse.ArgumentParser(description='Predict on images using a trained UNet model')
-    parser.add_argument('--input', '-i', type=str, default=r"C:\Users\Admin\Desktop\test_images\UK\processing\512",
+    parser.add_argument('--input', '-i', type=str, default=r"C:\Users\Admin\Desktop\test_images\UK\processing_new\512",
                         help='Directory containing input images')
-    parser.add_argument('--output', '-o', type=str, default=r"C:\Users\Admin\Desktop\test_images\UK\predictions\png\single_channel",
+    parser.add_argument('--output', '-o', type=str, default=r"C:\Users\Admin\Desktop\test_images\UK\predictions_new\png\single_channel",
                         help='Directory to save prediction outputs')
     parser.add_argument('--checkpoint', '-c', type=str, 
-                        default=r"C:\Users\Admin\anaconda3\envs\UNet-Kathe\UNet-Kathe\checkpoints\BSTL1e-08W1e-06B4E60_1.0\checkpoint_epoch60.pth",
+                        default=r"C:\Users\Admin\anaconda3\envs\UNet-Kathe\UNet-Kathe\checkpoints\SBT-Semi-NewL1e-08W1e-06B4E60S1.00\checkpoint_epoch60.pth",
                         help='Path to the checkpoint file')
     
     args = parser.parse_args()
