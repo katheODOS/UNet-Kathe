@@ -5,27 +5,27 @@ Per-Class Metrics:
 
 Class 0:
 Accuracy: 0.0000
-Total pixels: 842918
+Total pixels: 3370421
 Correctly classified: 0
 Mean per-image accuracy: 0.0000
 
 Class 1:
-Accuracy: 0.8461
-Total pixels: 4654198
-Correctly classified: 3937845
-Mean per-image accuracy: 0.8334
+Accuracy: 0.4309
+Total pixels: 18616441
+Correctly classified: 8022649
+Mean per-image accuracy: 0.4450
 
 Class 2:
-Accuracy: 0.9827
-Total pixels: 23411596
-Correctly classified: 23006862
-Mean per-image accuracy: 0.9803
+Accuracy: 0.9930
+Total pixels: 93647159
+Correctly classified: 92991927
+Mean per-image accuracy: 0.9921
 
 Class 3:
-Accuracy: 0.7705
-Total pixels: 1600425
-Correctly classified: 1233178
-Mean per-image accuracy: 0.6159
+Accuracy: 0.5462
+Total pixels: 6400940
+Correctly classified: 3496124
+Mean per-image accuracy: 0.4267
 
 Class 4:
 Accuracy: nan
@@ -34,24 +34,24 @@ Correctly classified: 0
 Mean per-image accuracy: 0.0000
 
 Class 5:
-Accuracy: 0.7506
-Total pixels: 1027966
-Correctly classified: 771601
-Mean per-image accuracy: 0.5910
+Accuracy: 0.4497
+Total pixels: 4112829
+Correctly classified: 1849728
+Mean per-image accuracy: 0.3571
 
 Class 6:
-Accuracy: 0.6530
-Total pixels: 510001
-Correctly classified: 333018
-Mean per-image accuracy: 0.4918
+Accuracy: 0.0620
+Total pixels: 2040626
+Correctly classified: 126448
+Mean per-image accuracy: 0.0548
 
-Overall Accuracy: 0.9137
+Overall Accuracy: 0.8307
 
 Confusion Matrix (percentages):
 Class 0: 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00
-Class 1: 0.00, 0.85, 0.14, 0.00, 0.00, 0.00, 0.00
-Class 2: 0.00, 0.01, 0.98, 0.00, 0.00, 0.00, 0.00
-Class 3: 0.00, 0.01, 0.22, 0.77, 0.00, 0.00, 0.00
+Class 1: 0.00, 0.43, 0.56, 0.01, 0.00, 0.00, 0.00
+Class 2: 0.00, 0.00, 0.99, 0.00, 0.00, 0.00, 0.00
+Class 3: 0.00, 0.00, 0.45, 0.55, 0.00, 0.00, 0.00
 Class 4: 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
-Class 5: 0.00, 0.12, 0.10, 0.00, 0.00, 0.75, 0.02
-Class 6: 0.00, 0.12, 0.16, 0.00, 0.00, 0.07, 0.65
+Class 5: 0.00, 0.09, 0.43, 0.02, 0.00, 0.45, 0.01
+Class 6: 0.00, 0.08, 0.82, 0.00, 0.00, 0.04, 0.06

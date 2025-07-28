@@ -33,6 +33,19 @@ import matplotlib.colors as mcolors
 ORIGINAL_CLASSES = [0, 1, 2, 3, 4, 5, 6]
 CLASS_NAMES = ['Border Pixels', 'Forest land', 'Crop land', 'Water body', 'Artificial Surface', 'Other']
 
+def calculate_iou(confusion_matrix):
+    """Calculate IoU for each class from confusion matrix."""
+    intersection = np.diag(confusion_matrix)
+    ground_truth_sum = np.sum(confusion_matrix, axis=1)
+    predicted_sum = np.sum(confusion_matrix, axis=0)
+    union = ground_truth_sum + predicted_sum - intersection
+    
+    iou = np.zeros_like(intersection, dtype=float)
+    valid_classes = union > 0
+    iou[valid_classes] = intersection[valid_classes] / union[valid_classes]
+    
+    return iou
+
 def evaluate_model(net, dataloader, device, n_classes):
     net.eval()
     confusion_mat = np.zeros((n_classes, n_classes), dtype=np.int64)
@@ -65,7 +78,10 @@ def evaluate_model(net, dataloader, device, n_classes):
                         accuracy = (pred[mask] == class_idx).mean()
                         class_accuracies[class_idx].append(accuracy)
     
-    return confusion_mat, class_accuracies
+    total_pixels = confusion_mat.sum()
+    iou_scores = calculate_iou(confusion_mat)
+    
+    return confusion_mat, class_accuracies, iou_scores, total_pixels
 
 
 def plot_results(confusion_mat, class_accuracies, save_dir):
@@ -171,6 +187,31 @@ def save_metrics(confusion_mat, class_accuracies, save_dir):
                 row_percentages = ['0.00' for _ in range(confusion_mat.shape[1])]
             f.write(f'Class {ORIGINAL_CLASSES[i]}: {", ".join(row_percentages)}\n')
 
+def save_iou_metrics(iou_scores, total_pixels, save_dir):
+    """Save IoU metrics to a file."""
+    save_path = Path(save_dir) / 'miou.txt'
+    
+    with open(save_path, 'w') as f:
+        f.write('=== Intersection over Union (IoU) Metrics ===\n\n')
+        
+        # Per-class IoU
+        f.write('Per-Class IoU:\n')
+        f.write('-' * 50 + '\n')
+        valid_ious = []
+        
+        for idx, (iou, class_name) in enumerate(zip(iou_scores, CLASS_NAMES)):
+            if idx == 0:  # Skip border pixels class
+                continue
+            f.write(f'Class {idx} ({class_name}): {iou:.4f}\n')
+            if iou > 0:  # Only include non-zero IoUs in mean calculation
+                valid_ious.append(iou)
+        
+        # Mean IoU (excluding border pixels)
+        mean_iou = np.mean(valid_ious) if valid_ious else 0
+        f.write(f'\nMean IoU (excluding border pixels): {mean_iou:.4f}\n')
+        
+        # Total pixels evaluated
+        f.write(f'\nTotal pixels evaluated: {total_pixels:,}\n')
 
 def detect_model_type(state_dict):
     """Detect if model uses bilinear upsampling based on state dict keys"""
@@ -265,7 +306,7 @@ def was_recently_modified(folder_path, hours=144):
 
 def process_all_checkpoints():
     """Process all checkpoint directories"""
-    checkpoints_dir = Path('./checkpoints')
+    checkpoints_dir = Path(r"C:\Users\Admin\anaconda3\envs\UNet-Kathe\UNet-Kathe\checkpoints\best_runs_scale_0.5")
     
     for model_dir in checkpoints_dir.iterdir():
         if not model_dir.is_dir():
@@ -275,7 +316,7 @@ def process_all_checkpoints():
         results_dir = model_dir / 'results'
         
         # Check if any result files were recently modified (within last 3 hours)
-        recently_modified, mod_time, threshold = was_recently_modified(results_dir, hours=3)
+        recently_modified, mod_time, threshold = was_recently_modified(results_dir, hours=0)
         if recently_modified:
             logging.info(f"Skipping {model_dir.name} - result files were recently modified at {mod_time} (threshold: {threshold})")
             continue
@@ -325,7 +366,7 @@ def process_all_checkpoints():
                 net.load_state_dict(state_dict)
                 
                 # Create dataset and dataloader
-                val_dataset = BasicDataset(input_dir, masks_dir, scale=0.5)
+                val_dataset = BasicDataset(input_dir, masks_dir, scale=1.0)
                 val_loader = DataLoader(val_dataset, 
                                       batch_size=1,
                                       shuffle=False,
@@ -333,11 +374,12 @@ def process_all_checkpoints():
                                       pin_memory=True)
                 
                 # Evaluate
-                confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, 7)
+                confusion_mat, class_accuracies, iou_scores, total_pixels = evaluate_model(net, val_loader, device, 7)
                 
-                # Save results in the model's directory
+                # Save results
                 plot_results(confusion_mat, class_accuracies, results_dir)
                 save_metrics(confusion_mat, class_accuracies, results_dir)
+                save_iou_metrics(iou_scores, total_pixels, results_dir)
                 
                 logging.info(f"Results saved in {results_dir}")
                 
@@ -393,12 +435,13 @@ if __name__ == '__main__':
         
         # Evaluate
         logging.info('Starting evaluation...')
-        confusion_mat, class_accuracies = evaluate_model(net, val_loader, device, args.classes)
+        confusion_mat, class_accuracies, iou_scores, total_pixels = evaluate_model(net, val_loader, device, args.classes)
         
-        # Save and plot results
+        # Save results
         logging.info('Saving results...')
         plot_results(confusion_mat, class_accuracies, args.output)
         save_metrics(confusion_mat, class_accuracies, args.output)
+        save_iou_metrics(iou_scores, total_pixels, args.output)
         
         logging.info(f'Evaluation complete! Results saved in {args.output}')
     else:

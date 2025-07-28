@@ -69,7 +69,7 @@ def process_checkpoints():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logging.info(f'Using device {device}')
 
-    checkpoints_dir = Path('./checkpoints')
+    checkpoints_dir = Path(r"C:\Users\Admin\anaconda3\envs\UNet-Kathe\UNet-Kathe\checkpoints\best_runs_scale_0.5")
     
     for model_dir in checkpoints_dir.iterdir():
         if not model_dir.is_dir():
