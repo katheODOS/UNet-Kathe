@@ -1,0 +1,15 @@
+=== Intersection over Union (IoU) Metrics ===
+
+Per-Class IoU:
+--------------------------------------------------
+Class 1 (Forest land): 0.1564
+Class 2 (Grassland): 0.0650
+Class 3 (Crop land): 0.1047
+Class 4 (Water body): 0.0000
+Class 5 (Artificial Surface): 0.2131
+Class 6 (Other): 0.0000
+Class 7 (Semi-natural Grassland): 0.0000
+
+Mean IoU (excluding border pixels): 0.1348
+
+Total pixels evaluated: 127,926,272

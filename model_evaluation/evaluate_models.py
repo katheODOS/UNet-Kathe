@@ -209,6 +209,9 @@ def save_iou_metrics(iou_scores, total_pixels, save_dir):
     """Save IoU metrics to a file."""
     save_path = Path(save_dir) / 'miou.txt'
     
+    # Define classes to exclude
+    excluded_classes = {4, 6}  # Water body and Other
+    
     with open(save_path, 'w') as f:
         f.write('=== Intersection over Union (IoU) Metrics ===\n\n')
         
@@ -220,13 +223,16 @@ def save_iou_metrics(iou_scores, total_pixels, save_dir):
         for idx, (iou, class_name) in enumerate(zip(iou_scores, CLASS_NAMES)):
             if idx == 0:  # Skip border pixels class
                 continue
+            if idx in excluded_classes:  # Skip excluded classes
+                f.write(f'Class {idx} ({class_name}): {iou:.4f} [Excluded from mIoU]\n')
+                continue
             f.write(f'Class {idx} ({class_name}): {iou:.4f}\n')
             if iou > 0:  # Only include non-zero IoUs in mean calculation
                 valid_ious.append(iou)
         
-        # Mean IoU (excluding border pixels)
+        # Mean IoU (excluding border pixels and specified classes)
         mean_iou = np.mean(valid_ious) if valid_ious else 0
-        f.write(f'\nMean IoU (excluding border pixels): {mean_iou:.4f}\n')
+        f.write(f'\nMean IoU (excluding border pixels and classes 4, 6): {mean_iou:.4f}\n')
         
         # Total pixels evaluated
         f.write(f'\nTotal pixels evaluated: {total_pixels:,}\n')
@@ -328,7 +334,7 @@ def was_recently_modified(folder_path, hours=144):
 
 def process_all_checkpoints():
     """Process all checkpoint directories"""
-    checkpoints_dir = Path('.checkpoints/best_runs_scale_0.5')
+    checkpoints_dir = Path('.\checkpoints')
     
     for model_dir in checkpoints_dir.iterdir():
         if not model_dir.is_dir():

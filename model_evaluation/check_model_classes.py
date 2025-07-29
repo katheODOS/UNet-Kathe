@@ -113,6 +113,31 @@ def main():
                        help='Directory containing model checkpoints')
     parser.add_argument('--output_dir', type=str, default='./checkpoints',
                        help='Directory to save results')
+    parser.add_argument('--single_file', type=str, 
+                       help='Path to a single .pth file to check')
+    args = parser.parse_args()
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    if args.single_file:
+        try:
+            state_dict = torch.load(args.single_file, map_location='cpu', weights_only=True)
+            if 'mask_values' in state_dict:
+                mask_values = state_dict.pop('mask_values')
+                print(f"\nMask values: {mask_values}")
+            
+            n_classes = get_model_classes(state_dict)
+            print(f"\nFile: {args.single_file}")
+            print(f"Number of classes: {n_classes}")
+        except Exception as e:
+            print(f"Error loading file: {str(e)}")
+    else:
+        print(f"Checking model checkpoints in {args.checkpoints_dir}...")
+        results = check_all_checkpoints(args.checkpoints_dir)
+        save_results(results, args.output_dir)
+    parser = argparse.ArgumentParser(description='Check number of classes in model checkpoints')
+    parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints',
+                       help='Directory containing model checkpoints')
+    parser.add_argument('--output_dir', type=str, default='./checkpoints',
+                       help='Directory to save results')
     args = parser.parse_args()
     
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
