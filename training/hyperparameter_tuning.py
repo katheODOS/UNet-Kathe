@@ -16,15 +16,15 @@ import atexit
 import re
 
 # Hyperparameter configurations
-LEARNING_RATES = [1e-9, 1e-8, 1e-7, 1e-6, 1e-5]
-BATCH_SIZES = [1, 2, 4, 8, 16]
-EPOCHS = [5, 10, 15, 20, 25]
-WEIGHT_DECAYS = [1e-9, 1e-8, 1e-7, 1e-6]
+LEARNING_RATES = [1e-8, 1e-7]
+BATCH_SIZES = [2, 4]
+EPOCHS = [30, 40]
+WEIGHT_DECAYS = [1e-8, 1e-7, 1e-6]
+SCALE = [0.75, 1.0]
 
 # Dataset configurations with path mappings
 DATASETS = {
-    'BST': {'name': 'Dataset BST', 'code': 'BST', 'path': 'Dataset BST'},
-    'SBT Semi': {'name': 'Dataset SBT Semi', 'code': 'BST-Semi', 'path': 'Dataset SBT Semi'},
+    'SBT-Semi-New-V2': {'name': 'Dataset SBT Semi New V2', 'code': 'SBT-Semi-New-V2', 'path': 'Dataset SBT Semi New V2'},
    
 }
 
@@ -101,12 +101,12 @@ def extract_latest_validation_score(output_text):
     matches = re.findall(r'INFO: Validation Dice score: (\d+\.\d+)', output_text)
     return float(matches[-1]) if matches else 0.0
 
-def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epochs, weight_decay, config_details):
+def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epochs, weight_decay, scale, config_details):
     """Run training with specific configuration and capture output"""
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # Initialize model with 7 classes (0-6)
-    model = UNet(n_channels=3, n_classes=8, bilinear=True)
+    model = UNet(n_channels=3, n_classes=8, bilinear=True)  # Changed from 8 to 7
     model = model.to(device=device)
     
     with SafeOutputCapture() as output:
@@ -135,7 +135,7 @@ def run_training_configuration(dataset_path, checkpoint_dir, lr, batch_size, epo
                 batch_size=batch_size,
                 learning_rate=lr,
                 device=device,
-                img_scale=0.5,
+                img_scale=scale,  # Use the scale parameter here
                 save_checkpoint=True,
                 weight_decay=weight_decay
             )
@@ -174,7 +174,8 @@ def main():
         LEARNING_RATES,
         BATCH_SIZES,
         EPOCHS,
-        WEIGHT_DECAYS
+        WEIGHT_DECAYS,
+        SCALE  # Add SCALE to the product
     ))
     total_combinations = len(configs)
     logging.info(f"Total number of combinations to try: {total_combinations}")
@@ -183,14 +184,14 @@ def main():
         # Register global cleanup
         atexit.register(cleanup_wandb)
         
-        for idx, ((dataset_key, dataset_info), lr, batch_size, epochs, weight_decay) in enumerate(configs, 1):
+        for idx, ((dataset_key, dataset_info), lr, batch_size, epochs, weight_decay, scale) in enumerate(configs, 1):
             logging.info(f"\n{'='*80}")
             logging.info(f"Running combination {idx}/{total_combinations}")
             logging.info(f"{'='*80}")
             
             # Setup directories for current configuration
             checkpoint_dir = setup_checkpoint_dir(
-                dataset_info['code'], lr, weight_decay, epochs, batch_size
+                dataset_info['code'], lr, weight_decay, epochs, batch_size, scale
             )
             
             # Check if this configuration should be skipped based on folder name
@@ -239,6 +240,7 @@ Checkpoint Directory: {checkpoint_dir}"""
                     batch_size,
                     epochs,
                     weight_decay,
+                    scale,  # Add scale parameter here
                     config_details
                 )
                 

@@ -50,8 +50,8 @@ def train_model(
     n_val = len(val_set)
 
     # Define valid classes (excluding background/ignore)
-    valid_classes = [1, 2, 3, 5, 6, 7]  # This matches the actual classes in Dataset BST
-    n_classes = 8  # Total number of class channels (0-7)
+    valid_classes = [1, 2, 3, 5, 6, 7]  # Actual classes present in data
+    n_classes = 8  # Total number of classes (0-6)
 
     # (Initialize logging)
     experiment = wandb.init(project='U-Net', resume='allow', anonymous='must')
@@ -103,15 +103,18 @@ def train_model(
                 with torch.autocast(device.type if device.type != 'mps' else 'cpu', enabled=amp):
                     masks_pred = model(images)
                     
-                    # Compute cross-entropy loss (ignoring background/ignore index)
+                    # Ensure masks_pred has correct number of classes
+                    assert masks_pred.shape[1] == n_classes, f'Network predicted {masks_pred.shape[1]} classes but expected {n_classes}'
+                    
+                    # Compute cross-entropy loss
                     loss = criterion(masks_pred, true_masks)
                     
-                    # Add Dice loss for multi-class segmentation
+                    # Add Dice loss with matching dimensions
                     loss += dice_loss(
-                    F.softmax(masks_pred, dim=1).float(),
-                    F.one_hot(true_masks, 8).permute(0, 3, 1, 2).float(),  # Explicitly use 8 classes (0-7)
-                    multiclass=True
-                )
+                        F.softmax(masks_pred, dim=1).float(),
+                        F.one_hot(true_masks, n_classes).permute(0, 3, 1, 2).float(),
+                        multiclass=True
+                    )
 
                 optimizer.zero_grad(set_to_none=True)
                 grad_scaler.scale(loss).backward()

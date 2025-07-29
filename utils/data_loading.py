@@ -33,15 +33,14 @@ class BasicDataset(Dataset):
             hex_to_rgb("e657c4"): 2,    # Class 2
             hex_to_rgb("fc7ebb"): 3,    # Class 3
             hex_to_rgb("fa3e77"): 5,    # Class 5
-            hex_to_rgb("fa9441"): 6,
-            hex_to_rgb("ffd621"): 7    # Class 7
+            hex_to_rgb("fa9441"): 6,    # Class 6
         }
 
         # For Dataset BST, we preserve the original class indices (not contiguous)
         # This means we use class indices 0, 1, 2, 3, 5, 6
         self.class_map = {old_class: old_class for old_class in self.rgb_classes.values()}
         
-        # We still need 8 classes total (0-7)
+        # We still need 7 classes total (0-6)
         self.n_classes = 8
 
         self.images_dir = Path(images_dir)
