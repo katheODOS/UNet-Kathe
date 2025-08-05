@@ -1,5 +1,8 @@
 # UNet-Kathe
+NOTE:
 
+New version of SBT-Semi where class 6 (other) is merged into class 2, as class 6 was used for artificial gardens in houses but in reality c
+an be counted as pasture because it does not affect biodiversity detection which is the main task of this model. Also has some changes in 'train.py', 'hyperparameter_tuning.py', and 'data_loading.py' to reflect the lack of class 6 in data (which moves valid classes to 1, 2, 3, 5, 7).
 ## Overview
 Hello! Thank you for visiting my Bachelor's capstone project :3 please find information that can help you navigate these files and the setup below.
 
