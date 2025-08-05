@@ -13,7 +13,7 @@ CLASS_TO_RGB = {
     3: (242, 180, 92),  # cropland
     4: (59, 141, 247),   # water body
     5: (116, 116, 116),   # artificial surface
-    6: (217, 217, 217),   # other
+    #6: (217, 217, 217),   # other
     7: (255, 214, 33)    # Semi-natural grassland 
 }
 

@@ -14,35 +14,36 @@ CONFIGURATIONS = [
     {
         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
         'learning_rate': 1e-8,
-        'weight_decay': 1e-6,
-        'batch_size': 4,
-        'epochs': 60,
-        'scale' : 1.0
-    },
-    {
-         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
-        'learning_rate': 1e-8,
-        'weight_decay': 1e-6,
-        'batch_size': 4,
-        'epochs': 60,
-        'scale' : 0.75
-    },
-    {
-         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
-        'learning_rate': 1e-8,
         'weight_decay': 1e-8,
         'batch_size': 2,
-        'epochs': 55,
+        'epochs': 60,
         'scale' : 1.0
-    },
-    {
-         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
-        'learning_rate': 1e-8,
-        'weight_decay': 1e-8,
-        'batch_size': 2,
-        'epochs': 55,
-        'scale' : 0.75
     }
+        # },
+        # {
+        #         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
+        #     'learning_rate': 1e-8,
+        #     'weight_decay': 1e-6,
+        #     'batch_size': 4,
+        #     'epochs': 60,
+        #     'scale' : 0.75
+        # },
+        # {
+        #         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
+        #     'learning_rate': 1e-8,
+        #     'weight_decay': 1e-8,
+        #     'batch_size': 2,
+        #     'epochs': 55,
+        #     'scale' : 1.0
+        # },
+        # {
+        #         'dataset': {'name': 'Dataset SBT Semi New', 'code': 'SBT-Semi-New', 'path': 'Dataset SBT Semi New'},
+        #     'learning_rate': 1e-8,
+        #     'weight_decay': 1e-8,
+        #     'batch_size': 2,
+        #     'epochs': 55,
+        #     'scale' : 0.75
+        # }
 ]
 
 # Reuse the helper classes and functions from hyperparameter_tuning.py
@@ -116,6 +117,7 @@ Checkpoint Directory: {checkpoint_dir}"""
                     config['batch_size'],
                     config['epochs'],
                     config['weight_decay'],
+                    config['scale'],
                     config_details
                 )
                 

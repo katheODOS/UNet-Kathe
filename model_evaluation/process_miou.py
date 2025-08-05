@@ -8,9 +8,11 @@ def extract_miou_score(miou_file):
     try:
         with open(miou_file, 'r', encoding='utf-8') as f:
             content = f.read()
-            matches = re.findall(r'Mean IoU \(excluding border pixels\):\s+(\d+\.\d+)', content)
+            matches = re.findall(r'Mean IoU \(excluding border pixels and classes [^)]+\):\s+(\d+\.\d+)', content)
             if matches:
                 return float(matches[0])
+            else:
+                print(f"No score found in {miou_file}")
     except Exception as e:
         print(f"Error processing {miou_file}: {str(e)}")
     return None

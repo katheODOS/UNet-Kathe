@@ -269,10 +269,10 @@ def get_dataset_path(model_dir_name):
     # Extract dataset identifier from the start of the folder name
     if model_dir_name.startswith('ASA'):
         return './data/Dataset A SA'
-    elif model_dir_name.startswith('SBT-Semi'):
-        return './data/Dataset SBT Semi'
-    elif model_dir_name.startswith('SBT-Semi-New'):
-        return './data/Dataset SBT Semi New'
+    #elif model_dir_name.startswith('SBT-Semi'):
+    #    return './data/Dataset SBT Semi'
+    elif model_dir_name.startswith('SBT-Semi-New-V2'):
+        return './data/Dataset SBT Semi New V2'
     elif model_dir_name.startswith('BST'):
         return './data/Dataset BST'
     elif model_dir_name.startswith('BSA'):

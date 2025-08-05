@@ -21,36 +21,17 @@ def load_image(filename):
         return Image.open(filename)
 
 
-def hex_to_rgb(hex_color):
-    """Convert hex color to RGB tuple"""
-    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
-
 class BasicDataset(Dataset):
     def __init__(self, images_dir: str, mask_dir: str, scale: float = 1.0, mask_suffix: str = ''):
-        # RGB to class mapping for Dataset BST
-        self.rgb_classes = {
-            hex_to_rgb("27b341"): 1,    # Class 1
-            hex_to_rgb("e657c4"): 2,    # Class 2
-            hex_to_rgb("fc7ebb"): 3,    # Class 3
-            hex_to_rgb("fa3e77"): 5,    # Class 5
-            hex_to_rgb("fa9441"): 6,    # Class 6
-        }
-
-        # For Dataset BST, we preserve the original class indices (not contiguous)
-        # This means we use class indices 0, 1, 2, 3, 5, 6
-        self.class_map = {old_class: old_class for old_class in self.rgb_classes.values()}
-        
-        # We still need 7 classes total (0-6)
-        self.n_classes = 8
+        # For single-channel masks, define valid classes directly
+        self.valid_classes = [1, 2, 3, 5, 6, 7]  # Your actual valid classes
+        self.n_classes = 8  # Total classes including background (0)
 
         self.images_dir = Path(images_dir)
         self.mask_dir = Path(mask_dir)
         assert 0 < scale <= 1, 'Scale must be between 0 and 1'
         self.scale = scale
         self.mask_suffix = mask_suffix
-
-        # Predefined valid classes
-        self.valid_classes = list(self.rgb_classes.values())
 
         self.ids = [splitext(file)[0] for file in listdir(images_dir) 
                     if isfile(join(images_dir, file)) and not file.startswith('.')]
@@ -61,7 +42,7 @@ class BasicDataset(Dataset):
         logging.info(f'Creating dataset with {len(self.ids)} examples')
         logging.info('Scanning mask files to determine unique values')
         
-        # Scan and log unique mask values (optional, but kept for compatibility)
+        # Scan and log unique mask values
         with Pool() as p:
             unique = list(tqdm(
                 p.imap(partial(self._unique_mask_values, mask_dir=self.mask_dir, mask_suffix=self.mask_suffix), self.ids),
@@ -118,18 +99,21 @@ class BasicDataset(Dataset):
         # Initialize mask with zeros (background/ignore)
         processed_mask = np.zeros((newH, newW), dtype=np.int64)
         
-        # Handle RGB mask
-        if mask.ndim == 3 and mask.shape[2] == 3:
-            for rgb, class_id in self.rgb_classes.items():
-                # Create a boolean mask for pixels matching the current RGB value
-                class_mask = np.all(mask == rgb, axis=-1)
-                processed_mask[class_mask] = self.class_map[class_id]  # Map to contiguous class index
+        # Handle single-channel mask (most common case)
+        if mask.ndim == 2:
+            # Use the valid classes defined in __init__
+            for class_id in self.valid_classes:
+                mask_indices = mask == class_id
+                processed_mask[mask_indices] = class_id
         
-        # Handle single-channel mask
-        elif mask.ndim == 2:
-            for orig_class, mapped_class in self.rgb_classes.items():
-                mask_indices = mask == mapped_class
-                processed_mask[mask_indices] = self.class_map[mapped_class]  # Map to contiguous class index
+        # Handle multi-channel mask (if needed for compatibility)
+        elif mask.ndim == 3:
+            # Convert to single channel by taking the first channel
+            # or implement RGB-to-class mapping if needed
+            mask_single = mask[:, :, 0]  # Take first channel
+            for class_id in self.valid_classes:
+                mask_indices = mask_single == class_id
+                processed_mask[mask_indices] = class_id
         
         return processed_mask
 

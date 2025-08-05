@@ -5,27 +5,27 @@ Per-Class Metrics:
 
 Class 0:
 Accuracy: 0.0000
-Total pixels: 11009976
+Total pixels: 3453813
 Correctly classified: 0
 Mean per-image accuracy: 0.0000
 
 Class 1:
-Accuracy: 0.8438
+Accuracy: 0.8471
 Total pixels: 19024835
-Correctly classified: 16052238
-Mean per-image accuracy: 0.8535
+Correctly classified: 16115556
+Mean per-image accuracy: 0.8284
 
 Class 2:
-Accuracy: 0.0679
-Total pixels: 85884036
-Correctly classified: 5829993
-Mean per-image accuracy: 0.0713
+Accuracy: 0.9633
+Total pixels: 88173689
+Correctly classified: 84939862
+Mean per-image accuracy: 0.9529
 
 Class 3:
-Accuracy: 0.1048
+Accuracy: 0.9590
 Total pixels: 5336738
-Correctly classified: 559127
-Mean per-image accuracy: 0.0452
+Correctly classified: 5118110
+Mean per-image accuracy: 0.7807
 
 Class 4:
 Accuracy: 0.0000
@@ -34,31 +34,31 @@ Correctly classified: 0
 Mean per-image accuracy: 0.0000
 
 Class 5:
-Accuracy: 0.9015
+Accuracy: 0.7359
 Total pixels: 4381034
-Correctly classified: 3949327
-Mean per-image accuracy: 0.8190
+Correctly classified: 3224074
+Mean per-image accuracy: 0.6372
 
 Class 6:
-Accuracy: 0.0000
-Total pixels: 2289653
-Correctly classified: 0
-Mean per-image accuracy: 0.0000
-
-Class 7:
 Accuracy: 0.0000
 Total pixels: 0
 Correctly classified: 0
 Mean per-image accuracy: 0.0000
 
-Overall Accuracy: 0.2063
+Class 7:
+Accuracy: 0.4426
+Total pixels: 7556163
+Correctly classified: 3344619
+Mean per-image accuracy: 0.4279
+
+Overall Accuracy: 0.8813
 
 Confusion Matrix (percentages):
-Class 0: 0.00, 0.66, 0.32, 0.00, 0.00, 0.02, 0.00, 0.00
-Class 1: 0.00, 0.84, 0.00, 0.00, 0.00, 0.16, 0.00, 0.00
-Class 2: 0.00, 0.86, 0.07, 0.00, 0.00, 0.07, 0.00, 0.00
-Class 3: 0.00, 0.06, 0.02, 0.10, 0.00, 0.82, 0.00, 0.00
+Class 0: 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00
+Class 1: 0.00, 0.85, 0.11, 0.00, 0.00, 0.01, 0.00, 0.03
+Class 2: 0.00, 0.02, 0.96, 0.01, 0.00, 0.00, 0.00, 0.01
+Class 3: 0.00, 0.01, 0.02, 0.96, 0.00, 0.00, 0.00, 0.00
 Class 4: 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
-Class 5: 0.00, 0.10, 0.00, 0.00, 0.00, 0.90, 0.00, 0.00
-Class 6: 0.00, 0.69, 0.06, 0.00, 0.00, 0.24, 0.00, 0.00
-Class 7: 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
+Class 5: 0.00, 0.08, 0.18, 0.00, 0.00, 0.74, 0.00, 0.00
+Class 6: 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00
+Class 7: 0.00, 0.03, 0.52, 0.01, 0.00, 0.00, 0.00, 0.44

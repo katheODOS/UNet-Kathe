@@ -2,12 +2,14 @@
 
 Per-Class IoU:
 --------------------------------------------------
-Class 1 (Forest land): 0.0485
-Class 2 (Grassland): 0.3827
-Class 3 (Crop land): 0.0133
+Class 1 (Forest land): 0.5482
+Class 2 (Grassland): 0.7861
+Class 3 (Crop land): 0.1227
 Class 4 (Water body): 0.0000 [Excluded from mIoU]
-Class 5 (Artificial Surface): 0.2400
+Class 5 (Artificial Surface): 0.3438
 Class 6 (Other): 0.0000 [Excluded from mIoU]
-Class 7 (Semi-natural Grassland): 0.0000
+Class 7 (Semi-natural Grassland): 0.2526
 
-Mean IoU (excluding border pixels and cla
+Mean IoU (excluding border pixels and classes 4, 6): 0.4107
+
+Total pixels evaluated: 127,926,272

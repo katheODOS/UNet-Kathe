@@ -30,10 +30,10 @@ def get_dataset_path(model_dir_name):
         return './data/Dataset DSAR'
     elif model_dir_name.startswith('BST'):
         return './data/Dataset BST'
-    elif model_dir_name.startswith('SBT-Semi-New'):
-        return './data/Dataset SBT Semi New'
-    elif model_dir_name.startswith('SBT-Semi'):
-        return './data/Dataset SBT Semi'
+    elif model_dir_name.startswith('SBT-Semi-New-V2'):
+        return './data/Dataset SBT Semi New V2'
+    #elif model_dir_name.startswith('SBT-Semi'):
+    #    return './data/Dataset SBT Semi'
     elif model_dir_name.startswith('ESA'):
         return './data/Dataset ESAR'
     elif model_dir_name.startswith('ASA'):
